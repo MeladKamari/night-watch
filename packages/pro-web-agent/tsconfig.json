@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "lib": ["ES2018", "DOM"],
+    "types": []
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.test.ts", "dist"],
+  "references": [
+    { "path": "../pro-contracts" },
+    { "path": "../pro-browser-adapter" },
+    { "path": "../core" },
+    { "path": "../browser-sdk" }
+  ]
+}

@@ -1,0 +1,5 @@
+Night Watch Blazor / WASM interop (@night-watch/blazor)
+=======================================================
+
+Independent open implementation. Not affiliated with FingerprintJS, Inc.
+Includes C# JS interop helpers under ./csharp for Blazor WebAssembly / Server.

@@ -1,0 +1,699 @@
+{
+  "generatedAtIso": "2026-11-03T18:38:46.453Z",
+  "consented": true,
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+    "browserName": "chromium",
+    "headless": true,
+    "locale": "en-US",
+    "timezoneId": "(default)",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "deviceClass": "desktop-playwright"
+  },
+  "algorithm": {
+    "sourceManifestRevision": "default-profile-v1",
+    "enabledSourceCount": 41,
+    "sdkVersion": "1.0.0"
+  },
+  "wallClock": {
+    "sampleSize": 10,
+    "min": 45.30000001192093,
+    "max": 245.2999999821186,
+    "mean": 74.95,
+    "p50": 58.20000001788139,
+    "p95": 245.2999999821186,
+    "p99": 245.2999999821186
+  },
+  "sourceCosts": [
+    {
+      "key": "fonts",
+      "stats": {
+        "sampleSize": 10,
+        "min": 23,
+        "max": 142,
+        "mean": 37.9,
+        "p50": 26,
+        "p95": 142,
+        "p99": 142
+      },
+      "expensiveRelative": true
+    },
+    {
+      "key": "webGlExtensions",
+      "stats": {
+        "sampleSize": 10,
+        "min": 20,
+        "max": 31,
+        "mean": 24.7,
+        "p50": 23,
+        "p95": 31,
+        "p99": 31
+      },
+      "expensiveRelative": true
+    },
+    {
+      "key": "fontPreferences",
+      "stats": {
+        "sampleSize": 10,
+        "min": 19,
+        "max": 28,
+        "mean": 21.6,
+        "p50": 20,
+        "p95": 28,
+        "p99": 28
+      },
+      "expensiveRelative": true
+    },
+    {
+      "key": "userAgentData",
+      "stats": {
+        "sampleSize": 10,
+        "min": 16,
+        "max": 24,
+        "mean": 18.4,
+        "p50": 17,
+        "p95": 24,
+        "p99": 24
+      },
+      "expensiveRelative": true
+    },
+    {
+      "key": "domBlockers",
+      "stats": {
+        "sampleSize": 10,
+        "min": 11,
+        "max": 20,
+        "mean": 13.9,
+        "p50": 12,
+        "p95": 20,
+        "p99": 20
+      },
+      "expensiveRelative": true
+    },
+    {
+      "key": "webGlBasics",
+      "stats": {
+        "sampleSize": 10,
+        "min": 4,
+        "max": 9,
+        "mean": 6,
+        "p50": 6,
+        "p95": 9,
+        "p99": 9
+      },
+      "expensiveRelative": true
+    },
+    {
+      "key": "canvas",
+      "stats": {
+        "sampleSize": 10,
+        "min": 2,
+        "max": 17,
+        "mean": 4.4,
+        "p50": 3,
+        "p95": 17,
+        "p99": 17
+      },
+      "expensiveRelative": true
+    },
+    {
+      "key": "audio",
+      "stats": {
+        "sampleSize": 10,
+        "min": 2,
+        "max": 3,
+        "mean": 2.5,
+        "p50": 2,
+        "p95": 3,
+        "p99": 3
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "timezone",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 10,
+        "mean": 1.2,
+        "p50": 0,
+        "p95": 10,
+        "p99": 10
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "screenFrame",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.3,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "audioBaseLatency",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.2,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "dateTimeLocale",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.2,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "languages",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "sessionStorage",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "localStorage",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "platform",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "plugins",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "cookiesEnabled",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "invertedColors",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "hdr",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "privateClickMeasurement",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 1,
+        "mean": 0.1,
+        "p50": 0,
+        "p95": 1,
+        "p99": 1
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "osCpu",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "colorDepth",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "deviceMemory",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "screenResolution",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "hardwareConcurrency",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "indexedDB",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "openDatabase",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "cpuClass",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "touchSupport",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "vendor",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "vendorFlavors",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "colorGamut",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "forcedColors",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "monochrome",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "contrast",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "reducedMotion",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "reducedTransparency",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "math",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "pdfViewerEnabled",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    },
+    {
+      "key": "architecture",
+      "stats": {
+        "sampleSize": 10,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "expensiveRelative": false
+    }
+  ],
+  "relativeExpensiveFactor": 3,
+  "stability": [
+    {
+      "label": "document-rebuild×20",
+      "visitorIds": [
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2",
+        "49bc8976ca499c1d9df8e61f4583e4f2"
+      ],
+      "uniqueCount": 1,
+      "majorityVisitorId": "49bc8976ca499c1d9df8e61f4583e4f2",
+      "majorityShare": 1,
+      "notes": [
+        "Each sample is a fresh setContent + IIFE inject + load/get (reload-equivalent profile).",
+        "Not a claim of cross-device or post-browser-restart stability."
+      ]
+    }
+  ],
+  "modeComparisons": [
+    {
+      "modeA": "ltr+en-US",
+      "modeB": "rtl+en-US",
+      "visitorIdEqual": true,
+      "visitorIdA": "49bc8976ca499c1d9df8e61f4583e4f2",
+      "visitorIdB": "49bc8976ca499c1d9df8e61f4583e4f2",
+      "notes": [
+        "Same locale/timezone; only html dir differs — visitorId must not change solely due to RTL."
+      ]
+    },
+    {
+      "modeA": "ltr+en-US",
+      "modeB": "rtl+fa-IR+Asia/Tehran",
+      "visitorIdEqual": false,
+      "visitorIdA": "49bc8976ca499c1d9df8e61f4583e4f2",
+      "visitorIdB": "85c6bb9ac77389983d646855302da112",
+      "notes": [
+        "Locale/timezone fixtures may legitimately change languages/timezone sources; not an RTL defect."
+      ]
+    },
+    {
+      "modeA": "default-context",
+      "modeB": "ephemeral-context",
+      "visitorIdEqual": true,
+      "visitorIdA": "49bc8976ca499c1d9df8e61f4583e4f2",
+      "visitorIdB": "49bc8976ca499c1d9df8e61f4583e4f2",
+      "notes": [
+        "Same engine/profile class; storage isolation should not alter default-profile visitorId when signals are environment-stable."
+      ]
+    }
+  ],
+  "collisions": [
+    {
+      "label": "same-profile micro+reloads",
+      "sampleSize": 30,
+      "uniqueVisitorIds": 1,
+      "collisionPairsApprox": 435,
+      "uniquenessRatio": 0.03333333333333333,
+      "notes": [
+        "Local Playwright Chromium cohort only; not a worldwide collision rate."
+      ]
+    },
+    {
+      "label": "lab locale/timezone variants",
+      "sampleSize": 6,
+      "uniqueVisitorIds": 4,
+      "collisionPairsApprox": 3,
+      "uniquenessRatio": 0.6666666666666666,
+      "notes": [
+        "Synthetic lab diversity (locale/tz). Numerators/denominators only — no uniqueness claim."
+      ]
+    }
+  ],
+  "bundleSizes": [
+    {
+      "path": "fp.min.js",
+      "bytesUncompressed": 63285,
+      "bytesGzip": 23317
+    },
+    {
+      "path": "fp.umd.min.js",
+      "bytesUncompressed": 63478,
+      "bytesGzip": 23387
+    },
+    {
+      "path": "fp.esm.min.js",
+      "bytesUncompressed": 42166,
+      "bytesGzip": 16740
+    },
+    {
+      "path": "fp.min.cjs",
+      "bytesUncompressed": 46952,
+      "bytesGzip": 16823
+    }
+  ],
+  "domCleanup": {
+    "nodesBefore": 8,
+    "nodesAfter": 8,
+    "delta": 0,
+    "notes": [
+      "Node count includes consent DOM; collectors should not leave unbounded detached trees.",
+      "WebGL cache / AudioContext close are source-owned (disposeWebGlCache / closeAudioContext)."
+    ]
+  },
+  "operationalNotes": [
+    "Wall-clock sample size=10; delayFallback=0 (idle scheduling skipped for microbench).",
+    "Stability rebuilds=20.",
+    "Enabled sources locked at 41 (default-profile-v1); applePay absent.",
+    "Budgets are observed baselines (p50/p95/p99), not invented absolute SLAs.",
+    "No network egress expected; scripts are self-hosted IIFE only."
+  ],
+  "notRun": [
+    "Real mid-range / low-memory Chrome for Android hardware (CPU/memory) — emulator/device required",
+    "Real Android System WebView / Samsung Internet / iOS Safari hardware",
+    "Browser restart persistence across OS sessions",
+    "Main-thread long-task attribution via PerformanceObserver in production pages",
+    "Multi-thousand consented production entropy dataset"
+  ]
+}

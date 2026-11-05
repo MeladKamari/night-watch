@@ -1,0 +1,22 @@
+{
+  "productName": "Night Watch",
+  "productCode": "night-watch",
+  "npmScope": "@night-watch",
+  "iifeGlobal": "NightWatch",
+  "assets": {
+    "hero": "night-watch-hero.jpg",
+    "logo": "night-watch-logo.jpg",
+    "readmeBanner": "derived/night-watch-readme-1200.png",
+    "ogBanner": "derived/night-watch-banner-1280.png",
+    "icon512": "derived/night-watch-icon-512.png",
+    "icon192": "derived/night-watch-icon-192.png",
+    "icon64": "derived/night-watch-icon-64.png",
+    "icon32": "derived/night-watch-icon-32.png"
+  },
+  "colors": {
+    "void": "#070b14",
+    "ice": "#d7e0ea",
+    "cyan": "#3ad7ff",
+    "wall": "#1a2740"
+  }
+}

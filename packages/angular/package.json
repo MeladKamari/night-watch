@@ -1,0 +1,52 @@
+{
+  "name": "@night-watch/angular",
+  "version": "1.0.0",
+  "description": "Night Watch Angular service for visitor identification",
+  "license": "MIT",
+  "keywords": [
+    "fingerprint",
+    "angular",
+    "visitor-id"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "NOTICE",
+    "logo.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@night-watch/vanilla": "workspace:*",
+    "@night-watch/browser-sdk": "workspace:*"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=17",
+    "rxjs": ">=7"
+  },
+  "devDependencies": {
+    "@angular/core": "^19.2.0",
+    "rxjs": "^7.8.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

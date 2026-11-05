@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "night-watch-observation-v1",
+  "productCode": "night-watch",
+  "processingVersion": "night-watch-processing-v0",
+  "identityAlgorithmVersion": "night-watch-identity-v0",
+  "purpose": "fraud_prevention",
+  "consentStatus": "granted",
+  "collectedAt": "2026-11-03T12:00:00Z",
+  "idempotencyKey": "idem-12345678",
+  "region": "ir-central",
+  "legacyBrowser": {
+    "visitorId": "c5e055512be85b8798fe5d3240b2a04e",
+    "sourceManifestRevision": "default-v1",
+    "hashingRevision": "murmur3-x64-128-canonical-v1",
+    "confidenceScore": 0.6,
+    "componentKeys": ["platform", "timezone"],
+    "sdkPackageVersion": "1.0.0"
+  }
+}

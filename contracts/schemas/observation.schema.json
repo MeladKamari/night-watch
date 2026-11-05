@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://night-watch.local/schemas/observation.json",
+  "title": "Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "productCode",
+    "processingVersion",
+    "identityAlgorithmVersion",
+    "purpose",
+    "consentStatus",
+    "collectedAt",
+    "legacyBrowser",
+    "idempotencyKey"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "night-watch-observation-v1" },
+    "productCode": { "type": "string", "const": "night-watch" },
+    "processingVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "identityAlgorithmVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "purpose": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "consentStatus": {
+      "type": "string",
+      "enum": ["granted", "denied", "unknown", "not_required"]
+    },
+    "collectedAt": { "type": "string", "format": "date-time" },
+    "idempotencyKey": { "type": "string", "minLength": 8, "maxLength": 128 },
+    "nonce": { "type": "string", "maxLength": 128 },
+    "region": { "type": "string", "maxLength": 32 },
+    "tenantHint": { "type": "string", "maxLength": 64 },
+    "projectHint": { "type": "string", "maxLength": 64 },
+    "legacyBrowser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visitorId",
+        "sourceManifestRevision",
+        "hashingRevision",
+        "componentKeys",
+        "sdkPackageVersion"
+      ],
+      "properties": {
+        "visitorId": { "type": "string", "pattern": "^[0-9a-f]{32}$" },
+        "sourceManifestRevision": { "type": "string", "const": "default-v1" },
+        "hashingRevision": { "type": "string", "minLength": 1 },
+        "confidenceScore": { "type": ["number", "null"] },
+        "confidenceComment": { "type": "string", "maxLength": 512 },
+        "componentKeys": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "type": "string", "minLength": 1, "maxLength": 64 }
+        },
+        "sdkPackageVersion": { "type": "string", "maxLength": 32 }
+      }
+    }
+  }
+}

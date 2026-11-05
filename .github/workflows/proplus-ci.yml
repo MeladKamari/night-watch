@@ -1,0 +1,55 @@
+name: proplus-ci
+
+on:
+  push:
+    paths:
+      - 'packages/pro-*/**'
+      - 'server/**'
+      - 'contracts/**'
+      - 'docs/proplus*/**'
+      - 'tests/proplus-*.ts'
+      - 'scripts/ci/proplus-*.mjs'
+      - 'scripts/ci/validate-docker-compose.mjs'
+  pull_request:
+    paths:
+      - 'packages/pro-*/**'
+      - 'server/**'
+      - 'contracts/**'
+      - 'docs/proplus*/**'
+      - 'tests/proplus-*.ts'
+
+jobs:
+  js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.15.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm exec vitest run tests/proplus-*.test.ts
+      - run: node scripts/ci/proplus-ledger-audit.mjs
+      - run: node scripts/ci/validate-docker-compose.mjs
+        continue-on-error: true
+
+  dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet test server/NightWatch.sln -c Release
+
+  notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Honesty gate
+        run: |
+          echo "Playwright full browser matrix and physical Iran devices are NOT part of blocking CI."
+          echo "Testcontainers Postgres/Redis land with STEP 014+/016+."

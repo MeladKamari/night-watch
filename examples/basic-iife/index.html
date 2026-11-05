@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>IBF self-hosted IIFE example (no CDN)</title>
+    <!--
+      Copy packages/browser-sdk/dist/fp.min.js next to this file as ./fp.min.js
+      or adjust the script src to your first-party path.
+    -->
+  </head>
+  <body>
+    <h1>Night Watch — IIFE example</h1>
+    <label>
+      <input id="consent" type="checkbox" />
+      I consent to a local-only sample (no upload).
+    </label>
+    <button id="run" type="button" disabled>Collect</button>
+    <pre id="out">idle</pre>
+    <script src="./fp.min.js"></script>
+    <script>
+      ;(function () {
+        var consent = document.getElementById('consent')
+        var run = document.getElementById('run')
+        var out = document.getElementById('out')
+        consent.addEventListener('change', function () {
+          run.disabled = !consent.checked
+        })
+        run.addEventListener('click', function () {
+          if (!consent.checked) return
+          out.textContent = 'collecting…'
+          NightWatch.load({ monitoring: false, delayFallback: 0 })
+            .then(function (agent) {
+              return agent.get()
+            })
+            .then(function (result) {
+              out.textContent = JSON.stringify(
+                {
+                  visitorId: result.visitorId,
+                  version: result.version,
+                  sourceCount: Object.keys(result.components).length,
+                  hasApplePay: Object.keys(result.components).indexOf('applePay') !== -1,
+                },
+                null,
+                2,
+              )
+            })
+            .catch(function (err) {
+              out.textContent = String(err && err.message ? err.message : err)
+            })
+        })
+      })()
+    </script>
+  </body>
+</html>

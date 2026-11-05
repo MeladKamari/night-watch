@@ -1,0 +1,63 @@
+{
+  "name": "@night-watch/browser-sdk",
+  "version": "1.0.0",
+  "description": "Browser SDK entry for the independent 41-source fingerprinting library",
+  "license": "MIT",
+  "keywords": [
+    "fingerprint",
+    "browser",
+    "visitor-id",
+    "self-hosted"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/fp.cjs"
+    },
+    "./bundled": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/fp.esm.js",
+      "require": "./dist/fp.cjs"
+    },
+    "./fp.esm.js": "./dist/fp.esm.js",
+    "./fp.esm.min.js": "./dist/fp.esm.min.js",
+    "./fp.cjs": "./dist/fp.cjs",
+    "./fp.min.cjs": "./dist/fp.min.cjs",
+    "./fp.js": "./dist/fp.js",
+    "./fp.min.js": "./dist/fp.min.js",
+    "./fp.umd.js": "./dist/fp.umd.js",
+    "./fp.umd.min.js": "./dist/fp.umd.min.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/fp.cjs",
+  "module": "./dist/fp.esm.js",
+  "browser": "./dist/fp.umd.js",
+  "unpkg": "./dist/fp.min.js",
+  "jsdelivr": "./dist/fp.min.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "logo.png",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && pnpm run bundle",
+    "bundle": "rollup -c rollup.config.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@night-watch/core": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

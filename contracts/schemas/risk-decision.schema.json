@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://night-watch.local/schemas/risk-decision.json",
+  "title": "RiskDecision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "decision", "policyVersion", "score"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["known", "unknown", "insufficient_evidence", "unavailable", "unsupported"]
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["observe", "challenge", "allow", "deny", "review"]
+    },
+    "policyVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+  }
+}

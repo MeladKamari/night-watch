@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://night-watch.local/schemas/signal-evaluation.json",
+  "title": "SignalEvaluation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["signalId", "evaluation"],
+  "properties": {
+    "signalId": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "evaluation": { "$ref": "evidence-cell.json" }
+  }
+}

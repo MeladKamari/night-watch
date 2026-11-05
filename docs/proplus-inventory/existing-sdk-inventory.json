@@ -1,0 +1,241 @@
+{
+  "inventoryId": "proplus-step-001-existing-sdk",
+  "generatedAt": "2026-11-03T19:55:00Z",
+  "step": "001",
+  "repository": {
+    "rootPackageName": "independent-browser-fingerprint",
+    "rootPackageVersion": "1.0.0",
+    "packageManager": "pnpm@12.15.0",
+    "nodeEngines": ">=20",
+    "gitCommit": null,
+    "gitCommitStatus": "unavailable",
+    "gitCommitNote": "Workspace has no .git directory; cannot record a commit SHA."
+  },
+  "algorithmRevision": {
+    "sourceManifestRevision": "default-v1",
+    "hashingRevision": "murmur3-x64-128-canonical-v1",
+    "confidenceRevision": "heuristic-platform-v1",
+    "excludedUpstreamSource": "applePay",
+    "enabledSourceCount": 41,
+    "upstreamReference": {
+      "repository": "fingerprintjs/fingerprintjs",
+      "tag": "v5.3.0",
+      "commit": "dac5ae59409669f09aa09c0b2f44b7615b0520da",
+      "packageVersion": "5.3.0"
+    }
+  },
+  "visitorIdStabilityLocks": {
+    "identitySourcesSelfHash": "c5e055512be85b8798fe5d3240b2a04e",
+    "componentsSampleHash": "b0a3ed33df2bfd9f8ead1eebe9d2cf99",
+    "componentsErrorNullHash": "16fed7428df994fb38b63c173b7b39f9",
+    "goldenFixturePath": "tests/fixtures/hash-golden-vectors.json",
+    "goldenFixtureSha256Prefix": "96eaab1d1f042120"
+  },
+  "algorithmFileSha256Prefix": {
+    "packages/core/src/registry.ts": "c322bcbfe0e66f13",
+    "packages/core/src/hash/hash-components.ts": "8249553e29f88aa9",
+    "packages/core/src/hash/canonical.ts": "f96d978f92a2782c",
+    "packages/core/src/hash/murmur3.ts": "219b49431011531c",
+    "packages/core/src/types.ts": "74877192e4d4d56d",
+    "packages/browser-sdk/src/agent.ts": "0e831c2501e75d86",
+    "packages/browser-sdk/src/sources/builtin.ts": "8f87be48c299c47e",
+    "reference/default_profile.json": "81ad44f40926705e"
+  },
+  "packages": [
+    {
+      "name": "@night-watch/core",
+      "path": "packages/core",
+      "version": "1.0.0",
+      "role": "contracts, registry, collectors engine, murmur hash, confidence",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "name": "@night-watch/browser-sdk",
+      "path": "packages/browser-sdk",
+      "version": "1.0.0",
+      "role": "public load()/get() agent, 41 collectors, optional extensions",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "name": "@night-watch/playground",
+      "path": "apps/playground",
+      "version": "1.0.0",
+      "role": "local first-party Vite playground (loopback)",
+      "status": "IMPLEMENTED"
+    }
+  ],
+  "missingProPlusPackages": [
+    {
+      "name": "ASP.NET Core / C# backend",
+      "status": "MISSING",
+      "note": "No *.csproj / *.sln / Program.cs in repository"
+    },
+    {
+      "name": "PostgreSQL / Redis runtime wiring",
+      "status": "MISSING",
+      "note": "Design-only docs exist; no server implementation"
+    },
+    {
+      "name": "Angular / PrimeNG dashboard",
+      "status": "MISSING",
+      "note": "No angular.json or dashboard app"
+    },
+    {
+      "name": "@night-watch/proplus browser agent package",
+      "status": "MISSING",
+      "note": "Pro+ namespace packages not separated yet (STEP 002)"
+    }
+  ],
+  "enabledSources": [
+    { "order": 1, "name": "userAgentData", "status": "IMPLEMENTED" },
+    { "order": 2, "name": "fonts", "status": "IMPLEMENTED" },
+    { "order": 3, "name": "domBlockers", "status": "IMPLEMENTED" },
+    { "order": 4, "name": "fontPreferences", "status": "IMPLEMENTED" },
+    { "order": 5, "name": "audio", "status": "IMPLEMENTED" },
+    { "order": 6, "name": "screenFrame", "status": "IMPLEMENTED" },
+    { "order": 7, "name": "canvas", "status": "IMPLEMENTED" },
+    { "order": 8, "name": "osCpu", "status": "IMPLEMENTED" },
+    { "order": 9, "name": "languages", "status": "IMPLEMENTED" },
+    { "order": 10, "name": "colorDepth", "status": "IMPLEMENTED" },
+    { "order": 11, "name": "deviceMemory", "status": "IMPLEMENTED" },
+    { "order": 12, "name": "screenResolution", "status": "IMPLEMENTED" },
+    { "order": 13, "name": "hardwareConcurrency", "status": "IMPLEMENTED" },
+    { "order": 14, "name": "timezone", "status": "IMPLEMENTED" },
+    { "order": 15, "name": "sessionStorage", "status": "IMPLEMENTED" },
+    { "order": 16, "name": "localStorage", "status": "IMPLEMENTED" },
+    { "order": 17, "name": "indexedDB", "status": "IMPLEMENTED" },
+    { "order": 18, "name": "openDatabase", "status": "IMPLEMENTED" },
+    { "order": 19, "name": "cpuClass", "status": "IMPLEMENTED" },
+    { "order": 20, "name": "platform", "status": "IMPLEMENTED" },
+    { "order": 21, "name": "plugins", "status": "IMPLEMENTED" },
+    { "order": 22, "name": "touchSupport", "status": "IMPLEMENTED" },
+    { "order": 23, "name": "vendor", "status": "IMPLEMENTED" },
+    { "order": 24, "name": "vendorFlavors", "status": "IMPLEMENTED" },
+    { "order": 25, "name": "cookiesEnabled", "status": "IMPLEMENTED" },
+    { "order": 26, "name": "colorGamut", "status": "IMPLEMENTED" },
+    { "order": 27, "name": "invertedColors", "status": "IMPLEMENTED" },
+    { "order": 28, "name": "forcedColors", "status": "IMPLEMENTED" },
+    { "order": 29, "name": "monochrome", "status": "IMPLEMENTED" },
+    { "order": 30, "name": "contrast", "status": "IMPLEMENTED" },
+    { "order": 31, "name": "reducedMotion", "status": "IMPLEMENTED" },
+    { "order": 32, "name": "reducedTransparency", "status": "IMPLEMENTED" },
+    { "order": 33, "name": "hdr", "status": "IMPLEMENTED" },
+    { "order": 34, "name": "math", "status": "IMPLEMENTED" },
+    { "order": 35, "name": "pdfViewerEnabled", "status": "IMPLEMENTED" },
+    { "order": 36, "name": "architecture", "status": "IMPLEMENTED" },
+    { "order": 37, "name": "privateClickMeasurement", "status": "IMPLEMENTED" },
+    { "order": 38, "name": "audioBaseLatency", "status": "IMPLEMENTED" },
+    { "order": 39, "name": "dateTimeLocale", "status": "IMPLEMENTED" },
+    { "order": 40, "name": "webGlBasics", "status": "IMPLEMENTED" },
+    { "order": 41, "name": "webGlExtensions", "status": "IMPLEMENTED" }
+  ],
+  "excludedSources": [
+    {
+      "name": "applePay",
+      "status": "EXCLUDED_BY_DESIGN",
+      "reason": "Default-profile profile deliberately omits payment capability"
+    }
+  ],
+  "extensionPoints": [
+    {
+      "id": "load.customSources",
+      "api": "load({ customSources, overwriteBuiltins?, excludeSources? })",
+      "stability": "stable",
+      "preservesVisitorIdWhenUnused": true
+    },
+    {
+      "id": "mergeBuiltinSources",
+      "api": "mergeBuiltinSources(custom, options?)",
+      "stability": "stable",
+      "preservesVisitorIdWhenUnused": true
+    },
+    {
+      "id": "extendComponents",
+      "api": "extendComponents / omitComponents / withComponent",
+      "stability": "stable",
+      "note": "Post-collection transforms; changing keys changes visitorId by design"
+    },
+    {
+      "id": "collectionPolicy",
+      "api": "loadWithCollectionPolicy",
+      "stability": "stable-opt-in",
+      "preservesDefaultLoad": true
+    },
+    {
+      "id": "identityScope",
+      "api": "loadWithIdentityScope / hashComponentsNamespaced",
+      "stability": "stable-opt-in",
+      "preservesDefaultVisitorId": true
+    },
+    {
+      "id": "reliabilityProfiles",
+      "api": "loadWithReliabilityProfile",
+      "stability": "stable-opt-in",
+      "preservesDefaultLoad": true
+    },
+    {
+      "id": "pluginSdk",
+      "api": "packages/browser-sdk/src/plugins",
+      "stability": "stable-opt-in"
+    },
+    {
+      "id": "resourceBudgets",
+      "api": "packages/browser-sdk/src/budgets",
+      "stability": "stable-opt-in"
+    },
+    {
+      "id": "diagnostics",
+      "api": "packages/browser-sdk/src/diagnostics",
+      "stability": "stable-opt-in"
+    },
+    {
+      "id": "changeInspector",
+      "api": "packages/browser-sdk/src/inspector",
+      "stability": "stable-opt-in"
+    },
+    {
+      "id": "entropyExperiments",
+      "api": "packages/browser-sdk/src/experiments",
+      "stability": "stable-opt-in"
+    },
+    {
+      "id": "sourceMetadata",
+      "api": "packages/browser-sdk/src/source-meta",
+      "stability": "stable",
+      "preservesVisitorId": true
+    },
+    {
+      "id": "serverDesignConstant",
+      "api": "packages/browser-sdk/src/server-design",
+      "stability": "design-only",
+      "note": "No network client; FIRST_PARTY_SERVER_INTEGRATION_DESIGN constant only"
+    },
+    {
+      "id": "ALGORITHM_SCHEMA",
+      "api": "@night-watch/core ALGORITHM_SCHEMA / SOURCE_MANIFEST_REVISION",
+      "stability": "immutable-for-proplus-bridge",
+      "note": "Must not change without explicit adapter approval"
+    }
+  ],
+  "priorImplementationTrack": {
+    "claimedSteps": "01-73",
+    "progressDoc": "docs/PROGRESS.md",
+    "statusObserved": "PASS claimed for steps 70-73; inventory independently verified via source + tests"
+  },
+  "qualityGatesObserved": {
+    "pnpm_build": "PASS",
+    "pnpm_typecheck": "PASS",
+    "pnpm_test_pre_step001": "PASS (69 files / 529 tests)",
+    "pnpm_test_post_step001": "PASS (70 files / 535 tests)",
+    "pnpm_test_registry": "PASS (10)",
+    "pnpm_ci_guard": "PASS",
+    "pnpm_test_e2e": "NOT_RUN",
+    "pnpm_lint": "NOT_RUN"
+  },
+  "componentSummary": {
+    "implemented": ["@night-watch/core", "@night-watch/browser-sdk", "@night-watch/playground", "41_sources", "hash_visitorId", "optional_enhancements_63_73"],
+    "partial": ["first_party_server_design_only"],
+    "missing": ["proplus_packages", "aspnet_backend", "postgres", "redis", "angular_dashboard", "smart_signals", "identity_matching_server"],
+    "broken": []
+  }
+}

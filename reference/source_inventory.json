@@ -1,0 +1,289 @@
+[
+  {
+    "order": 1,
+    "name": "userAgentData",
+    "upstream_file": "user_agent_data.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/user_agent_data.ts",
+    "cursor_step": 13
+  },
+  {
+    "order": 2,
+    "name": "fonts",
+    "upstream_file": "fonts.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/fonts.ts",
+    "cursor_step": 14
+  },
+  {
+    "order": 3,
+    "name": "domBlockers",
+    "upstream_file": "dom_blockers.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/dom_blockers.ts",
+    "cursor_step": 15
+  },
+  {
+    "order": 4,
+    "name": "fontPreferences",
+    "upstream_file": "font_preferences.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/font_preferences.ts",
+    "cursor_step": 16
+  },
+  {
+    "order": 5,
+    "name": "audio",
+    "upstream_file": "audio.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/audio.ts",
+    "cursor_step": 17
+  },
+  {
+    "order": 6,
+    "name": "screenFrame",
+    "upstream_file": "screen_frame.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/screen_frame.ts",
+    "cursor_step": 18
+  },
+  {
+    "order": 7,
+    "name": "canvas",
+    "upstream_file": "canvas.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/canvas.ts",
+    "cursor_step": 19
+  },
+  {
+    "order": 8,
+    "name": "osCpu",
+    "upstream_file": "os_cpu.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/os_cpu.ts",
+    "cursor_step": 20
+  },
+  {
+    "order": 9,
+    "name": "languages",
+    "upstream_file": "languages.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/languages.ts",
+    "cursor_step": 21
+  },
+  {
+    "order": 10,
+    "name": "colorDepth",
+    "upstream_file": "color_depth.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/color_depth.ts",
+    "cursor_step": 22
+  },
+  {
+    "order": 11,
+    "name": "deviceMemory",
+    "upstream_file": "device_memory.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/device_memory.ts",
+    "cursor_step": 23
+  },
+  {
+    "order": 12,
+    "name": "screenResolution",
+    "upstream_file": "screen_resolution.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/screen_resolution.ts",
+    "cursor_step": 24
+  },
+  {
+    "order": 13,
+    "name": "hardwareConcurrency",
+    "upstream_file": "hardware_concurrency.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/hardware_concurrency.ts",
+    "cursor_step": 25
+  },
+  {
+    "order": 14,
+    "name": "timezone",
+    "upstream_file": "timezone.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/timezone.ts",
+    "cursor_step": 26
+  },
+  {
+    "order": 15,
+    "name": "sessionStorage",
+    "upstream_file": "session_storage.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/session_storage.ts",
+    "cursor_step": 27
+  },
+  {
+    "order": 16,
+    "name": "localStorage",
+    "upstream_file": "local_storage.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/local_storage.ts",
+    "cursor_step": 28
+  },
+  {
+    "order": 17,
+    "name": "indexedDB",
+    "upstream_file": "indexed_db.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/indexed_db.ts",
+    "cursor_step": 29
+  },
+  {
+    "order": 18,
+    "name": "openDatabase",
+    "upstream_file": "open_database.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/open_database.ts",
+    "cursor_step": 30
+  },
+  {
+    "order": 19,
+    "name": "cpuClass",
+    "upstream_file": "cpu_class.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/cpu_class.ts",
+    "cursor_step": 31
+  },
+  {
+    "order": 20,
+    "name": "platform",
+    "upstream_file": "platform.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/platform.ts",
+    "cursor_step": 32
+  },
+  {
+    "order": 21,
+    "name": "plugins",
+    "upstream_file": "plugins.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/plugins.ts",
+    "cursor_step": 33
+  },
+  {
+    "order": 22,
+    "name": "touchSupport",
+    "upstream_file": "touch_support.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/touch_support.ts",
+    "cursor_step": 34
+  },
+  {
+    "order": 23,
+    "name": "vendor",
+    "upstream_file": "vendor.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/vendor.ts",
+    "cursor_step": 35
+  },
+  {
+    "order": 24,
+    "name": "vendorFlavors",
+    "upstream_file": "vendor_flavors.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/vendor_flavors.ts",
+    "cursor_step": 36
+  },
+  {
+    "order": 25,
+    "name": "cookiesEnabled",
+    "upstream_file": "cookies_enabled.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/cookies_enabled.ts",
+    "cursor_step": 37
+  },
+  {
+    "order": 26,
+    "name": "colorGamut",
+    "upstream_file": "color_gamut.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/color_gamut.ts",
+    "cursor_step": 38
+  },
+  {
+    "order": 27,
+    "name": "invertedColors",
+    "upstream_file": "inverted_colors.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/inverted_colors.ts",
+    "cursor_step": 39
+  },
+  {
+    "order": 28,
+    "name": "forcedColors",
+    "upstream_file": "forced_colors.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/forced_colors.ts",
+    "cursor_step": 40
+  },
+  {
+    "order": 29,
+    "name": "monochrome",
+    "upstream_file": "monochrome.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/monochrome.ts",
+    "cursor_step": 41
+  },
+  {
+    "order": 30,
+    "name": "contrast",
+    "upstream_file": "contrast.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/contrast.ts",
+    "cursor_step": 42
+  },
+  {
+    "order": 31,
+    "name": "reducedMotion",
+    "upstream_file": "reduced_motion.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/reduced_motion.ts",
+    "cursor_step": 43
+  },
+  {
+    "order": 32,
+    "name": "reducedTransparency",
+    "upstream_file": "reduced_transparency.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/reduced_transparency.ts",
+    "cursor_step": 44
+  },
+  {
+    "order": 33,
+    "name": "hdr",
+    "upstream_file": "hdr.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/hdr.ts",
+    "cursor_step": 45
+  },
+  {
+    "order": 34,
+    "name": "math",
+    "upstream_file": "math.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/math.ts",
+    "cursor_step": 46
+  },
+  {
+    "order": 35,
+    "name": "pdfViewerEnabled",
+    "upstream_file": "pdf_viewer_enabled.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/pdf_viewer_enabled.ts",
+    "cursor_step": 47
+  },
+  {
+    "order": 36,
+    "name": "architecture",
+    "upstream_file": "architecture.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/architecture.ts",
+    "cursor_step": 48
+  },
+  {
+    "order": 37,
+    "name": "privateClickMeasurement",
+    "upstream_file": "private_click_measurement.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/private_click_measurement.ts",
+    "cursor_step": 49
+  },
+  {
+    "order": 38,
+    "name": "audioBaseLatency",
+    "upstream_file": "audio_base_latency.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/audio_base_latency.ts",
+    "cursor_step": 50
+  },
+  {
+    "order": 39,
+    "name": "dateTimeLocale",
+    "upstream_file": "date_time_locale.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/date_time_locale.ts",
+    "cursor_step": 51
+  },
+  {
+    "order": 40,
+    "name": "webGlBasics",
+    "upstream_file": "webgl.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/webgl.ts",
+    "cursor_step": 52
+  },
+  {
+    "order": 41,
+    "name": "webGlExtensions",
+    "upstream_file": "webgl.ts",
+    "url": "https://github.com/fingerprintjs/fingerprintjs/blob/v5.3.0/src/sources/webgl.ts",
+    "cursor_step": 53
+  }
+]

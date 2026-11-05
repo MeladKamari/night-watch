@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "description": "Vite/webpack-style resolve map fixture (documentation + test assertion). Consumes first-party package exports only — no CDN.",
+  "resolutions": {
+    "@night-watch/browser-sdk": {
+      "types": "packages/browser-sdk/dist/index.d.ts",
+      "import": "packages/browser-sdk/dist/index.js",
+      "bundledImport": "packages/browser-sdk/dist/fp.esm.js",
+      "require": "packages/browser-sdk/dist/fp.cjs",
+      "browserScript": "packages/browser-sdk/dist/fp.min.js",
+      "browserUmd": "packages/browser-sdk/dist/fp.umd.min.js"
+    },
+    "@night-watch/core": {
+      "types": "packages/core/dist/index.d.ts",
+      "import": "packages/core/dist/index.js",
+      "require": "packages/core/dist/core.cjs"
+    }
+  },
+  "sideEffects": false,
+  "offline": true,
+  "cdn": null
+}

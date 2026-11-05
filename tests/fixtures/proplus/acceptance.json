@@ -1,0 +1,28 @@
+{
+  "locale": "fa-IR",
+  "timeZone": "Asia/Tehran",
+  "presentationOnly": ["persianDigits", "rtl", "arabicIndicDigits"],
+  "network": {
+    "cgnatSharedIp": true,
+    "nat64Possible": true,
+    "vpnCommonForBenignUsers": true,
+    "vpnOnlyAutoBlock": false,
+    "throttledBandwidthKbps": 256,
+    "allLocalDependencies": true
+  },
+  "browsers": {
+    "chromium": "ci_when_available",
+    "firefox": "ci_when_available",
+    "edge": "ci_when_available",
+    "androidChromeWebView": "device_when_available",
+    "safariIOS": "device_when_available"
+  },
+  "deviceTests": {
+    "physicalIranMatrix": "NOT_RUN",
+    "mockedUnitFixtures": "validated_here"
+  },
+  "falsePositiveGuards": [
+    "vpn_signal_never_sole_deny",
+    "cgnat_not_treated_as_proxy_fraud_alone"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "@night-watch/core",
+  "version": "1.0.0",
+  "description": "Core contracts and default source registry for the independent browser fingerprint SDK",
+  "license": "MIT",
+  "keywords": [
+    "fingerprint",
+    "browser",
+    "visitor-id",
+    "murmurhash3"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/core.cjs"
+    },
+    "./bundled": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/core.esm.js",
+      "require": "./dist/core.cjs"
+    },
+    "./core.esm.js": "./dist/core.esm.js",
+    "./core.esm.min.js": "./dist/core.esm.min.js",
+    "./core.cjs": "./dist/core.cjs",
+    "./core.min.cjs": "./dist/core.min.cjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/core.cjs",
+  "module": "./dist/core.esm.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "logo.png",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && pnpm run bundle",
+    "bundle": "rollup -c rollup.config.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

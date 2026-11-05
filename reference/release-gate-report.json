@@ -1,0 +1,339 @@
+{
+  "ok": true,
+  "version": "1.0.0",
+  "manifest": "default-v1",
+  "enabledSourceCount": 41,
+  "checks": [
+    {
+      "id": "enabled_count_41",
+      "ok": true,
+      "detail": "ENABLED_SOURCE_COUNT=41"
+    },
+    {
+      "id": "applePay_absent_registry",
+      "ok": true,
+      "detail": "excluded=applePay"
+    },
+    {
+      "id": "registry_invariants",
+      "ok": true,
+      "detail": "assertDefaultRegistryInvariants ok"
+    },
+    {
+      "id": "manifest_revision",
+      "ok": true,
+      "detail": "default-v1"
+    },
+    {
+      "id": "source_tests_userAgentData",
+      "ok": true,
+      "detail": "user-agent-data.test.ts + e2e/user-agent-data.spec.ts"
+    },
+    {
+      "id": "source_tests_fonts",
+      "ok": true,
+      "detail": "fonts.test.ts + e2e/fonts.spec.ts"
+    },
+    {
+      "id": "source_tests_domBlockers",
+      "ok": true,
+      "detail": "dom-blockers.test.ts + e2e/dom-blockers.spec.ts"
+    },
+    {
+      "id": "source_tests_fontPreferences",
+      "ok": true,
+      "detail": "font-preferences.test.ts + e2e/font-preferences.spec.ts"
+    },
+    {
+      "id": "source_tests_audio",
+      "ok": true,
+      "detail": "audio.test.ts + e2e/audio.spec.ts"
+    },
+    {
+      "id": "source_tests_screenFrame",
+      "ok": true,
+      "detail": "screen-frame.test.ts + e2e/screen-frame.spec.ts"
+    },
+    {
+      "id": "source_tests_canvas",
+      "ok": true,
+      "detail": "canvas.test.ts + e2e/canvas.spec.ts"
+    },
+    {
+      "id": "source_tests_osCpu",
+      "ok": true,
+      "detail": "os-cpu.test.ts + e2e/os-cpu.spec.ts"
+    },
+    {
+      "id": "source_tests_languages",
+      "ok": true,
+      "detail": "languages.test.ts + e2e/languages.spec.ts"
+    },
+    {
+      "id": "source_tests_colorDepth",
+      "ok": true,
+      "detail": "color-depth.test.ts + e2e/color-depth.spec.ts"
+    },
+    {
+      "id": "source_tests_deviceMemory",
+      "ok": true,
+      "detail": "device-memory.test.ts + e2e/device-memory.spec.ts"
+    },
+    {
+      "id": "source_tests_screenResolution",
+      "ok": true,
+      "detail": "screen-resolution.test.ts + e2e/screen-resolution.spec.ts"
+    },
+    {
+      "id": "source_tests_hardwareConcurrency",
+      "ok": true,
+      "detail": "hardware-concurrency.test.ts + e2e/hardware-concurrency.spec.ts"
+    },
+    {
+      "id": "source_tests_timezone",
+      "ok": true,
+      "detail": "timezone.test.ts + e2e/timezone.spec.ts"
+    },
+    {
+      "id": "source_tests_sessionStorage",
+      "ok": true,
+      "detail": "session-storage.test.ts + e2e/session-storage.spec.ts"
+    },
+    {
+      "id": "source_tests_localStorage",
+      "ok": true,
+      "detail": "local-storage.test.ts + e2e/local-storage.spec.ts"
+    },
+    {
+      "id": "source_tests_indexedDB",
+      "ok": true,
+      "detail": "indexed-db.test.ts + e2e/indexed-db.spec.ts"
+    },
+    {
+      "id": "source_tests_openDatabase",
+      "ok": true,
+      "detail": "open-database.test.ts + e2e/open-database.spec.ts"
+    },
+    {
+      "id": "source_tests_cpuClass",
+      "ok": true,
+      "detail": "cpu-class.test.ts + e2e/cpu-class.spec.ts"
+    },
+    {
+      "id": "source_tests_platform",
+      "ok": true,
+      "detail": "platform.test.ts + e2e/platform.spec.ts"
+    },
+    {
+      "id": "source_tests_plugins",
+      "ok": true,
+      "detail": "plugins.test.ts + e2e/plugins.spec.ts"
+    },
+    {
+      "id": "source_tests_touchSupport",
+      "ok": true,
+      "detail": "touch-support.test.ts + e2e/touch-support.spec.ts"
+    },
+    {
+      "id": "source_tests_vendor",
+      "ok": true,
+      "detail": "vendor.test.ts + e2e/vendor.spec.ts"
+    },
+    {
+      "id": "source_tests_vendorFlavors",
+      "ok": true,
+      "detail": "vendor-flavors.test.ts + e2e/vendor-flavors.spec.ts"
+    },
+    {
+      "id": "source_tests_cookiesEnabled",
+      "ok": true,
+      "detail": "cookies-enabled.test.ts + e2e/cookies-enabled.spec.ts"
+    },
+    {
+      "id": "source_tests_colorGamut",
+      "ok": true,
+      "detail": "color-gamut.test.ts + e2e/color-gamut.spec.ts"
+    },
+    {
+      "id": "source_tests_invertedColors",
+      "ok": true,
+      "detail": "inverted-colors.test.ts + e2e/inverted-colors.spec.ts"
+    },
+    {
+      "id": "source_tests_forcedColors",
+      "ok": true,
+      "detail": "forced-colors.test.ts + e2e/forced-colors.spec.ts"
+    },
+    {
+      "id": "source_tests_monochrome",
+      "ok": true,
+      "detail": "monochrome.test.ts + e2e/monochrome.spec.ts"
+    },
+    {
+      "id": "source_tests_contrast",
+      "ok": true,
+      "detail": "contrast.test.ts + e2e/contrast.spec.ts"
+    },
+    {
+      "id": "source_tests_reducedMotion",
+      "ok": true,
+      "detail": "reduced-motion.test.ts + e2e/reduced-motion.spec.ts"
+    },
+    {
+      "id": "source_tests_reducedTransparency",
+      "ok": true,
+      "detail": "reduced-transparency.test.ts + e2e/reduced-transparency.spec.ts"
+    },
+    {
+      "id": "source_tests_hdr",
+      "ok": true,
+      "detail": "hdr.test.ts + e2e/hdr.spec.ts"
+    },
+    {
+      "id": "source_tests_math",
+      "ok": true,
+      "detail": "math.test.ts + e2e/math.spec.ts"
+    },
+    {
+      "id": "source_tests_pdfViewerEnabled",
+      "ok": true,
+      "detail": "pdf-viewer-enabled.test.ts + e2e/pdf-viewer-enabled.spec.ts"
+    },
+    {
+      "id": "source_tests_architecture",
+      "ok": true,
+      "detail": "architecture.test.ts + e2e/architecture.spec.ts"
+    },
+    {
+      "id": "source_tests_privateClickMeasurement",
+      "ok": true,
+      "detail": "private-click-measurement.test.ts + e2e/private-click-measurement.spec.ts"
+    },
+    {
+      "id": "source_tests_audioBaseLatency",
+      "ok": true,
+      "detail": "audio-base-latency.test.ts + e2e/audio-base-latency.spec.ts"
+    },
+    {
+      "id": "source_tests_dateTimeLocale",
+      "ok": true,
+      "detail": "date-time-locale.test.ts + e2e/date-time-locale.spec.ts"
+    },
+    {
+      "id": "source_tests_webGlBasics",
+      "ok": true,
+      "detail": "webgl-basics.test.ts + e2e/webgl-basics.spec.ts"
+    },
+    {
+      "id": "source_tests_webGlExtensions",
+      "ok": true,
+      "detail": "webgl-extensions.test.ts + e2e/webgl-extensions.spec.ts"
+    },
+    {
+      "id": "all_41_source_test_pairs",
+      "ok": true,
+      "detail": "missingPairs=0; mapSize=41"
+    },
+    {
+      "id": "evidence_reference/upstream-diff-report.md",
+      "ok": true,
+      "detail": "reference/upstream-diff-report.md"
+    },
+    {
+      "id": "evidence_reference/upstream-diff-report.json",
+      "ok": true,
+      "detail": "reference/upstream-diff-report.json"
+    },
+    {
+      "id": "evidence_reference/perf-entropy-report.md",
+      "ok": true,
+      "detail": "reference/perf-entropy-report.md"
+    },
+    {
+      "id": "evidence_reference/PARITY_MATRIX.md",
+      "ok": true,
+      "detail": "reference/PARITY_MATRIX.md"
+    },
+    {
+      "id": "evidence_docs/BROWSER_COVERAGE.md",
+      "ok": true,
+      "detail": "docs/BROWSER_COVERAGE.md"
+    },
+    {
+      "id": "evidence_LICENSE",
+      "ok": true,
+      "detail": "LICENSE"
+    },
+    {
+      "id": "evidence_NOTICE",
+      "ok": true,
+      "detail": "NOTICE"
+    },
+    {
+      "id": "evidence_CHANGELOG.md",
+      "ok": true,
+      "detail": "CHANGELOG.md"
+    },
+    {
+      "id": "evidence_docs/RELEASE_CHECKLIST.md",
+      "ok": true,
+      "detail": "docs/RELEASE_CHECKLIST.md"
+    },
+    {
+      "id": "evidence_docs/ROLLBACK.md",
+      "ok": true,
+      "detail": "docs/ROLLBACK.md"
+    },
+    {
+      "id": "evidence_docs/TAG_PLAN.md",
+      "ok": true,
+      "detail": "docs/TAG_PLAN.md"
+    },
+    {
+      "id": "fa_IR_fixture",
+      "ok": true,
+      "detail": "browser-matrix.spec.ts locale/tz fixtures"
+    },
+    {
+      "id": "no_egress_proof",
+      "ok": true,
+      "detail": "browser-matrix collects with egress assertions"
+    },
+    {
+      "id": "no_payment_source_files",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "id": "ci_guard_script",
+      "ok": true,
+      "detail": "scripts/ci/guard-excluded-payment-source.mjs"
+    },
+    {
+      "id": "release_version_aligned",
+      "ok": true,
+      "detail": "browser-sdk=1.0.0; core=1.0.0"
+    },
+    {
+      "id": "package_license_mit",
+      "ok": true,
+      "detail": "sdk=MIT; core=MIT"
+    },
+    {
+      "id": "release_dist_tag",
+      "ok": true,
+      "detail": "1.x packages use npm dist-tag \"latest\" + public access"
+    },
+    {
+      "id": "package_license_files",
+      "ok": true,
+      "detail": "LICENSE+NOTICE packaged beside dist"
+    },
+    {
+      "id": "bundle_no_getApplePay",
+      "ok": true,
+      "detail": "fp.min.js scanned"
+    }
+  ],
+  "generatedAtIso": "2026-11-05T09:53:12.708Z"
+}

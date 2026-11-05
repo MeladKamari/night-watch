@@ -1,0 +1,51 @@
+{
+  "name": "@night-watch/preact",
+  "version": "1.0.0",
+  "description": "Night Watch Preact hooks for visitor identification",
+  "license": "MIT",
+  "keywords": [
+    "fingerprint",
+    "preact",
+    "hooks",
+    "visitor-id"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "NOTICE",
+    "logo.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@night-watch/vanilla": "workspace:*",
+    "@night-watch/browser-sdk": "workspace:*"
+  },
+  "peerDependencies": {
+    "preact": ">=10"
+  },
+  "devDependencies": {
+    "preact": "^10.26.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

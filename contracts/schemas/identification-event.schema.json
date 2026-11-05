@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://night-watch.local/schemas/identification-event.json",
+  "title": "IdentificationEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "visitorId",
+    "matchType",
+    "identityOutcome",
+    "identityConfidence",
+    "firstSeenAt",
+    "lastSeenAt",
+    "signals",
+    "risk",
+    "processingVersion",
+    "region",
+    "serverTime"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "night-watch-event-v1" },
+    "eventId": { "type": "string", "pattern": "^ev_[A-Za-z0-9]{8,64}$" },
+    "visitorId": { "type": "string", "pattern": "^v_[A-Za-z0-9]{8,64}$" },
+    "anonymousCorrelationId": { "type": ["string", "null"], "maxLength": 128 },
+    "matchType": {
+      "type": "string",
+      "enum": ["exact", "probable", "ambiguous", "new", "unknown", "unsupported"]
+    },
+    "identityOutcome": {
+      "type": "string",
+      "enum": ["new", "matched", "ambiguous", "unsupported"]
+    },
+    "identityConfidence": { "$ref": "evidence-cell.json" },
+    "firstSeenAt": { "type": ["string", "null"], "format": "date-time" },
+    "lastSeenAt": { "type": ["string", "null"], "format": "date-time" },
+    "signals": {
+      "type": "object",
+      "maxProperties": 64,
+      "additionalProperties": { "$ref": "evidence-cell.json" }
+    },
+    "risk": { "$ref": "risk-decision.json" },
+    "processingVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "region": { "type": "string", "minLength": 1, "maxLength": 32 },
+    "serverTime": { "type": "string", "format": "date-time" },
+    "receipt": { "$ref": "server-receipt.json" }
+  }
+}

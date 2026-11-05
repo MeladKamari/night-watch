@@ -1,0 +1,42 @@
+{
+  "name": "@night-watch/web-agent",
+  "version": "1.0.0",
+  "description": "Night Watch web agent public API wrapping @night-watch/browser-sdk without changing visitorId",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "NOTICE",
+    "logo.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "checksums": "node ./scripts/checksum-dist.mjs"
+  },
+  "dependencies": {
+    "@night-watch/browser-adapter": "workspace:*",
+    "@night-watch/contracts": "workspace:*",
+    "@night-watch/browser-sdk": "workspace:*",
+    "@night-watch/core": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "visitorId": "f9a09783f26f33b59d88254ff44c7000",
+  "version": "1.0.0",
+  "confidence": {
+    "score": 0.6,
+    "comment": "Heuristic compatibility score 0.6 (reference-scale derived 0.996). Not a calibrated probability of uniqueness or identity."
+  },
+  "sourceCount": 41,
+  "hasApplePay": false,
+  "componentKeys": [
+    "userAgentData",
+    "fonts",
+    "domBlockers",
+    "fontPreferences",
+    "audio",
+    "screenFrame",
+    "canvas",
+    "osCpu",
+    "languages",
+    "colorDepth",
+    "deviceMemory",
+    "screenResolution",
+    "hardwareConcurrency",
+    "timezone",
+    "sessionStorage",
+    "localStorage",
+    "indexedDB",
+    "openDatabase",
+    "cpuClass",
+    "platform",
+    "plugins",
+    "touchSupport",
+    "vendor",
+    "vendorFlavors",
+    "cookiesEnabled",
+    "colorGamut",
+    "invertedColors",
+    "forcedColors",
+    "monochrome",
+    "contrast",
+    "reducedMotion",
+    "reducedTransparency",
+    "hdr",
+    "math",
+    "pdfViewerEnabled",
+    "architecture",
+    "privateClickMeasurement",
+    "audioBaseLatency",
+    "dateTimeLocale",
+    "webGlBasics",
+    "webGlExtensions"
+  ],
+  "components": {
+    "userAgentData": {
+      "ok": true,
+      "duration": 26,
+      "preview": null
+    },
+    "fonts": {
+      "ok": true,
+      "duration": 81,
+      "preview": "[\"Arabic Typesetting\",\"Calibri\",\"Century\",\"Century Gothic\",\"Franklin Gothic\",\"Leelawadee\",\"Lucida Bright\",\"MS Reference "
+    },
+    "domBlockers": {
+      "ok": true,
+      "duration": 23,
+      "preview": null
+    },
+    "fontPreferences": {
+      "ok": true,
+      "duration": 72,
+      "preview": "{\"default\":149.312,\"apple\":149.312,\"serif\":149.312,\"sans\":144.015,\"mono\":121.515,\"min\":9.343,\"system\":147.859}"
+    },
+    "audio": {
+      "ok": true,
+      "duration": 2,
+      "preview": "124.04347776696522"
+    },
+    "screenFrame": {
+      "ok": true,
+      "duration": 0,
+      "preview": "[0,0,0,0]"
+    },
+    "canvas": {
+      "ok": true,
+      "duration": 12,
+      "preview": "{\"winding\":true,\"geometry\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAABuCAYAAADoHgdpAAAQAElEQVR4AexdCZhcVZX+76"
+    },
+    "osCpu": {
+      "ok": true,
+      "duration": 0,
+      "preview": null
+    },
+    "languages": {
+      "ok": true,
+      "duration": 0,
+      "preview": "[[\"en-US\"]]"
+    },
+    "colorDepth": {
+      "ok": true,
+      "duration": 1,
+      "preview": "24"
+    },
+    "deviceMemory": {
+      "ok": true,
+      "duration": 0,
+      "preview": null
+    },
+    "screenResolution": {
+      "ok": true,
+      "duration": 0,
+      "preview": "[720,1280]"
+    },
+    "hardwareConcurrency": {
+      "ok": true,
+      "duration": 0,
+      "preview": "16"
+    },
+    "timezone": {
+      "ok": true,
+      "duration": 4,
+      "preview": "\"Asia/Tehran\""
+    },
+    "sessionStorage": {
+      "ok": true,
+      "duration": 0,
+      "preview": "true"
+    },
+    "localStorage": {
+      "ok": true,
+      "duration": 0,
+      "preview": "true"
+    },
+    "indexedDB": {
+      "ok": true,
+      "duration": 0,
+      "preview": "true"
+    },
+    "openDatabase": {
+      "ok": true,
+      "duration": 0,
+      "preview": "false"
+    },
+    "cpuClass": {
+      "ok": true,
+      "duration": 0,
+      "preview": null
+    },
+    "platform": {
+      "ok": true,
+      "duration": 0,
+      "preview": "\"Win32\""
+    },
+    "plugins": {
+      "ok": true,
+      "duration": 1,
+      "preview": "[]"
+    },
+    "touchSupport": {
+      "ok": true,
+      "duration": 0,
+      "preview": "{\"maxTouchPoints\":0,\"touchEvent\":false,\"touchStart\":false}"
+    },
+    "vendor": {
+      "ok": true,
+      "duration": 0,
+      "preview": "\"Google Inc.\""
+    },
+    "vendorFlavors": {
+      "ok": true,
+      "duration": 0,
+      "preview": "[]"
+    },
+    "cookiesEnabled": {
+      "ok": true,
+      "duration": 0,
+      "preview": "false"
+    },
+    "colorGamut": {
+      "ok": true,
+      "duration": 0,
+      "preview": "\"srgb\""
+    },
+    "invertedColors": {
+      "ok": true,
+      "duration": 0,
+      "preview": null
+    },
+    "forcedColors": {
+      "ok": true,
+      "duration": 0,
+      "preview": "false"
+    },
+    "monochrome": {
+      "ok": true,
+      "duration": 0,
+      "preview": "0"
+    },
+    "contrast": {
+      "ok": true,
+      "duration": 0,
+      "preview": "0"
+    },
+    "reducedMotion": {
+      "ok": true,
+      "duration": 0,
+      "preview": "false"
+    },
+    "reducedTransparency": {
+      "ok": true,
+      "duration": 0,
+      "preview": "false"
+    },
+    "hdr": {
+      "ok": true,
+      "duration": 0,
+      "preview": "false"
+    },
+    "math": {
+      "ok": true,
+      "duration": 1,
+      "preview": "{\"acos\":1.4473588658278522,\"acosh\":709.889355822726,\"acoshPf\":355.291251501643,\"asin\":0.12343746096704435,\"asinh\":0.8813"
+    },
+    "pdfViewerEnabled": {
+      "ok": true,
+      "duration": 0,
+      "preview": "false"
+    },
+    "architecture": {
+      "ok": true,
+      "duration": 0,
+      "preview": "255"
+    },
+    "privateClickMeasurement": {
+      "ok": true,
+      "duration": 0,
+      "preview": null
+    },
+    "audioBaseLatency": {
+      "ok": true,
+      "duration": 0,
+      "preview": "-2"
+    },
+    "dateTimeLocale": {
+      "ok": true,
+      "duration": 0,
+      "preview": "\"en-US\""
+    },
+    "webGlBasics": {
+      "ok": true,
+      "duration": 5,
+      "preview": "{\"version\":\"WebGL 1.0 (OpenGL ES 2.0 Chromium)\",\"vendor\":\"WebKit\",\"vendorUnmasked\":\"Google Inc. (Google)\",\"renderer\":\"We"
+    },
+    "webGlExtensions": {
+      "ok": true,
+      "duration": 14,
+      "preview": "{\"contextAttributes\":[\"alpha=true\",\"antialias=true\",\"depth=true\",\"desynchronized=false\",\"failIfMajorPerformanceCaveat=fa"
+    }
+  }
+}

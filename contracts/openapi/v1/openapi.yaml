@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: Night Watch Pro Server API
+  version: 1.0.0-alpha.0
+  description: Independent first-party identification API. Not affiliated with Fingerprint Inc.
+servers:
+  - url: /v1
+paths:
+  /observations:
+    post:
+      operationId: createObservation
+      summary: Ingest a browser observation (idempotent)
+      parameters:
+        - in: header
+          name: Idempotency-Key
+          required: true
+          schema: { type: string, minLength: 8, maxLength: 128 }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/observation.schema.json
+      responses:
+        "202":
+          description: Accepted
+        "400":
+          description: Invalid
+          content:
+            application/problem+json:
+              schema:
+                $ref: ../../schemas/error-envelope.schema.json
+  /identify:
+    post:
+      operationId: identify
+      summary: Identify from observation; server assigns visitorId/eventId
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/observation.schema.json
+      responses:
+        "200":
+          description: Identification event
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/identification-event.schema.json
+  /receipts/verify:
+    post:
+      operationId: verifyReceipt
+      summary: Verify sealed server receipt
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/server-receipt.schema.json
+      responses:
+        "200":
+          description: Verified
+components:
+  schemas:
+    Observation:
+      $ref: ../../schemas/observation.schema.json
+    IdentificationEvent:
+      $ref: ../../schemas/identification-event.schema.json
+    RiskDecision:
+      $ref: ../../schemas/risk-decision.schema.json
+    ServerReceipt:
+      $ref: ../../schemas/server-receipt.schema.json
+    ErrorEnvelope:
+      $ref: ../../schemas/error-envelope.schema.json

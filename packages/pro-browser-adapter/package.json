@@ -1,0 +1,40 @@
+{
+  "name": "@night-watch/browser-adapter",
+  "version": "1.0.0",
+  "description": "Additive browser adapter from @night-watch/browser-sdk into Night Watch observation envelopes",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "NOTICE",
+    "logo.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@night-watch/contracts": "workspace:*",
+    "@night-watch/browser-sdk": "workspace:*",
+    "@night-watch/core": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "ledgerId": "night-watch-architecture-v0",
+  "productCode": "night-watch",
+  "step": "003",
+  "containers": [
+    "legacy_browser_sdk",
+    "proplus_browser_adapter",
+    "tls_gateway",
+    "aspnet_core_api",
+    "postgresql",
+    "redis",
+    "angular_admin",
+    "webhook_outbox"
+  ],
+  "trustBoundaries": [
+    {
+      "id": "browser_untrusted",
+      "zone": "browser",
+      "trust": "untrusted",
+      "failureMode": "spoofed_components_ignored_for_authority"
+    },
+    {
+      "id": "edge_conditional",
+      "zone": "edge",
+      "trust": "conditional_trusted_proxy",
+      "failureMode": "untrusted_forwarded_headers_rejected"
+    },
+    {
+      "id": "server_authoritative",
+      "zone": "aspnet_core",
+      "trust": "trusted_compute",
+      "failureMode": "503_when_persistence_unavailable"
+    },
+    {
+      "id": "postgres_sor",
+      "zone": "postgresql",
+      "trust": "system_of_record",
+      "failureMode": "no_foreign_saas_failover"
+    },
+    {
+      "id": "redis_ephemeral",
+      "zone": "redis",
+      "trust": "ephemeral",
+      "failureMode": "velocity_signals_unavailable"
+    },
+    {
+      "id": "operator_rbac",
+      "zone": "admin",
+      "trust": "privileged",
+      "failureMode": "deny_by_default_audit_required"
+    },
+    {
+      "id": "offline_datasets",
+      "zone": "intelligence",
+      "trust": "provider_qualified",
+      "failureMode": "stale_or_provider_unavailable"
+    }
+  ],
+  "latencyBudgetsMs": {
+    "observationAcceptP95": 100,
+    "identifySyncP95": 250,
+    "enrichmentSoft": 2000,
+    "managementReadP95": 500
+  },
+  "stackDecisions": {
+    "backend": "aspnet_core_modular_monolith",
+    "database": "postgresql",
+    "cache": "redis",
+    "adminUi": "angular_primeng",
+    "runtimeCloudDependency": "none"
+  },
+  "adrs": [
+    "ADR-P001",
+    "ADR-P002",
+    "ADR-P003",
+    "ADR-P004",
+    "ADR-P005",
+    "ADR-P006",
+    "ADR-P007",
+    "ADR-P008"
+  ],
+  "excluded": ["applePay", "native_mobile_sdks", "vendor_fingerprint_saas"],
+  "identityPlanes": {
+    "legacyBrowser": "default-v1",
+    "server": "night-watch-identity-v0"
+  }
+}

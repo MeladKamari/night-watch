@@ -1,0 +1,8 @@
+bc749b232ea388ce8c2d0100bb490e9cb572966b2f3f11aabdc9961670624cc9  pnpm-lock.yaml
+1646161f97a0c968de9912af336f348340065a75cc2ca68d85a289b19f9793b1  packages/browser-sdk/dist/fp.min.js
+7de37331b9177c2c50fcad417d95310e9fd76ec141d9b265424764a19344c121  packages/browser-sdk/dist/fp.umd.min.js
+68902fa6837ec78f9633c8ea74c80cc985beeb856aa1968bbfaa12fc3d208c84  packages/browser-sdk/dist/fp.esm.min.js
+00d9521290f4e488ec7d4bdeaa9d0a46f0bffceb9ed59455d1b62cbd640a9639  packages/browser-sdk/dist/fp.min.cjs
+89f1b113557c6dcc5a95e3fe0ceea745d1b87d88796dc632cfb2b2f76f69c2bf  packages/core/dist/core.esm.min.js
+4356f961eda850fb080517cf14202aa3752b237855ff1bb406c7e6120fb89c2e  packages/core/dist/core.min.cjs
+ce87137a90db0e4fc5424b9fc7792dabe26cb733a997a5c32a66b625f52304e3  reference/sbom.cdx.json

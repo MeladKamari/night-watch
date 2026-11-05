@@ -1,0 +1,22 @@
+{
+  "x64hash128": [
+    { "input": "", "seed": 0, "hash": "00000000000000000000000000000000" },
+    { "input": "hello", "seed": 0, "hash": "cbd8a7b341bd9b025b1e906a48ae1d19" },
+    { "input": "Hello", "seed": 0, "hash": "35b974ff55d4c41ca000eacf29125544" },
+    { "input": "hello", "seed": 1, "hash": "a78ddff5adae8d10128900ef20900135" },
+    { "input": "fa-IR", "seed": 0, "hash": "899d6b72fda82524f7296a27c75aa181" },
+    { "input": "Asia/Tehran", "seed": 0, "hash": "4463cd6b2354f11aaa1f9e22a699dbea" }
+  ],
+  "componentsSample": {
+    "canonical": "a:\"x\"|b:1",
+    "hash": "b0a3ed33df2bfd9f8ead1eebe9d2cf99"
+  },
+  "componentsErrorNull": {
+    "canonical": "a:null|z:error",
+    "hash": "16fed7428df994fb38b63c173b7b39f9"
+  },
+  "identitySourcesSelfHash": {
+    "description": "Each of 41 enabled sources contributes JSON.stringify(name) as value",
+    "hash": "c5e055512be85b8798fe5d3240b2a04e"
+  }
+}

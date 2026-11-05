@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1.7
+# Background worker host — same modules assembly for now; dedicated worker host lands with outbox steps.
+ARG DOTNET_VERSION=10.0
+
+FROM mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION} AS build
+WORKDIR /src
+COPY Directory.Build.props ./
+COPY NuGet.config ./
+COPY NightWatch.sln ./
+COPY src/ ./src/
+COPY tests/ ./tests/
+RUN dotnet restore NightWatch.sln
+RUN dotnet publish src/NightWatch.Api/NightWatch.Api.csproj -c Release -o /app/publish --no-restore
+
+FROM mcr.microsoft.com/dotnet/aspnet:${DOTNET_VERSION} AS final
+WORKDIR /app
+ENV ASPNETCORE_URLS=http://+:8081
+ENV IBF_PROPLUS_ROLE=worker
+RUN useradd --create-home --uid 10001 appuser
+COPY --from=build /app/publish .
+USER 10001
+EXPOSE 8081
+ENTRYPOINT ["dotnet", "NightWatch.Api.dll"]

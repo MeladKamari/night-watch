@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://night-watch.local/schemas/evidence-cell.json",
+  "title": "EvidenceCell",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "value", "confidence", "provenance"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "known",
+        "unknown",
+        "unsupported",
+        "unavailable",
+        "not_applicable",
+        "insufficient_evidence",
+        "provider_unavailable",
+        "stale",
+        "permission_denied",
+        "uncalibrated"
+      ]
+    },
+    "value": { "type": ["number", "string", "boolean", "object", "array", "null"] },
+    "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "provenance": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "reason": { "type": "string", "maxLength": 256 },
+    "modelVersion": { "type": "string", "maxLength": 64 }
+  }
+}

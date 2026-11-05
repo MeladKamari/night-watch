@@ -1,0 +1,18 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/core" },
+    { "path": "./packages/browser-sdk" },
+    { "path": "./packages/vanilla" },
+    { "path": "./packages/react" },
+    { "path": "./packages/preact" },
+    { "path": "./packages/vue" },
+    { "path": "./packages/angular" },
+    { "path": "./packages/blazor" },
+    { "path": "./packages/pro-contracts" },
+    { "path": "./packages/pro-browser-adapter" },
+    { "path": "./packages/pro-server-sdk" },
+    { "path": "./packages/pro-dashboard-client" },
+    { "path": "./packages/pro-web-agent" }
+  ]
+}

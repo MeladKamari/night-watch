@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://night-watch.local/schemas/server-receipt.json",
+  "title": "ServerReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receiptId", "eventId", "issuedAt", "expiresAt", "audience", "nonce", "signature"],
+  "properties": {
+    "receiptId": { "type": "string", "pattern": "^rcpt_[A-Za-z0-9]{8,64}$" },
+    "eventId": { "type": "string", "pattern": "^ev_[A-Za-z0-9]{8,64}$" },
+    "issuedAt": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "audience": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "nonce": { "type": "string", "minLength": 8, "maxLength": 128 },
+    "signature": { "type": "string", "minLength": 16, "maxLength": 4096 }
+  }
+}

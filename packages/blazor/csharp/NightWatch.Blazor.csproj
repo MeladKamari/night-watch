@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>NightWatch.Blazor</RootNamespace>
+    <AssemblyName>NightWatch.Blazor</AssemblyName>
+    <Description>Night Watch Blazor JS interop helpers for visitor identification.</Description>
+    <PackageId>NightWatch.Blazor</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Night Watch</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.11" />
+  </ItemGroup>
+</Project>

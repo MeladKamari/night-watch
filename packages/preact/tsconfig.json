@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "lib": ["ES2018", "DOM"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "types": []
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.test.ts", "dist"],
+  "references": [{ "path": "../vanilla" }, { "path": "../browser-sdk" }]
+}

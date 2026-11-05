@@ -1,0 +1,40 @@
+# Minimal Envoy front proxy for /collect and /identify (lab).
+static_resources:
+  listeners:
+  - name: https_in
+    address: { socket_address: { address: 0.0.0.0, port_value: 8443 } }
+    filter_chains:
+    - transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            - certificate_chain: { filename: /etc/night-watch/pki/identify.local.test.crt }
+              private_key: { filename: /etc/night-watch/pki/identify.local.test.key }
+      filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: night_watch_gw
+          route_config:
+            name: local
+            virtual_hosts:
+            - name: identify
+              domains: ["identify.local.test"]
+              routes:
+              - match: { path: "/collect" }
+                route: { cluster: night_watch_api, prefix_rewrite: "/v1/observations" }
+              - match: { path: "/identify" }
+                route: { cluster: night_watch_api, prefix_rewrite: "/v1/identify" }
+          http_filters:
+          - name: envoy.filters.http.router
+  clusters:
+  - name: night_watch_api
+    connect_timeout: 1s
+    type: STATIC
+    load_assignment:
+      cluster_name: night_watch_api
+      endpoints:
+      - lb_endpoints:
+        - endpoint: { address: { socket_address: { address: 127.0.0.1, port_value: 5080 } } }

@@ -1,0 +1,38 @@
+# Minimal chart mirroring server/docker-compose.yml core services.
+# No foreign SaaS; IP outbound lookup off by default.
+
+replicaCount: 1
+
+image:
+  apiRepository: night-watch-api
+  workerRepository: night-watch-worker
+  tag: local
+  pullPolicy: IfNotPresent
+
+service:
+  apiPort: 8080
+  workerPort: 8081
+
+postgres:
+  enabled: true
+  image: postgres:16.6-alpine
+  database: night_watch
+  user: nightwatch
+  existingSecret: night-watch-postgres
+  secretKey: password
+
+redis:
+  enabled: true
+  image: redis:7.4.1-alpine
+
+env:
+  ASPNETCORE_ENVIRONMENT: Production
+  NightWatch__IpDatasets__AllowOutboundLookup: "false"
+  NightWatch__FeatureFlags__ExperimentalMl: Disabled
+  NightWatch__MigrateOnStart: "true"
+
+gateway:
+  enabled: false
+
+dashboard:
+  enabled: false

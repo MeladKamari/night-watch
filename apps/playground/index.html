@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Night Watch — Playground</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <meta name="theme-color" content="#070b14" />
+    <!-- First-party only: no external fonts, CDNs, analytics, or remote sample endpoints. -->
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Persian RTL surrounding content (locale fixture, not identity assumption). -->
+      <section id="surrounding" dir="rtl" lang="fa" aria-label="محتوای محیطی فارسی">
+        <header class="brand-lockup">
+          <img
+            class="brand-logo"
+            src="/night-watch-logo.png"
+            width="280"
+            height="140"
+            alt="Night Watch"
+          />
+          <h1>Night Watch</h1>
+        </header>
+        <p>
+          این ناحیه محتوای محیطی راست‌به‌چپ را شبیه‌سازی می‌کند تا سازگاری جهت متن، یونیکد و چیدمان
+          در کنار پنل تشخیصی انگلیسی بررسی شود. هیچ فونت یا اسکریپت شخص ثالثی بارگیری نمی‌شود.
+        </p>
+        <p>
+          بسته: <code>@night-watch/browser-sdk</code> · نمایه: <code>default-v1</code> (۴۱ منبع) · منطقهٔ
+          زمانی نمونه برای آزمون: <code>Asia/Tehran</code>
+        </p>
+        <p class="note">
+          جمع‌آوری فقط با رضایت شما انجام می‌شود و به‌صورت پیش‌فرض محلی است. ارسال به Pro+ API
+          (<code>127.0.0.1:5080</code>) فقط با دکمهٔ Identify در پنل آزمایشگاهی انجام می‌شود.
+          شناسهٔ هش‌شده با ارقام لاتین باقی می‌ماند؛ ارقام فارسی فقط برای نمایش برچسب‌ها هستند.
+        </p>
+      </section>
+
+      <!-- English LTR developer diagnostics panel (interactive). -->
+      <aside id="diagnostics" dir="ltr" lang="en" aria-label="Developer diagnostics">
+        <h2>Developer diagnostics</h2>
+        <dl class="meta">
+          <dt>Package</dt>
+          <dd id="diag-package">@night-watch/browser-sdk</dd>
+          <dt>Manifest</dt>
+          <dd id="diag-manifest">default-v1</dd>
+          <dt>Sources</dt>
+          <dd id="diag-sources">41 (applePay excluded)</dd>
+          <dt>Version</dt>
+          <dd id="diag-version">—</dd>
+          <dt>Telemetry</dt>
+          <dd id="diag-telemetry">off · Pro+ lab opt-in → :5080</dd>
+        </dl>
+        <div id="playground-app"></div>
+        <p class="note">
+          Panel is <code>dir=&quot;ltr&quot;</code> beside RTL surrounding content. Serve via
+          <code>pnpm playground</code> on loopback only.
+        </p>
+      </aside>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

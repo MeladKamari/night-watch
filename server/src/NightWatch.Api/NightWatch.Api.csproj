@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.20.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.20.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NightWatch.BuildingBlocks\NightWatch.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Ingestion\NightWatch.Modules.Ingestion.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Identity\NightWatch.Modules.Identity.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Intelligence\NightWatch.Modules.Intelligence.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Risk\NightWatch.Modules.Risk.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Admin\NightWatch.Modules.Admin.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Webhooks\NightWatch.Modules.Webhooks.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Privacy\NightWatch.Modules.Privacy.csproj" />
+    <ProjectReference Include="..\NightWatch.Modules.Reporting\NightWatch.Modules.Reporting.csproj" />
+    <ProjectReference Include="..\NightWatch.Persistence\NightWatch.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

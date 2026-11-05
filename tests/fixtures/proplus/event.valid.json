@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "night-watch-event-v1",
+  "eventId": "ev_01JEXAMPLEEVENT",
+  "visitorId": "v_01JEXAMPLEVISIT",
+  "anonymousCorrelationId": null,
+  "matchType": "ambiguous",
+  "identityOutcome": "ambiguous",
+  "identityConfidence": {
+    "status": "uncalibrated",
+    "value": null,
+    "confidence": null,
+    "provenance": "server"
+  },
+  "firstSeenAt": "2026-11-03T12:00:00Z",
+  "lastSeenAt": "2026-11-03T12:00:00Z",
+  "signals": {
+    "vpn": {
+      "status": "unknown",
+      "value": null,
+      "confidence": null,
+      "provenance": "offline_ip_feed"
+    }
+  },
+  "risk": {
+    "status": "insufficient_evidence",
+    "decision": "observe",
+    "policyVersion": "1",
+    "score": null
+  },
+  "processingVersion": "night-watch-processing-v0",
+  "region": "ir-central",
+  "serverTime": "2026-11-03T12:00:01Z"
+}
