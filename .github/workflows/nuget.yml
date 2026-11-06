@@ -1,9 +1,14 @@
-# Pack + push NightWatch.Blazor to nuget.org.
+# Pack + push NightWatch.Blazor to nuget.org via CI.
 #
-# Secret required: NUGET_API_KEY
+# Auth (preferred): NuGet Trusted Publishing (OIDC) — no long-lived key.
+#   1. https://www.nuget.org/account/TrustedPublishing
+#      Repository Owner: MeladKamari
+#      Repository: night-watch
+#      Workflow File: nuget.yml
+#   2. GitHub secret NUGET_USER = nuget.org profile username (NOT email)
+#
+# Optional fallback: GitHub secret NUGET_API_KEY
 #   https://www.nuget.org/account/apikeys
-#   Scopes: Push new packages and package versions
-#   Glob: NightWatch.Blazor (or *)
 #
 # Skip a push: include "chore(release):" or "[skip nuget]" in the commit message.
 name: nuget
@@ -24,6 +29,7 @@ concurrency:
 
 permissions:
   contents: read
+  id-token: write
 
 env:
   CI: true
@@ -56,7 +62,30 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Choose NuGet auth mode
+        id: auth
+        env:
+          NUGET_USER: ${{ secrets.NUGET_USER }}
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -n "${NUGET_USER:-}" ]; then
+            echo "mode=oidc" >> "$GITHUB_OUTPUT"
+          elif [ -n "${NUGET_API_KEY:-}" ]; then
+            echo "mode=apikey" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Set GitHub secret NUGET_USER (Trusted Publishing) or NUGET_API_KEY"
+            exit 1
+          fi
+
+      - name: NuGet login (OIDC → temp API key)
+        id: login
+        if: steps.auth.outputs.mode == 'oidc'
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Pack and push to nuget.org
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY || secrets.NUGET_API_KEY }}
         run: node scripts/release/nuget-publish.mjs --execute
