@@ -5,9 +5,9 @@ import { spawnSync } from 'node:child_process'
 import {
   DEFAULT_PRIVACY_POLICY,
   assertPurposeAllowed,
-} from '@night-watch/contracts'
-import { ENABLED_SOURCES, hashComponents, type UnknownComponents } from '@night-watch/core'
-import { runProPlusBridge } from '@night-watch/browser-adapter'
+} from '@thenightwatch/contracts'
+import { ENABLED_SOURCES, hashComponents, type UnknownComponents } from '@thenightwatch/core'
+import { runProPlusBridge } from '@thenightwatch/browser-adapter'
 import { describe, expect, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')

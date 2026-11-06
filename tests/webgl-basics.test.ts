@@ -13,7 +13,7 @@ import {
   shouldAvoidDebugRendererInfo,
   type WebGlBasicsPayload,
   type WebGlCacheBag,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 function mockDocument(getContextImpl: (type: string) => unknown): Document {

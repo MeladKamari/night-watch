@@ -3,7 +3,7 @@ import {
   collectDomBlockers,
   getFilters,
   isDomBlockersApplicable,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 test.describe('domBlockers', () => {
   test('Desktop Chromium is not eligible → undefined (no fabricated blockers)', async () => {

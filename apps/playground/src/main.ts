@@ -8,7 +8,7 @@ import {
   SDK_PACKAGE_VERSION,
   SDK_PRODUCT_LABEL,
   SOURCE_MANIFEST_REVISION,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { mountPlayground } from './ui.js'
 import './styles.css'
 

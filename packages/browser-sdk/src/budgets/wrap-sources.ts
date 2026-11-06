@@ -1,4 +1,4 @@
-import type { MaybePromise, Source } from '@night-watch/core'
+import type { MaybePromise, Source } from '@thenightwatch/core'
 import { SourceTimeoutError } from './errors.js'
 import { throwIfAborted, toAbortError, type TimerRegistry } from './timers.js'
 import type { ResolvedCollectionBudget } from './types.js'

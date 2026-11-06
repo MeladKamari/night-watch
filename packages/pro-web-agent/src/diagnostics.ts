@@ -1,4 +1,4 @@
-import { ENABLED_SOURCES } from '@night-watch/core'
+import { ENABLED_SOURCES } from '@thenightwatch/core'
 import { PRO_WEB_AGENT_PROTOCOL_VERSION } from './types.js'
 import type { CollectionPolicyState } from './policy.js'
 

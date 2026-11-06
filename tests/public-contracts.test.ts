@@ -13,12 +13,12 @@ import {
   type Source,
   type SourceValue,
   type SourcesToComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import type {
   Agent,
   GetResult,
   LoadOptions,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, expectTypeOf, it } from 'vitest'
 import {
   runtimeGuards,

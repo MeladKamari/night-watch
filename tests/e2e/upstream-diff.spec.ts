@@ -8,7 +8,7 @@ import {
   UPSTREAM_PIN,
   hashComponents,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { readSdkIife } from './helpers/inject-sdk.js'
 import {
   buildUpstreamDiffReport,
@@ -105,7 +105,7 @@ test.describe('upstream differential (consented local sample)', () => {
     expect(report.consented).toBe(true)
     expect(report.matchCount + report.mismatchCount).toBe(41)
     expect(report.localHash).toBe(hashComponents(sample.localComponents as UnknownComponents))
-    // Raw visitorId must not be used as a pass condition — expect inequality while applePay remains.
+    // Raw visitorId must not be used as a pass condition ï¿½ expect inequality while applePay remains.
     expect(report.rawVisitorIdEqual).toBe(false)
 
     // Filtered-hash parity is asserted only when all 41 sources match (proven fixture path).

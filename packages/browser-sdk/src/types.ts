@@ -4,7 +4,7 @@ import type {
   Confidence,
   UnknownComponents,
   UnknownSources,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * Options for {@link Load}.
@@ -98,4 +98,4 @@ export type {
   SourcesToComponents,
   UnknownComponents,
   UnknownSources,
-} from '@night-watch/core'
+} from '@thenightwatch/core'

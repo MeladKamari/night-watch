@@ -35,7 +35,7 @@ import {
   resolveReliabilityProfile,
   RELIABILITY_PROFILES_REVISION,
   SOURCE_RELIABILITY_TIERS,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 // Default path — unchanged
 await load({ monitoring: false })

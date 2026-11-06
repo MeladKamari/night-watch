@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
-import { ENABLED_SOURCES, hashComponents, type UnknownComponents } from '@night-watch/core'
+import { ENABLED_SOURCES, hashComponents, type UnknownComponents } from '@thenightwatch/core'
 import { createProWebAgent, ProWebAgent, PRO_WEB_AGENT_PROTOCOL_VERSION } from './index.js'
-import type { GetResult } from '@night-watch/browser-sdk'
+import type { GetResult } from '@thenightwatch/browser-sdk'
 
 function fakeResult(components: UnknownComponents): GetResult {
   const visitorId = hashComponents(components)

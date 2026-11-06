@@ -1,4 +1,4 @@
-import { ENABLED_SOURCES } from '@night-watch/core'
+import { ENABLED_SOURCES } from '@thenightwatch/core'
 import { assertNoDynamicCodePatterns } from './csp.js'
 import { ProWebAgent } from './agent.js'
 

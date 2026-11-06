@@ -3,7 +3,7 @@ import {
   createNightWatchClient,
   type NightWatchClientOptions,
   type NightWatchSnapshot,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
 export type UseVisitorDataOptions = NightWatchClientOptions & {
   /** When false, skips auto-collect on mount. Default true in the browser. */

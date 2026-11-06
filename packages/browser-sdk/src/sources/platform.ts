@@ -5,7 +5,7 @@ import {
   isWebKit,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 export type NavigatorWithPlatform = {
   readonly platform?: string

@@ -14,8 +14,8 @@ import {
   shouldAvoidPolygonModeExtensions,
   type WebGlCacheBag,
   type WebGlExtensionsPayload,
-} from '@night-watch/browser-sdk'
-import { loadSource, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+} from '@thenightwatch/browser-sdk'
+import { loadSource, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 /** Prototype-held GL constants (matches WebGLRenderingContext layout). */

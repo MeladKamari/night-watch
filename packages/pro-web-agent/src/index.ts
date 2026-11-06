@@ -77,5 +77,5 @@ export {
   type ReleaseGateReport,
 } from './release-gate.js'
 
-export const WEB_AGENT_PACKAGE_NAME = '@night-watch/web-agent' as const
+export const WEB_AGENT_PACKAGE_NAME = '@thenightwatch/web-agent' as const
 export const WEB_AGENT_PACKAGE_VERSION = '1.0.0' as const

@@ -4,7 +4,7 @@ import {
   withIframe,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * Probe string: `m`/`w` maximize width; `LLi` separates otherwise-similar fonts.

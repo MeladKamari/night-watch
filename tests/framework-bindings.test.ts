@@ -3,17 +3,17 @@ import {
   createNightWatchClient,
   identify,
   VANILLA_PACKAGE_NAME,
-} from '@night-watch/vanilla'
-import { REACT_PACKAGE_NAME } from '@night-watch/react'
-import { VUE_PACKAGE_NAME } from '@night-watch/vue'
-import { PREACT_PACKAGE_NAME } from '@night-watch/preact'
-import { ANGULAR_PACKAGE_NAME } from '@night-watch/angular'
+} from '@thenightwatch/vanilla'
+import { REACT_PACKAGE_NAME } from '@thenightwatch/react'
+import { VUE_PACKAGE_NAME } from '@thenightwatch/vue'
+import { PREACT_PACKAGE_NAME } from '@thenightwatch/preact'
+import { ANGULAR_PACKAGE_NAME } from '@thenightwatch/angular'
 import {
   BLAZOR_PACKAGE_NAME,
   identifyForBlazor,
   installNightWatchBlazorGlobal,
-} from '@night-watch/blazor'
-import { ENABLED_SOURCES } from '@night-watch/browser-sdk'
+} from '@thenightwatch/blazor'
+import { ENABLED_SOURCES } from '@thenightwatch/browser-sdk'
 
 function stubSources() {
   return Object.fromEntries(ENABLED_SOURCES.map((name) => [name, () => ({ ok: name })]))
@@ -21,12 +21,12 @@ function stubSources() {
 
 describe('framework binding packages', () => {
   it('exports stable package names', () => {
-    expect(VANILLA_PACKAGE_NAME).toBe('@night-watch/vanilla')
-    expect(REACT_PACKAGE_NAME).toBe('@night-watch/react')
-    expect(VUE_PACKAGE_NAME).toBe('@night-watch/vue')
-    expect(PREACT_PACKAGE_NAME).toBe('@night-watch/preact')
-    expect(ANGULAR_PACKAGE_NAME).toBe('@night-watch/angular')
-    expect(BLAZOR_PACKAGE_NAME).toBe('@night-watch/blazor')
+    expect(VANILLA_PACKAGE_NAME).toBe('@thenightwatch/vanilla')
+    expect(REACT_PACKAGE_NAME).toBe('@thenightwatch/react')
+    expect(VUE_PACKAGE_NAME).toBe('@thenightwatch/vue')
+    expect(PREACT_PACKAGE_NAME).toBe('@thenightwatch/preact')
+    expect(ANGULAR_PACKAGE_NAME).toBe('@thenightwatch/angular')
+    expect(BLAZOR_PACKAGE_NAME).toBe('@thenightwatch/blazor')
   })
 
   it('vanilla identify works with allowNonBrowser stubs', async () => {

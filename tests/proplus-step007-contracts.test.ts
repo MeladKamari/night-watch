@@ -6,7 +6,7 @@ import {
   validateErrorEnvelope,
   validateIdentificationEvent,
   validateObservation,
-} from '@night-watch/contracts'
+} from '@thenightwatch/contracts'
 import { describe, expect, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')

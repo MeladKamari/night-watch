@@ -1,4 +1,4 @@
-import { PRODUCT_PUBLIC_LABEL, type EvidenceStatus } from '@night-watch/contracts'
+import { PRODUCT_PUBLIC_LABEL, type EvidenceStatus } from '@thenightwatch/contracts'
 
 export type DashboardClientConfig = {
   readonly baseUrl: string

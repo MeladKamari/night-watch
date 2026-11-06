@@ -20,7 +20,7 @@ import {
   type BuiltinSourceOptions,
   type Source,
   type UnknownComponents,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, expectTypeOf, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')

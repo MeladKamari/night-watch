@@ -19,7 +19,7 @@ export {
   type LoadOptions,
   type LoadAgentOptions,
   type GetOptions,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
-export const VANILLA_PACKAGE_NAME = '@night-watch/vanilla' as const
+export const VANILLA_PACKAGE_NAME = '@thenightwatch/vanilla' as const
 export const VANILLA_PACKAGE_VERSION = '1.0.0' as const

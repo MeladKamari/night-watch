@@ -2,7 +2,7 @@
 
 ## Product
 
-- [x] Brand: Night Watch (`@night-watch/*`, IIFE `NightWatch`)
+- [x] Brand: Night Watch (`@thenightwatch/*`, IIFE `NightWatch`)
 - [x] Browser SDK 41-source `default-v1`
 - [x] Framework packages: vanilla, react, vue, angular, preact, blazor
 - [x] Server API identity-v4 + admin console + playground
@@ -21,9 +21,9 @@
 ## Install (consumers)
 
 ```bash
-pnpm add @night-watch/browser-sdk
+pnpm add @thenightwatch/browser-sdk
 # or
-pnpm add @night-watch/react
+pnpm add @thenightwatch/react
 ```
 
 ```html

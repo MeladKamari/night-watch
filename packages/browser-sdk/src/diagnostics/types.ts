@@ -1,4 +1,4 @@
-import type { Confidence } from '@night-watch/core'
+import type { Confidence } from '@thenightwatch/core'
 
 /** Versioned diagnostics catalog (independent of `SOURCE_MANIFEST_REVISION`). */
 export const DIAGNOSTICS_REVISION = 'night-watch-diagnostics-v1' as const

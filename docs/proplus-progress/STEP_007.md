@@ -7,7 +7,7 @@
 
 - `contracts/schemas/*.json` — Observation, IdentificationEvent, SignalEvaluation, RiskDecision, ServerReceipt, ErrorEnvelope, EvidenceCell
 - `contracts/openapi/v1/openapi.yaml`
-- `@night-watch/contracts` validators (`validateObservation`, etc.)
+- `@thenightwatch/contracts` validators (`validateObservation`, etc.)
 - Fixtures under `tests/fixtures/proplus/`
 - `tests/proplus-step007-contracts.test.ts`
 

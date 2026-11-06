@@ -25,7 +25,7 @@ import {
   formatFingerprintChangeReport,
   inspectFingerprintRebuild,
   CHANGE_INSPECTOR_DISCLAIMER,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 const agent = await load({ monitoring: false })
 const a = await agent.get()

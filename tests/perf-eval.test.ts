@@ -1,6 +1,6 @@
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { ENABLED_SOURCES, SOURCE_MANIFEST_REVISION } from '@night-watch/core'
+import { ENABLED_SOURCES, SOURCE_MANIFEST_REVISION } from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 import {
   buildPerfEntropyReport,

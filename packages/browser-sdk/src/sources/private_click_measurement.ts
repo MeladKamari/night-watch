@@ -1,4 +1,4 @@
-import { getDocument, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getDocument, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /**
  * Anchor surface used for Safari Private Click Measurement (PCM) detection.

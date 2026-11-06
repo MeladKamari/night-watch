@@ -7,8 +7,8 @@ import {
   hashComponents,
   isValueComponent,
   load,
-} from '@night-watch/browser-sdk'
-import { toInt } from '@night-watch/core'
+} from '@thenightwatch/browser-sdk'
+import { toInt } from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 describe('toInt + getUnstableScreenResolution', () => {

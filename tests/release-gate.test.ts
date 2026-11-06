@@ -1,7 +1,7 @@
 import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { ENABLED_SOURCE_COUNT, ENABLED_SOURCES } from '@night-watch/core'
-import { SDK_PACKAGE_VERSION } from '@night-watch/browser-sdk'
+import { ENABLED_SOURCE_COUNT, ENABLED_SOURCES } from '@thenightwatch/core'
+import { SDK_PACKAGE_VERSION } from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')

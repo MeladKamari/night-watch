@@ -9,7 +9,7 @@ import {
   load,
   probeCookiesEnabled,
   type DocumentWithCookie,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 function makeCookieJar(initial = ''): DocumentWithCookie & {

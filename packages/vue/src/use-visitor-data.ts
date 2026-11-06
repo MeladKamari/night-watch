@@ -12,7 +12,7 @@ import {
   type NightWatchClientOptions,
   type NightWatchSnapshot,
   type NightWatchStatus,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
 export type UseVisitorDataOptions = NightWatchClientOptions & {
   enabled?: boolean

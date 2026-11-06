@@ -1,4 +1,4 @@
-import { getIntl, toFloat, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getIntl, toFloat, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /** Minimal Date constructor used for DST-stable offset fallback. */
 export type OffsetDateCtor = {

@@ -16,7 +16,7 @@ import {
   type UsageSnapshot,
   type WebhookDeliveryItem,
   type WebhookItem,
-} from '@night-watch/dashboard-client'
+} from '@thenightwatch/dashboard-client'
 import { SessionStore } from './session.store'
 
 export type ConsoleApiConfig = {

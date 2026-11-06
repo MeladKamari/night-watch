@@ -1,4 +1,4 @@
-import { errorToObject, isSensitiveKey, toError } from '@night-watch/core'
+import { errorToObject, isSensitiveKey, toError } from '@thenightwatch/core'
 
 /**
  * Keys that identify the current page or session and must never appear in

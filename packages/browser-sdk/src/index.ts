@@ -585,7 +585,7 @@ export {
   type SourcesToComponents,
   type UnknownComponents,
   type UnknownSources,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 export type {
   Agent,
@@ -598,7 +598,7 @@ export type {
   LoadOptions,
 } from './types.js'
 
-import { componentsToDebugString, hashComponents } from '@night-watch/core'
+import { componentsToDebugString, hashComponents } from '@thenightwatch/core'
 import { load } from './agent.js'
 import type { BrowserSdkDefaultExport } from './types.js'
 

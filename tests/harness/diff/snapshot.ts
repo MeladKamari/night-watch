@@ -1,7 +1,7 @@
 import {
   COMPONENT_ERROR_HASH_SENTINEL,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import type { ComponentSnapshot } from './types.js'
 
 /**

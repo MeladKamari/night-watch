@@ -9,7 +9,7 @@ export {
   type NightWatchSnapshot,
   type GetResult,
   type LoadOptions,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
-export const VUE_PACKAGE_NAME = '@night-watch/vue' as const
+export const VUE_PACKAGE_NAME = '@thenightwatch/vue' as const
 export const VUE_PACKAGE_VERSION = '1.0.0' as const

@@ -1,4 +1,4 @@
-import { getWindow, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getWindow, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /**
  * Fixed allowlist of browser-specific (not engine-specific) window globals.

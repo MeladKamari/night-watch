@@ -1,4 +1,4 @@
-Night Watch (@night-watch/*)
+Night Watch (@thenightwatch/*)
 ============================================
 
 This product is an independently branded browser fingerprinting library.
@@ -40,6 +40,6 @@ Intentional product deviations from that baseline (non-exhaustive):
   - Iran-default registry uses 41 sources and excludes the payment API-state
     source (`applePay`).
   - `monitoring` defaults to false and never contacts vendor telemetry endpoints.
-  - Package scope `@night-watch/*` and global `NightWatch` are independent brand identifiers.
+  - Package scope `@thenightwatch/*` and global `NightWatch` are independent brand identifiers.
 
 See `docs/MIGRATION.md`, `reference/parity_decisions.md`, and `LICENSE`.

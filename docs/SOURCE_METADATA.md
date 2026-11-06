@@ -16,7 +16,7 @@ import {
   getSourceMetadataRegistry,
   getSourceMetadata,
   SOURCE_METADATA_REGISTRY_REVISION,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 const registry = getSourceMetadataRegistry()
 // registry.sourceCount === 41, excludesApplePay === true

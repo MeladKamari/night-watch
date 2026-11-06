@@ -4,15 +4,15 @@ import {
   SOURCE_MANIFEST_REVISION,
   hashComponents,
   type UnknownComponents,
-} from '@night-watch/core'
-import type { GetResult } from '@night-watch/browser-sdk'
+} from '@thenightwatch/core'
+import type { GetResult } from '@thenightwatch/browser-sdk'
 import {
   IDENTITY_ALGORITHM_VERSION,
   PROCESSING_VERSION,
   PRODUCT_CODE,
   type LegacyBrowserIdentity,
   type ObservationEnvelope,
-} from '@night-watch/contracts'
+} from '@thenightwatch/contracts'
 
 export type AdaptGetResultOptions = {
   purpose: string

@@ -1,4 +1,4 @@
-import { load, type GetResult, type LoadAgentOptions } from '@night-watch/browser-sdk'
+import { load, type GetResult, type LoadAgentOptions } from '@thenightwatch/browser-sdk'
 
 /**
  * One-shot collect: `load()` then `get()`.

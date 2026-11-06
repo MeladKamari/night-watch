@@ -1,4 +1,4 @@
-import { getScreen, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getScreen, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /** Minimal screen surface for color-depth reads. */
 export type ScreenWithColorDepth = {

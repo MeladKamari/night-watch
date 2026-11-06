@@ -6,7 +6,7 @@ import {
   FONT_PROBE_STRING,
   UnsupportedEnvironmentError,
   getFonts,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 test.describe('fonts source', () => {
   test('Node getFonts does not invent an empty success list', async () => {

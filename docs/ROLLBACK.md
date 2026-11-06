@@ -18,11 +18,11 @@
 ## npm dist-tag rollback (only if a publish already occurred)
 
 ```bash
-# Example — requires human auth and npm credentials
-npm dist-tag add @night-watch/browser-sdk@<previous> latest
-npm dist-tag add @night-watch/core@<previous> latest
+# Example ï¿½ requires human auth and npm credentials
+npm dist-tag add @thenightwatch/browser-sdk@<previous> latest
+npm dist-tag add @thenightwatch/core@<previous> latest
 # Optionally deprecate the bad version
-npm deprecate @night-watch/browser-sdk@<bad> "Use <previous>; see CHANGELOG"
+npm deprecate @thenightwatch/browser-sdk@<bad> "Use <previous>; see CHANGELOG"
 ```
 
 Do **not** `npm unpublish` after 72h or if dependents exist; prefer deprecate.

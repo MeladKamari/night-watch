@@ -1,6 +1,6 @@
 # Night Watch branding
 
-Canonical product artwork for `@night-watch/*`, the API, playground, and console.
+Canonical product artwork for `@thenightwatch/*`, the API, playground, and console.
 
 ## Assets
 

@@ -8,7 +8,7 @@ import {
   hashComponentsOmittingExcluded,
   omitExcludedUpstreamComponents,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { snapshotComponents } from './snapshot.js'
 import type { ComponentSnapshot, SourceDiffKind, SourceDiffRow, UpstreamDiffReport } from './types.js'
 

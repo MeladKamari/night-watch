@@ -4,7 +4,7 @@
 
 ## Deliverables
 - `docs/proplus-privacy/THREAT_MODEL_AND_RETENTION.md`
-- `DEFAULT_PRIVACY_POLICY` / `assertPurposeAllowed` in `@night-watch/contracts`
+- `DEFAULT_PRIVACY_POLICY` / `assertPurposeAllowed` in `@thenightwatch/contracts`
 - Tests in `tests/proplus-step008-013-foundation.test.ts`
 
 ## Next

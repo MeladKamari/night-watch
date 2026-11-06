@@ -30,8 +30,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@night-watch/browser-sdk': resolve(rootDir, '../../packages/browser-sdk/src/index.ts'),
-      '@night-watch/core': resolve(rootDir, '../../packages/core/src/index.ts'),
+      '@thenightwatch/browser-sdk': resolve(rootDir, '../../packages/browser-sdk/src/index.ts'),
+      '@thenightwatch/core': resolve(rootDir, '../../packages/core/src/index.ts'),
     },
   },
 })

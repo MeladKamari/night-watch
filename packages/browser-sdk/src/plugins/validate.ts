@@ -2,7 +2,7 @@ import {
   ENABLED_SOURCES,
   EXCLUDED_UPSTREAM_SOURCE,
   type EnabledSourceName,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { PluginRegistrationError } from './errors.js'
 import type { PluginDefinition, ResolvedPluginPolicy } from './types.js'
 

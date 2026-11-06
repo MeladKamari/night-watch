@@ -15,7 +15,7 @@ import {
   hashComponents,
   load,
   sourceMetadataRegistryToJson,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { execFileSync } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'

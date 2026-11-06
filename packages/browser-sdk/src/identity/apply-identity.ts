@@ -1,4 +1,4 @@
-import { hashComponents } from '@night-watch/core'
+import { hashComponents } from '@thenightwatch/core'
 import type { GetResult } from '../types.js'
 import { describeIdentityDerivation, hashComponentsNamespaced } from './hash-namespaced.js'
 import type { IdentityScope, NamespacedGetResult } from './types.js'

@@ -13,7 +13,7 @@ import {
   toFloat,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * Screen chrome insets as CSS side order: top, right, bottom, left.

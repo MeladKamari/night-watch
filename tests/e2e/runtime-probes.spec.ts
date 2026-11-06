@@ -10,7 +10,7 @@ import {
   probeMatchMedia,
   probeWebGlContext,
   releaseWebGlProbe,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 test.describe('browser runtime probes', () => {
   test('window/document/navigator/screen are ok in Chromium', async ({ page }) => {

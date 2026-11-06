@@ -4,7 +4,7 @@ import {
   type BuiltinSourceOptions,
   type BuiltinSources,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import {
   createAgent,
   handleMonitoringOption,

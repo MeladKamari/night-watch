@@ -6,7 +6,7 @@ namespace NightWatch.Blazor;
 
 /// <summary>
 /// Thin Blazor wrapper around <c>window.NightWatchBlazor.identify</c>
-/// (from <c>@night-watch/blazor</c>).
+/// (NuGet package <c>NightWatch.Blazor</c>).
 /// </summary>
 public sealed class NightWatchJs(IJSRuntime js)
 {

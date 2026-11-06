@@ -6,7 +6,7 @@ import {
   hashComponents,
   withComponent,
   type UnknownComponents,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 export function demoCustomHash(base: UnknownComponents): string {
   const tagged = withComponent(base, 'appBuild', {

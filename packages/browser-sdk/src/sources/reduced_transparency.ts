@@ -1,4 +1,4 @@
-import { getMatchMedia, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getMatchMedia, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /**
  * CSS `prefers-reduced-transparency` media feature.

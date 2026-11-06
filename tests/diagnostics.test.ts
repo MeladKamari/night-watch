@@ -16,7 +16,7 @@ import {
   redactErrorForDiagnostics,
   validateDiagnosticSnapshot,
   type GetResult,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 function sampleResult(overrides: Partial<GetResult> = {}): GetResult {

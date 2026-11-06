@@ -1,8 +1,8 @@
-import type { BuiltinComponents, Confidence } from '@night-watch/core'
+import type { BuiltinComponents, Confidence } from '@thenightwatch/core'
 
 /**
  * First-party identity scope for optional namespaced visitor IDs.
- * Opt-in only — default {@link import('../agent.js').load} / {@link import('@night-watch/core').hashComponents}
+ * Opt-in only — default {@link import('../agent.js').load} / {@link import('@thenightwatch/core').hashComponents}
  * remain upstream-shaped (unsalted).
  *
  * The SDK never persists this scope to storage and never exfiltrates it.

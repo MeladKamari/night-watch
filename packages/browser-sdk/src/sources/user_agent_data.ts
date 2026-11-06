@@ -1,4 +1,4 @@
-import { getNavigator, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getNavigator, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 type HighEntropyValues = {
   architecture?: string

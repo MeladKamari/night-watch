@@ -10,7 +10,7 @@ import {
   load,
   type DateTimeFormatLike,
   type IntlWithDateTimeFormat,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 /** Loose BCP 47 tag check (upstream-style). */

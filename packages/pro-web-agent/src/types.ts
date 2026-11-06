@@ -1,5 +1,5 @@
-import type { CollectionMode } from '@night-watch/contracts'
-import type { GetResult } from '@night-watch/browser-sdk'
+import type { CollectionMode } from '@thenightwatch/contracts'
+import type { GetResult } from '@thenightwatch/browser-sdk'
 
 export const PRO_WEB_AGENT_PROTOCOL_VERSION = 'night-watch-web-agent/1' as const
 
@@ -19,7 +19,7 @@ export type ProAgentOptions = {
   consentStatus?: 'granted' | 'denied' | 'unknown' | 'not_required'
   telemetry?: boolean
   protocolVersion?: string
-  /** Injected for tests — defaults to @night-watch/browser-sdk load */
+  /** Injected for tests — defaults to @thenightwatch/browser-sdk load */
   loadFn?: () => Promise<{ get: (opts?: object) => Promise<GetResult> }>
   fetchImpl?: typeof fetch
 }

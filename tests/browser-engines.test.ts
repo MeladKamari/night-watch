@@ -14,7 +14,7 @@ import {
   isTrident,
   isWebKit,
   isWebKit616OrNewer,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 import {
   chromiumContext,

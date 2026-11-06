@@ -4,7 +4,7 @@ import {
   isChromium86OrNewer,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /** Locale fields used by the languages collector (incl. legacy IE names). */
 export type NavigatorWithLanguages = {

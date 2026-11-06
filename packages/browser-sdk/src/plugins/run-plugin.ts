@@ -1,4 +1,4 @@
-import type { BuiltinSourceOptions, Component, MaybePromise, UnknownComponents } from '@night-watch/core'
+import type { BuiltinSourceOptions, Component, MaybePromise, UnknownComponents } from '@thenightwatch/core'
 import {
   PluginAbortError,
   PluginJsonSafetyError,

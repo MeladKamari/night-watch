@@ -4,7 +4,7 @@ import {
   isWebKit,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * Special `audioBaseLatency` component values (FingerprintJS OSS v5.3.0).

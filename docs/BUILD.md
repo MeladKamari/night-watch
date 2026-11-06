@@ -24,7 +24,7 @@ pnpm run ci:checksums
 pnpm run audit:prod
 ```
 
-## Artifacts (`@night-watch/browser-sdk`)
+## Artifacts (`@thenightwatch/browser-sdk`)
 
 | Path | Format |
 |---|---|
@@ -34,11 +34,11 @@ pnpm run audit:prod
 | `dist/fp(.min).js` | IIFE → `NightWatch` |
 | `dist/fp.umd(.min).js` | UMD |
 
-`@night-watch/core` ships `dist/core.esm(.min).js` and `dist/core(.min).cjs`.
+`@thenightwatch/core` ships `dist/core.esm(.min).js` and `dist/core(.min).cjs`.
 
 ## Version pinning
 
-- Pin `@night-watch/browser-sdk` and `@night-watch/core` to **exact** versions in apps.
+- Pin `@thenightwatch/browser-sdk` and `@thenightwatch/core` to **exact** versions in apps.
 - Record `SOURCE_MANIFEST_REVISION` (`default-v1`) beside stored visitorIds.
 - After rebuild, refresh SRI hashes / `ci:checksums` output before deploy.
 

@@ -1,4 +1,4 @@
-# Public API — `@night-watch/browser-sdk`
+# Public API — `@thenightwatch/browser-sdk`
 
 Import is **SSR-safe**. Call `load()` only in a browser (or tests with
 `allowNonBrowser` overrides). Types live in the published `.d.ts` files.
@@ -20,7 +20,7 @@ starts the 41 Default-profile collectors, and returns an `Agent`.
 Registering the excluded key `applePay` throws `RegistryInvariantError`.
 
 ```ts
-import { load } from '@night-watch/browser-sdk'
+import { load } from '@thenightwatch/browser-sdk'
 
 const agent = await load({
   monitoring: false,
@@ -35,11 +35,11 @@ const agent = await load({
 | `visitorId` | `string` | MurmurHash3 x64 128 hex of canonical components |
 | `confidence` | `{ score: number; comment: string }` | Heuristic; see accuracy doc |
 | `components` | `BuiltinComponents` | Per-source `{ value, duration }` or `{ error, duration }` |
-| `version` | `string` | `@night-watch/browser-sdk` package version |
+| `version` | `string` | `@thenightwatch/browser-sdk` package version |
 
 `duration` is **never** part of the hash input.
 
-## Hash / debug helpers (`@night-watch/core` re-exported)
+## Hash / debug helpers (`@thenightwatch/core` re-exported)
 
 ```ts
 import {
@@ -50,7 +50,7 @@ import {
   withComponent,
   ENABLED_SOURCES,
   SOURCE_MANIFEST_REVISION,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 ```
 
 | Helper | Role |

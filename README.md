@@ -12,10 +12,10 @@ Brand kit: [`branding/`](./branding/) (hero, icons, palette).
 | | |
 |---|---|
 | **Product** | **Night Watch** |
-| **Browser** | `@night-watch/core`, `@night-watch/browser-sdk` ? 41-source default entropy profile |
-| **Frameworks** | `@night-watch/vanilla` · `react` · `vue` · `angular` · `preact` · `blazor` |
-| **Server** | Night Watch API (`identity-v4`) — identify, smart signals, decisions, management |
-| **License** | [MIT](./LICENSE) · attribution in [NOTICE](./NOTICE) |
+| **Browser** | `@thenightwatch/core`, `@thenightwatch/browser-sdk` ? 41-source default entropy profile |
+| **Frameworks** | `@thenightwatch/vanilla` ï¿½ `react` ï¿½ `vue` ï¿½ `angular` ï¿½ `preact` ï¿½ `blazor` |
+| **Server** | Night Watch API (`identity-v4`) ï¿½ identify, smart signals, decisions, management |
+| **License** | [MIT](./LICENSE) ï¿½ attribution in [NOTICE](./NOTICE) |
 | **Status** | **1.0.0** |
 
 > Night Watch is **not** an official Fingerprint product. Behavioral baseline for the open-source collectors was FingerprintJS OSS **v5.3.0**; algorithms were adapted under MIT. Vendor SaaS hosts are **forbidden** at runtime.
@@ -24,10 +24,10 @@ Brand kit: [`branding/`](./branding/) (hero, icons, palette).
 
 ## Why this exists
 
-Teams that must keep fingerprinting **first-party** — air-gapped, on-prem, or otherwise unable to call foreign fingerprint SaaS — get a single stack:
+Teams that must keep fingerprinting **first-party** ï¿½ air-gapped, on-prem, or otherwise unable to call foreign fingerprint SaaS ï¿½ get a single stack:
 
 1. Browser collection on your origin  
-2. Server identity, risk signals, and decisions — with offline reputation feeds and no vendor telemetry
+2. Server identity, risk signals, and decisions ï¿½ with offline reputation feeds and no vendor telemetry
 
 Honest boundary: Night Watch is a self-hosted identification/risk platform, **not** a clone of any commercial global SaaS population network.
 
@@ -37,14 +37,14 @@ Honest boundary: Night Watch is a self-hosted identification/risk platform, **no
 
 ```text
 +--------------------------+   POST /v1/identify   +--------------------------+
-¦  @night-watch/browser-sdk¦ -------------------? ¦  Night Watch API     ¦
-¦  playground / site       ¦   + environmentProbes¦  identity-v4             ¦
-+--------------------------+                      ¦  smart signals · score   ¦
-                                                  ¦  decisions · webhooks    ¦
+ï¿½  @thenightwatch/browser-sdkï¿½ -------------------? ï¿½  Night Watch API     ï¿½
+ï¿½  playground / site       ï¿½   + environmentProbesï¿½  identity-v4             ï¿½
++--------------------------+                      ï¿½  smart signals ï¿½ score   ï¿½
+                                                  ï¿½  decisions ï¿½ webhooks    ï¿½
                                                   +--------------------------+
-                                                               ¦
+                                                               ï¿½
                                                   SQLite (dev) / Postgres
-                                                  optional Redis · Helm
+                                                  optional Redis ï¿½ Helm
 ```
 
 | Layer | Path | Role |
@@ -60,20 +60,20 @@ Honest boundary: Night Watch is a self-hosted identification/risk platform, **no
 
 ## Features
 
-### Browser SDK (`@night-watch/*`)
+### Browser SDK (`@thenightwatch/*`)
 - **41 entropy sources** (default manifest); payment API-state (`applePay`) excluded by design  
 - MurmurHash3 x64-128 visitor hash  
-- ESM / CJS / IIFE / UMD bundles — **self-hostable**, no CDN required  
+- ESM / CJS / IIFE / UMD bundles ï¿½ **self-hostable**, no CDN required  
 - Global IIFE name: `NightWatch`  
 - Telemetry **off** by default (`monitoring` is a no-op)  
 - SSR-safe import; honest `unsupported` / `error` semantics  
 
 ### Night Watch API (`identity-v4`)
 - **Identify**: exact alias rematch, continuity token rematch, soft-link insights **without** silent visitor merge  
-- **Confidence**: `unavailable` · `heuristic` · `holdout_backed` — never invents production-calibrated ML  
-- **Smart signals** (web): bot / automation / tamper / VM / VPN·proxy (offline ASN feed) / rare-device (tenant-local population) / proximity (consent-gated) / MITM (edge TLS headers) / velocity  
+- **Confidence**: `unavailable` ï¿½ `heuristic` ï¿½ `holdout_backed` ï¿½ never invents production-calibrated ML  
+- **Smart signals** (web): bot / automation / tamper / VM / VPNï¿½proxy (offline ASN feed) / rare-device (tenant-local population) / proximity (consent-gated) / MITM (edge TLS headers) / velocity  
 - **Decisions**: weighted suspect score + challenge flow  
-- **Network feed**: signed offline ASN/IP reputation bundle — no live foreign SaaS lookup  
+- **Network feed**: signed offline ASN/IP reputation bundle ï¿½ no live foreign SaaS lookup  
 - **Management**: API keys, rules, webhooks, privacy export/erase, graph edges, console auth (+ optional MFA)  
 - **Sealed envelopes** for customer-backend verification  
 
@@ -82,14 +82,14 @@ Honest boundary: Night Watch is a self-hosted identification/risk platform, **no
 - Native mobile SDK  
 - Claiming **production-calibrated ML** without your own labeled fraud feedback in production  
 
-Details: [`docs/ACCURACY_AND_LIMITATIONS.md`](./docs/ACCURACY_AND_LIMITATIONS.md) · [`docs/proplus-progress/STEP_135.md`](./docs/proplus-progress/STEP_135.md)
+Details: [`docs/ACCURACY_AND_LIMITATIONS.md`](./docs/ACCURACY_AND_LIMITATIONS.md) ï¿½ [`docs/proplus-progress/STEP_135.md`](./docs/proplus-progress/STEP_135.md)
 
 ---
 
 ## Quick start
 
 ### Requirements
-- **Node.js** = 20 · **pnpm** 12  
+- **Node.js** = 20 ï¿½ **pnpm** 12  
 - **.NET SDK** 10.x (see `server/global.json`) for the API  
 
 ### 1) Browser SDK
@@ -101,7 +101,7 @@ pnpm playground          # http://127.0.0.1:4173
 ```
 
 ```ts
-import { load } from '@night-watch/browser-sdk'
+import { load } from '@thenightwatch/browser-sdk'
 
 const agent = await load({ monitoring: false })
 const result = await agent.get()
@@ -123,16 +123,16 @@ Framework bindings (same `visitorId` as the browser SDK):
 
 | Package | Use |
 |---|---|
-| `@night-watch/vanilla` | `identify()` / `createNightWatchClient()` |
-| `@night-watch/react` | `useVisitorData()` |
-| `@night-watch/vue` | `useVisitorData()` composable |
-| `@night-watch/angular` | `NightWatchService` / `provideNightWatch()` |
-| `@night-watch/preact` | `useVisitorData()` |
-| `@night-watch/blazor` | JS interop + `NightWatch.Blazor` C# helper |
+| `@thenightwatch/vanilla` | `identify()` / `createNightWatchClient()` |
+| `@thenightwatch/react` | `useVisitorData()` |
+| `@thenightwatch/vue` | `useVisitorData()` composable |
+| `@thenightwatch/angular` | `NightWatchService` / `provideNightWatch()` |
+| `@thenightwatch/preact` | `useVisitorData()` |
+| `@thenightwatch/blazor` | JS interop + `NightWatch.Blazor` C# helper |
 
 ```ts
-import { identify } from '@night-watch/vanilla'
-import { useVisitorData } from '@night-watch/react' // or vue / preact
+import { identify } from '@thenightwatch/vanilla'
+import { useVisitorData } from '@thenightwatch/react' // or vue / preact
 
 const { visitorId } = await identify()
 ```
@@ -220,7 +220,7 @@ CI: [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 
 ```text
 apps/                 playground, admin-console
-packages/             @night-watch/*
+packages/             @thenightwatch/*
 server/               ASP.NET Core Night Watch API, persistence, deploy
 contracts/            shared schemas
 docs/                 product + architecture docs
@@ -253,7 +253,7 @@ Dev defaults live in `server/src/NightWatch.Api/appsettings.json`:
 - Empty Postgres ? **SQLite** file `night-watch-dev.db` (local durable aliases / vectors)  
 - `NightWatch:IpDatasets:AllowOutboundLookup` = `false` (offline feed only)  
 - `ForbidVendorHosts` = `true`  
-- Product code: `night-watch` · identity algorithm: `identity-v4`  
+- Product code: `night-watch` ï¿½ identity algorithm: `identity-v4`  
 
 For tests that must not collide with a live DB, set `NIGHT_WATCH_TEST_SQLITE` to a unique path (the API test assembly does this automatically).
 
@@ -263,7 +263,7 @@ For tests that must not collide with a live DB, set `NIGHT_WATCH_TEST_SQLITE` to
 
 - Do **not** use client `visitorId` alone for authentication or high-value authorization.  
 - Prefer server identify + sealed envelope verification on your backend.  
-- Treat labels / feedback as sensitive; production calibration requires **your** fraud labels — the lab calibration endpoint is for development metrics only.  
+- Treat labels / feedback as sensitive; production calibration requires **your** fraud labels ï¿½ the lab calibration endpoint is for development metrics only.  
 - Report vulnerabilities per [`SECURITY.md`](./SECURITY.md).
 
 ---
@@ -271,7 +271,7 @@ For tests that must not collide with a live DB, set `NIGHT_WATCH_TEST_SQLITE` to
 ## Trademark & attribution
 
 - Product: **Night Watch**  
-- npm scope: `@night-watch/*`  
+- npm scope: `@thenightwatch/*`  
 - Browser IIFE global: `NightWatch`  
 - See [`NOTICE`](./NOTICE) for MIT attribution to FingerprintJS OSS where applicable.  
 - Forbidden runtime hosts include `fingerprint.com`, `fpjs.io`, `openfpcdn`, `fingerprintjs`.
@@ -280,4 +280,4 @@ For tests that must not collide with a live DB, set `NIGHT_WATCH_TEST_SQLITE` to
 
 ## License
 
-[MIT](./LICENSE) © 2026 Night Watch contributors
+[MIT](./LICENSE) ï¿½ 2026 Night Watch contributors

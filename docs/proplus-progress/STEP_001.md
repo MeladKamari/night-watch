@@ -19,14 +19,14 @@ The Self-hosted 41-source TypeScript SDK is present and healthy in this workspac
 | `docs/proplus-progress/STEP_001.md` | This handoff |
 | `tests/proplus-step001-baseline.test.ts` | visitorId / algorithm stability lock (before ≡ after) |
 
-**Not modified:** `@night-watch/core` / `@night-watch/browser-sdk` collectors, hash, registry, agent, or prior tests.
+**Not modified:** `@thenightwatch/core` / `@thenightwatch/browser-sdk` collectors, hash, registry, agent, or prior tests.
 
 ## Commands actually run and outputs
 
 | Command | Exit | Output summary |
 |---|---:|---|
 | `pnpm build` | 0 | `tsc -b` + Rollup core/browser bundles OK |
-| `pnpm typecheck` | 0 | root + `@night-watch/playground` OK |
+| `pnpm typecheck` | 0 | root + `@thenightwatch/playground` OK |
 | `pnpm test` (pre-change) | 0 | **69** files / **529** tests passed |
 | `pnpm test:registry` | 0 | **10** node:test registry locks passed |
 | `pnpm run ci:guard` | 0 | `CI guard PASS: no payment-source collector/API…` |
@@ -57,7 +57,7 @@ sampleHash b0a3ed33df2bfd9f8ead1eebe9d2cf99
 
 | Item | Status | Evidence |
 |---|---|---|
-| Enumerate SDK packages | **VALIDATED** | `@night-watch/core`, `@night-watch/browser-sdk`, `@night-watch/playground` |
+| Enumerate SDK packages | **VALIDATED** | `@thenightwatch/core`, `@thenightwatch/browser-sdk`, `@thenightwatch/playground` |
 | Enumerate 41 sources | **VALIDATED** | Registry + inventory + builtin wiring |
 | applePay exclusion | **VALIDATED** | Registry + `ci:guard` |
 | visitorId unchanged by STEP 001 | **VALIDATED** | Golden hashes match inventory locks |

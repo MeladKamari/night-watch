@@ -11,8 +11,8 @@ import {
   probeTouchStart,
   readMaxTouchPoints,
   type TouchSupport,
-} from '@night-watch/browser-sdk'
-import { loadSource, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+} from '@thenightwatch/browser-sdk'
+import { loadSource, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 describe('readMaxTouchPoints / probeTouchEvent / probeTouchStart', () => {

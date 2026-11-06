@@ -11,7 +11,7 @@ import {
   omitExcludedUpstreamComponents,
   x64hash128,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')

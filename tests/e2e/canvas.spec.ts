@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { CANVAS_PRINTED_TEXT, ImageStatus } from '@night-watch/browser-sdk'
+import { CANVAS_PRINTED_TEXT, ImageStatus } from '@thenightwatch/browser-sdk'
 
 test.describe('canvas', () => {
   test('RTL host with Persian CSS does not leak into canvas probe; stable data URLs', async ({

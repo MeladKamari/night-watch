@@ -8,7 +8,7 @@ import {
   isWebKit616OrNewer,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 export type CanvasFingerprint = {
   winding: boolean

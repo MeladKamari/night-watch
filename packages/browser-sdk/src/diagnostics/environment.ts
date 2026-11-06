@@ -1,4 +1,4 @@
-import { getDocument, getNavigator, getSecureContext } from '@night-watch/core'
+import { getDocument, getNavigator, getSecureContext } from '@thenightwatch/core'
 import type { DiagnosticEnvironment } from './types.js'
 
 /**

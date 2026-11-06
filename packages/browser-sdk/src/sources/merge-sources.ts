@@ -5,7 +5,7 @@ import {
   type BuiltinSources,
   type Source,
   type UnknownSources,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { createBuiltinSources } from './builtin.js'
 
 export type MergeSourcesOptions = {

@@ -5,9 +5,9 @@
 
 ## Evidence
 ```
-pnpm --filter @night-watch/admin-console run build
+pnpm --filter @thenightwatch/admin-console run build
 # Application bundle generation complete; output apps/admin-console/dist/admin-console
-pnpm --filter @night-watch/admin-console exec vitest run
+pnpm --filter @thenightwatch/admin-console exec vitest run
 # Passed 4
 ```
 

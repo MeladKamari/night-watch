@@ -1,4 +1,4 @@
-import { getDocument, type ProbeResult } from '@night-watch/core'
+import { getDocument, type ProbeResult } from '@thenightwatch/core'
 import type { PluginDefinition } from '../types.js'
 
 /**

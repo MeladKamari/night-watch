@@ -19,7 +19,7 @@ import {
   applyIdentityScope,
   hashComponentsNamespaced,
   deriveVisitorIds,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 // Default — unsalted default-profile hash (unchanged)
 const agent = await load({ monitoring: false })

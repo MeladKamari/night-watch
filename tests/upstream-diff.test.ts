@@ -9,7 +9,7 @@ import {
   hashComponents,
   hashComponentsOmittingExcluded,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 import {
   buildUpstreamDiffReport,

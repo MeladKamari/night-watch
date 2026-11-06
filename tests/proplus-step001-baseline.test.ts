@@ -14,7 +14,7 @@ import {
   createBuiltinSources,
   hashComponents,
   type UnknownComponents,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -57,7 +57,7 @@ const golden = JSON.parse(
 describe('STEP 001 Pro+ baseline inventory', () => {
   it('enumerates all workspace SDK packages', () => {
     const names = inventory.packages.map((p) => p.name).sort()
-    expect(names).toEqual(['@night-watch/browser-sdk', '@night-watch/core', '@night-watch/playground'].sort())
+    expect(names).toEqual(['@thenightwatch/browser-sdk', '@thenightwatch/core', '@thenightwatch/playground'].sort())
   })
 
   it('enumerates all 41 Default-profile sources with IMPLEMENTED status', () => {

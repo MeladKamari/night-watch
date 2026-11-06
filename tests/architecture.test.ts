@@ -9,7 +9,7 @@ import {
   load,
   resolveNativeTypedArrays,
   type ArchitectureTypedArrays,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 describe('collectArchitecture / getArchitectureValue', () => {

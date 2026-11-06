@@ -13,7 +13,7 @@ export {
   type NightWatchSnapshot,
   type GetResult,
   type LoadOptions,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
-export const ANGULAR_PACKAGE_NAME = '@night-watch/angular' as const
+export const ANGULAR_PACKAGE_NAME = '@thenightwatch/angular' as const
 export const ANGULAR_PACKAGE_VERSION = '1.0.0' as const

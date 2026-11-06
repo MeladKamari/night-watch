@@ -1,4 +1,4 @@
-import { type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /**
  * Minimal typed-array surface for the architecture NaN probe.

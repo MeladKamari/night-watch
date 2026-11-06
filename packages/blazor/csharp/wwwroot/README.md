@@ -1,7 +1,7 @@
 # Night Watch Blazor static assets
 
-Ship the published JS from `@night-watch/blazor` (or the IIFE from
-`@night-watch/browser-sdk`) on your host, then call
+Ship the published JS from `@thenightwatch/blazor` (or the IIFE from
+`@thenightwatch/browser-sdk`) on your host, then call
 `installNightWatchBlazorGlobal()` before using `NightWatchJs`.
 
 Example in `index.html` / `App.razor`:

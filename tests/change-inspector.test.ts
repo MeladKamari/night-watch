@@ -8,7 +8,7 @@ import {
   inspectFingerprintRebuild,
   load,
   type UnknownComponents,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 function collection(

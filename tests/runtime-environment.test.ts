@@ -18,7 +18,7 @@ import {
   probeWebGlContext,
   runProbe,
   unsupported,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 describe('runtime environment guards (Node / SSR)', () => {

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { isFrameSizeNull, screenFrameCheckInterval } from '@night-watch/browser-sdk'
+import { isFrameSizeNull, screenFrameCheckInterval } from '@thenightwatch/browser-sdk'
 
 test.describe('screenFrame', () => {
   test('reads screen chrome insets; repeated reads are stable; no orphan timers after clear', async ({

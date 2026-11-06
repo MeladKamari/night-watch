@@ -1,4 +1,4 @@
-import type { GetResult, LoadAgentOptions } from '@night-watch/browser-sdk'
+import type { GetResult, LoadAgentOptions } from '@thenightwatch/browser-sdk'
 
 export type NightWatchStatus = 'idle' | 'loading' | 'ready' | 'error'
 

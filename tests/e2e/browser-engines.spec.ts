@@ -6,10 +6,10 @@ import {
   isGecko,
   isTrident,
   isWebKit,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
- * Chromium capability smoke. Full in-page `@night-watch/core` import awaits playground bundling;
+ * Chromium capability smoke. Full in-page `@thenightwatch/core` import awaits playground bundling;
  * here we assert Playwright Desktop Chrome exposes the same signature family our detectors use.
  * Node-side package calls must remain SSR-safe (false / empty).
  */

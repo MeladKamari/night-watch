@@ -9,8 +9,8 @@ import {
   isDomBlockersApplicable,
   isValueComponent,
   load,
-} from '@night-watch/browser-sdk'
-import { parseSimpleCssSelector } from '@night-watch/core'
+} from '@thenightwatch/browser-sdk'
+import { parseSimpleCssSelector } from '@thenightwatch/core'
 import { describe, expect, it, vi } from 'vitest'
 
 /**

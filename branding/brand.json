@@ -1,7 +1,7 @@
 {
   "productName": "Night Watch",
   "productCode": "night-watch",
-  "npmScope": "@night-watch",
+  "npmScope": "@thenightwatch",
   "iifeGlobal": "NightWatch",
   "assets": {
     "hero": "night-watch-hero.jpg",

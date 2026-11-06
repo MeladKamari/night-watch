@@ -9,7 +9,7 @@ import {
   toError,
   type Source,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 type Opts = { cache: Record<string, unknown> }

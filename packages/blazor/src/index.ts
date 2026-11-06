@@ -13,7 +13,7 @@ export {
   type NightWatchSnapshot,
   type GetResult,
   type LoadOptions,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
-export const BLAZOR_PACKAGE_NAME = '@night-watch/blazor' as const
+export const BLAZOR_PACKAGE_NAME = '@thenightwatch/blazor' as const
 export const BLAZOR_PACKAGE_VERSION = '1.0.0' as const

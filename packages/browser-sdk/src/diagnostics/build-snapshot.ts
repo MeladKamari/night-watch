@@ -3,7 +3,7 @@ import {
   isErrorComponent,
   isValueComponent,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { SDK_PACKAGE_VERSION } from '../package-meta.js'
 import type { GetResult } from '../types.js'
 import { collectRedactedEnvironment } from './environment.js'

@@ -6,7 +6,7 @@ import {
   transformSource,
   wait,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it, vi } from 'vitest'
 
 type Opts = { cache: Record<string, unknown>; debug?: boolean }

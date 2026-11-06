@@ -7,7 +7,7 @@ import {
   heuristicPlatformConfidenceModel,
   resolveConfidenceEnvironment,
   type Confidence,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 function platform(value: unknown) {

@@ -1,4 +1,4 @@
-import { ENABLED_SOURCES, SOURCE_MANIFEST_REVISION } from '@night-watch/core'
+import { ENABLED_SOURCES, SOURCE_MANIFEST_REVISION } from '@thenightwatch/core'
 import { flagRelativeExpensive, summarizeDurations } from './stats.js'
 import type {
   CollectTimingSample,

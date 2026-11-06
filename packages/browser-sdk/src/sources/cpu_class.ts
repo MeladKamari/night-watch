@@ -1,4 +1,4 @@
-import { getNavigator, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getNavigator, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /** Legacy IE `navigator.cpuClass` surface; absent on modern Chromium/Firefox/Safari. */
 export type NavigatorWithCpuClass = {

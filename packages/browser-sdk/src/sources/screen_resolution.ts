@@ -7,7 +7,7 @@ import {
   toInt,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /** Orientation-independent `[larger, smaller]` pair; `null` = non-finite after parse. */
 export type ScreenResolution = [number | null, number | null]

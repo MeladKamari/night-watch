@@ -7,7 +7,7 @@ import {
   isValueComponent,
   load,
   probeIndexedDB,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 describe('probeIndexedDB / getIndexedDBValue', () => {

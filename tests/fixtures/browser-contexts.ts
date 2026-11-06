@@ -1,4 +1,4 @@
-import type { BrowserContext } from '@night-watch/core'
+import type { BrowserContext } from '@thenightwatch/core'
 
 type LooseWindow = Record<string, unknown> & {
   Intl?: unknown

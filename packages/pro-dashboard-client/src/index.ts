@@ -22,5 +22,5 @@ export {
   type PrivacyExportResult,
 } from './client.js'
 
-export const DASHBOARD_CLIENT_PACKAGE_NAME = '@night-watch/dashboard-client' as const
+export const DASHBOARD_CLIENT_PACKAGE_NAME = '@thenightwatch/dashboard-client' as const
 export const DASHBOARD_CLIENT_PACKAGE_VERSION = '1.0.0' as const

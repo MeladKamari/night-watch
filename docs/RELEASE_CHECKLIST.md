@@ -1,4 +1,4 @@
-# Release checklist — `@night-watch/*` 1.0.0
+# Release checklist ï¿½ `@thenightwatch/*` 1.0.0
 
 **Authorization:** Do **not** run `npm publish`, `pnpm publish`, or push release
 tags to a remote unless a human explicitly authorizes that action.
@@ -33,7 +33,7 @@ tags to a remote unless a human explicitly authorizes that action.
 
 ## Package metadata
 
-- [ ] `@night-watch/core` and `@night-watch/browser-sdk` versions identical (`1.0.0`)
+- [ ] `@thenightwatch/core` and `@thenightwatch/browser-sdk` versions identical (`1.0.0`)
 - [ ] `LICENSE` + `NOTICE` present
 - [ ] `CHANGELOG.md` section for this version
 - [ ] `publishConfig.tag` is `next` for RC (stable later uses `latest` only when authorized)
@@ -46,7 +46,7 @@ Follow [`docs/TAG_PLAN.md`](./TAG_PLAN.md). Annotated tag only after gates pass.
 
 1. Verify registry tarball contents (no secrets, includes `dist` + LICENSE via npm files or root NOTICE copy).
 2. Smoke-install from registry into a clean project (still first-party host for IIFE).
-3. File rollback notes if yanked — [`docs/ROLLBACK.md`](./ROLLBACK.md).
+3. File rollback notes if yanked ï¿½ [`docs/ROLLBACK.md`](./ROLLBACK.md).
 
 ## Sign-off record
 

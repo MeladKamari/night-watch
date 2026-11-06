@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 
 /**
  * Browser smoke for agent load/get. Uses page.evaluate with inlined expectations
- * until the playground bundles `@night-watch/browser-sdk` for in-page import.
+ * until the playground bundles `@thenightwatch/browser-sdk` for in-page import.
  * Full collector values remain unimplemented → components may be errors; API shape must hold.
  */
 test('document environment supports fingerprint agent preconditions', async ({ page }) => {

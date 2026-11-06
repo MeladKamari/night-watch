@@ -21,7 +21,7 @@ SDK را روی دامنه ISP یا سرور داخلی خود «اول‌طرف
 یا با ESM در باندلر محلی / ورک‌اسپیس:
 
 ```ts
-import { load } from '@night-watch/browser-sdk'
+import { load } from '@thenightwatch/browser-sdk'
 
 const agent = await load({ monitoring: false })
 const { visitorId, components } = await agent.get()

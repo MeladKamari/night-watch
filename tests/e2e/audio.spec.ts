@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { SpecialFingerprint, getHash } from '@night-watch/browser-sdk'
+import { SpecialFingerprint, getHash } from '@thenightwatch/browser-sdk'
 
 test.describe('audio source', () => {
   test('Chromium OfflineAudioContext yields a finite fingerprint; no AudioContext playback', async ({

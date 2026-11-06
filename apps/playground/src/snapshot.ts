@@ -6,7 +6,7 @@ import {
   isValueComponent,
   type GetResult,
   type UnknownComponents,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { summarizeError, summarizeValue } from './format.js'
 
 export type SignalKind = 'value' | 'error'

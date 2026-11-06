@@ -32,7 +32,7 @@ import {
   load,
   loadWithResourceBudget,
   RESOURCE_BUDGETS_REVISION,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 await load({ monitoring: false }) // unchanged
 

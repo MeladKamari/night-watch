@@ -17,10 +17,10 @@
 
 | Package | Path |
 |---|---|
-| `@night-watch/contracts` | `packages/pro-contracts` |
-| `@night-watch/browser-adapter` | `packages/pro-browser-adapter` |
-| `@night-watch/server-sdk` | `packages/pro-server-sdk` |
-| `@night-watch/dashboard-client` | `packages/pro-dashboard-client` |
+| `@thenightwatch/contracts` | `packages/pro-contracts` |
+| `@thenightwatch/browser-adapter` | `packages/pro-browser-adapter` |
+| `@thenightwatch/server-sdk` | `packages/pro-server-sdk` |
+| `@thenightwatch/dashboard-client` | `packages/pro-dashboard-client` |
 
 Also: `docs/proplus-compatibility.md`, `tests/proplus-step002-packages.test.ts`, lockfile/SBOM/checksum refresh.
 
@@ -35,10 +35,10 @@ Also: `docs/proplus-compatibility.md`, `tests/proplus-step002-packages.test.ts`,
 
 ## Validation
 
-- Adapter imports `@night-watch/browser-sdk` / `@night-watch/core` and preserves `hashComponents` visitorId.
+- Adapter imports `@thenightwatch/browser-sdk` / `@thenightwatch/core` and preserves `hashComponents` visitorId.
 - Rejects mutated visitorId and `applePay` leakage.
 - Server SDK blocks vendor Fingerprint hosts.
-- Legacy packages do not depend on `@night-watch/*`.
+- Legacy packages do not depend on `@thenightwatch/*`.
 
 ## Limitations
 

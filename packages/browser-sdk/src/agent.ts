@@ -11,7 +11,7 @@ import {
   type BuiltinSourceOptions,
   type BuiltinSources,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { SDK_PACKAGE_VERSION } from './package-meta.js'
 import { mergeBuiltinSources } from './sources/merge-sources.js'
 import type { Agent, GetOptions, GetResult, LoadOptions } from './types.js'
@@ -125,7 +125,7 @@ export type LoadAgentOptions = Readonly<
 /**
  * Loads the fingerprinting agent: optional idle wait, start collectors, return Agent.
  * SSR-safe to **import**; calling `load()` without a browser throws
- * {@link import('@night-watch/core').UnsupportedEnvironmentError} unless test overrides apply.
+ * {@link import('@thenightwatch/core').UnsupportedEnvironmentError} unless test overrides apply.
  */
 export async function load(options: LoadAgentOptions = {}): Promise<Agent> {
   const delayFallback = options.delayFallback ?? DEFAULT_DELAY_FALLBACK_MS

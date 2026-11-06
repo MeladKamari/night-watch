@@ -35,7 +35,7 @@ export type EncryptionDesign = {
 
 /**
  * Optional future evidence payload shape (design).
- * Must not be posted by `@night-watch/browser-sdk` unless a separately versioned
+ * Must not be posted by `@thenightwatch/browser-sdk` unless a separately versioned
  * package is explicitly adopted later.
  */
 export type ConsentedEvidencePayloadDesign = {
@@ -97,7 +97,7 @@ export const FIRST_PARTY_SERVER_INTEGRATION_DESIGN: FirstPartyServerIntegrationD
     slaNote: 'Deployer-defined; design requires acknowledgment + purge receipt',
   },
   notes: [
-    'Design-only (step 71). No fetch/XHR/WebSocket client is registered in @night-watch/browser-sdk.',
+    'Design-only (step 71). No fetch/XHR/WebSocket client is registered in @thenightwatch/browser-sdk.',
     'Optional local ingestion must be first-party only.',
     'Default load() never contacts a server.',
   ],

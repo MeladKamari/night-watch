@@ -12,7 +12,7 @@ import {
   type BuiltinSourceOptions,
   type BuiltinSources,
   type Source,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 type Opts = BuiltinSourceOptions
@@ -124,7 +124,7 @@ describe('agent lifecycle', () => {
   })
 
   it('default export exposes load/hashComponents/componentsToDebugString', async () => {
-    const mod = await import('@night-watch/browser-sdk')
+    const mod = await import('@thenightwatch/browser-sdk')
     expect(typeof mod.default.load).toBe('function')
     expect(typeof mod.default.hashComponents).toBe('function')
     expect(typeof mod.default.componentsToDebugString).toBe('function')

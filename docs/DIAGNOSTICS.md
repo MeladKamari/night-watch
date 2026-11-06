@@ -27,7 +27,7 @@ import {
   exportDiagnosticSnapshot,
   validateDiagnosticSnapshot,
   hashReproSeed,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 await load({ monitoring: false }) // unchanged
 

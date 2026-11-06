@@ -1,4 +1,4 @@
-import { isErrorComponent, isValueComponent, type Component } from '@night-watch/core'
+import { isErrorComponent, isValueComponent, type Component } from '@thenightwatch/core'
 import { redactDeep, redactErrorForDiagnostics } from '../diagnostics/redact.js'
 
 export function armOf(component: Component<unknown> | undefined): 'value' | 'error' | 'missing' {

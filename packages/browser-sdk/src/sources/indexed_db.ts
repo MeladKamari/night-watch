@@ -4,7 +4,7 @@ import {
   isTrident,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /** Minimal window surface for IndexedDB existence probe. */
 export type WindowWithIndexedDB = {

@@ -31,6 +31,7 @@ artifacts/
 cursor/
 *.nupkg
 .pnpm-store/
+scripts/release/.last-version
 
 apps/playground/dist-web/
 

@@ -8,9 +8,9 @@
 
 | Topic | Upstream OSS | This SDK (`@night-watch`) |
 |---|---|---|
-| Package | `@fingerprintjs/fingerprintjs` | `@night-watch/browser-sdk` (+ `@night-watch/core`) |
+| Package | `@fingerprintjs/fingerprintjs` | `@thenightwatch/browser-sdk` (+ `@thenightwatch/core`) |
 | Global | `FingerprintJS` | `NightWatch` |
-| Sources | 42 builtins | **41** — `applePay` excluded |
+| Sources | 42 builtins | **41** ï¿½ `applePay` excluded |
 | `monitoring` | May beacon | Default **false**; always no-op here |
 | Raw `visitorId` | Includes all 42 | **Not** expected to equal upstream raw ID |
 | Filtered hash | Omit `applePay` then hash | Can match when components match (see step 58 report) |
@@ -24,7 +24,7 @@ const fp = await FingerprintJS.load()
 const r = await fp.get()
 
 // After
-import { load } from '@night-watch/browser-sdk'
+import { load } from '@thenightwatch/browser-sdk'
 const fp = await load({ monitoring: false })
 const r = await fp.get()
 ```
@@ -57,7 +57,7 @@ IIFE:
 Announce breaks in release notes. Do **not** claim bit-for-bit continuity across
 manifest revisions.
 
-## From an older `@ibf` / pre–Night Watch pre-release
+## From an older `@ibf` / preï¿½Night Watch pre-release
 
 1. Diff `ENABLED_SOURCES` and `ALGORITHM_SCHEMA`.
 2. Re-run consented differential / stability reports if you store visitorIds.

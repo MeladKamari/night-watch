@@ -30,7 +30,7 @@ import {
   createPersianFontProbePlugin,
   resolvePlugins,
   PLUGIN_SDK_REVISION,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 // Default path — unchanged
 await load({ monitoring: false })

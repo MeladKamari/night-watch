@@ -1,4 +1,4 @@
-import { ENABLED_SOURCES, ENABLED_SOURCE_COUNT } from '@night-watch/core'
+import { ENABLED_SOURCES, ENABLED_SOURCE_COUNT } from '@thenightwatch/core'
 import {
   SOURCE_CATEGORIES,
   sourcesInCategories,

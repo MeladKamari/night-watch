@@ -9,7 +9,7 @@ export {
   type NightWatchSnapshot,
   type GetResult,
   type LoadOptions,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
-export const REACT_PACKAGE_NAME = '@night-watch/react' as const
+export const REACT_PACKAGE_NAME = '@thenightwatch/react' as const
 export const REACT_PACKAGE_VERSION = '1.0.0' as const

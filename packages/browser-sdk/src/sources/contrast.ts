@@ -1,4 +1,4 @@
-import { getMatchMedia, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getMatchMedia, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /**
  * Stable numeric codes for `prefers-contrast` (FingerprintJS OSS v5.3.0).

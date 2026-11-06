@@ -9,7 +9,7 @@ import {
   isInIframe,
   parseSimpleCssSelector,
   withIframe,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 describe('parseSimpleCssSelector', () => {

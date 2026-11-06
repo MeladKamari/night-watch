@@ -6,7 +6,7 @@
 - Console auth: login/logout/me (session + CSRF)
 - Management: keys (list/create/revoke/rotate), cases, rules (get/simulate/publish/rollback), webhooks (list/create/rotate/deliveries/replay), projects (list/create/patch), audit, usage
 - Public keys default scope `collect:ingest`
-- `@night-watch/dashboard-client` covers the above
+- `@thenightwatch/dashboard-client` covers the above
 - `ConsoleAuthAndManagementTests` covers revoke + rules publish + webhooks + projects + audit
 
 ## Admin console

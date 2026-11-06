@@ -1159,217 +1159,217 @@
     },
     {
       "type": "library",
-      "name": "@night-watch/admin-console",
+      "name": "@thenightwatch/admin-console",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fadmin-console@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/angular",
+      "name": "@thenightwatch/angular",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fangular@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/angular",
+      "name": "@thenightwatch/angular",
       "version": "link:packages/angular",
       "purl": "pkg:npm/@night-watch%2Fangular@link:packages/angular"
     },
     {
       "type": "library",
-      "name": "@night-watch/blazor",
+      "name": "@thenightwatch/blazor",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fblazor@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/blazor",
+      "name": "@thenightwatch/blazor",
       "version": "link:packages/blazor",
       "purl": "pkg:npm/@night-watch%2Fblazor@link:packages/blazor"
     },
     {
       "type": "library",
-      "name": "@night-watch/browser-adapter",
+      "name": "@thenightwatch/browser-adapter",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fbrowser-adapter@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/browser-adapter",
+      "name": "@thenightwatch/browser-adapter",
       "version": "link:../pro-browser-adapter",
       "purl": "pkg:npm/@night-watch%2Fbrowser-adapter@link:../pro-browser-adapter"
     },
     {
       "type": "library",
-      "name": "@night-watch/browser-adapter",
+      "name": "@thenightwatch/browser-adapter",
       "version": "link:packages/pro-browser-adapter",
       "purl": "pkg:npm/@night-watch%2Fbrowser-adapter@link:packages/pro-browser-adapter"
     },
     {
       "type": "library",
-      "name": "@night-watch/browser-sdk",
+      "name": "@thenightwatch/browser-sdk",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fbrowser-sdk@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/browser-sdk",
+      "name": "@thenightwatch/browser-sdk",
       "version": "link:../../packages/browser-sdk",
       "purl": "pkg:npm/@night-watch%2Fbrowser-sdk@link:../../packages/browser-sdk"
     },
     {
       "type": "library",
-      "name": "@night-watch/browser-sdk",
+      "name": "@thenightwatch/browser-sdk",
       "version": "link:../browser-sdk",
       "purl": "pkg:npm/@night-watch%2Fbrowser-sdk@link:../browser-sdk"
     },
     {
       "type": "library",
-      "name": "@night-watch/browser-sdk",
+      "name": "@thenightwatch/browser-sdk",
       "version": "link:packages/browser-sdk",
       "purl": "pkg:npm/@night-watch%2Fbrowser-sdk@link:packages/browser-sdk"
     },
     {
       "type": "library",
-      "name": "@night-watch/contracts",
+      "name": "@thenightwatch/contracts",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fcontracts@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/contracts",
+      "name": "@thenightwatch/contracts",
       "version": "link:../pro-contracts",
       "purl": "pkg:npm/@night-watch%2Fcontracts@link:../pro-contracts"
     },
     {
       "type": "library",
-      "name": "@night-watch/contracts",
+      "name": "@thenightwatch/contracts",
       "version": "link:packages/pro-contracts",
       "purl": "pkg:npm/@night-watch%2Fcontracts@link:packages/pro-contracts"
     },
     {
       "type": "library",
-      "name": "@night-watch/core",
+      "name": "@thenightwatch/core",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fcore@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/core",
+      "name": "@thenightwatch/core",
       "version": "link:../../packages/core",
       "purl": "pkg:npm/@night-watch%2Fcore@link:../../packages/core"
     },
     {
       "type": "library",
-      "name": "@night-watch/core",
+      "name": "@thenightwatch/core",
       "version": "link:../core",
       "purl": "pkg:npm/@night-watch%2Fcore@link:../core"
     },
     {
       "type": "library",
-      "name": "@night-watch/core",
+      "name": "@thenightwatch/core",
       "version": "link:packages/core",
       "purl": "pkg:npm/@night-watch%2Fcore@link:packages/core"
     },
     {
       "type": "library",
-      "name": "@night-watch/dashboard-client",
+      "name": "@thenightwatch/dashboard-client",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fdashboard-client@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/dashboard-client",
+      "name": "@thenightwatch/dashboard-client",
       "version": "link:../../packages/pro-dashboard-client",
       "purl": "pkg:npm/@night-watch%2Fdashboard-client@link:../../packages/pro-dashboard-client"
     },
     {
       "type": "library",
-      "name": "@night-watch/dashboard-client",
+      "name": "@thenightwatch/dashboard-client",
       "version": "link:packages/pro-dashboard-client",
       "purl": "pkg:npm/@night-watch%2Fdashboard-client@link:packages/pro-dashboard-client"
     },
     {
       "type": "library",
-      "name": "@night-watch/playground",
+      "name": "@thenightwatch/playground",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fplayground@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/preact",
+      "name": "@thenightwatch/preact",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fpreact@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/preact",
+      "name": "@thenightwatch/preact",
       "version": "link:packages/preact",
       "purl": "pkg:npm/@night-watch%2Fpreact@link:packages/preact"
     },
     {
       "type": "library",
-      "name": "@night-watch/react",
+      "name": "@thenightwatch/react",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Freact@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/react",
+      "name": "@thenightwatch/react",
       "version": "link:packages/react",
       "purl": "pkg:npm/@night-watch%2Freact@link:packages/react"
     },
     {
       "type": "library",
-      "name": "@night-watch/server-sdk",
+      "name": "@thenightwatch/server-sdk",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fserver-sdk@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/server-sdk",
+      "name": "@thenightwatch/server-sdk",
       "version": "link:packages/pro-server-sdk",
       "purl": "pkg:npm/@night-watch%2Fserver-sdk@link:packages/pro-server-sdk"
     },
     {
       "type": "library",
-      "name": "@night-watch/vanilla",
+      "name": "@thenightwatch/vanilla",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fvanilla@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/vanilla",
+      "name": "@thenightwatch/vanilla",
       "version": "link:../vanilla",
       "purl": "pkg:npm/@night-watch%2Fvanilla@link:../vanilla"
     },
     {
       "type": "library",
-      "name": "@night-watch/vanilla",
+      "name": "@thenightwatch/vanilla",
       "version": "link:packages/vanilla",
       "purl": "pkg:npm/@night-watch%2Fvanilla@link:packages/vanilla"
     },
     {
       "type": "library",
-      "name": "@night-watch/vue",
+      "name": "@thenightwatch/vue",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fvue@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/vue",
+      "name": "@thenightwatch/vue",
       "version": "link:packages/vue",
       "purl": "pkg:npm/@night-watch%2Fvue@link:packages/vue"
     },
     {
       "type": "library",
-      "name": "@night-watch/web-agent",
+      "name": "@thenightwatch/web-agent",
       "version": "1.0.0",
       "purl": "pkg:npm/@night-watch%2Fweb-agent@1.0.0"
     },
     {
       "type": "library",
-      "name": "@night-watch/web-agent",
+      "name": "@thenightwatch/web-agent",
       "version": "link:packages/pro-web-agent",
       "purl": "pkg:npm/@night-watch%2Fweb-agent@link:packages/pro-web-agent"
     },

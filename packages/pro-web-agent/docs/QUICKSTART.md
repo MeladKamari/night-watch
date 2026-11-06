@@ -1,16 +1,16 @@
-# @night-watch/web-agent quickstart (Self-hosted-party)
+# @thenightwatch/web-agent quickstart (Self-hosted-party)
 
 ## Install
 
 ```bash
-pnpm add @night-watch/web-agent @night-watch/browser-sdk
+pnpm add @thenightwatch/web-agent @thenightwatch/browser-sdk
 # or local tarball / internal registry
 ```
 
 ## Minimal browser usage
 
 ```ts
-import { createProWebAgent, BrowserCollectionPolicy, FirstPartyTransport } from '@night-watch/web-agent'
+import { createProWebAgent, BrowserCollectionPolicy, FirstPartyTransport } from '@thenightwatch/web-agent'
 
 const policy = new BrowserCollectionPolicy()
 policy.configure({
@@ -29,7 +29,7 @@ const agent = createProWebAgent({
 
 await agent.start()
 const data = await agent.identify()
-// visitorId is deterministic from @night-watch/browser-sdk (41 sources). Decisions are server-side only.
+// visitorId is deterministic from @thenightwatch/browser-sdk (41 sources). Decisions are server-side only.
 ```
 
 ## Transport

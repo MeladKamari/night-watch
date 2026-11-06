@@ -1,10 +1,10 @@
-import type { CollectionMode } from '@night-watch/contracts'
+import type { CollectionMode } from '@thenightwatch/contracts'
 import {
   adaptGetResultToObservation,
   type AdaptGetResultOptions,
 } from './adapt.js'
-import type { GetResult } from '@night-watch/browser-sdk'
-import { hashComponents, type UnknownComponents } from '@night-watch/core'
+import type { GetResult } from '@thenightwatch/browser-sdk'
+import { hashComponents, type UnknownComponents } from '@thenightwatch/core'
 
 export type ProPlusBridgeOptions = AdaptGetResultOptions & {
   mode: CollectionMode

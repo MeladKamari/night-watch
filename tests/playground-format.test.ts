@@ -12,7 +12,7 @@ import {
   snapshotToCopyJson,
   type PlaygroundSnapshot,
 } from '../apps/playground/src/snapshot.js'
-import type { GetResult } from '@night-watch/browser-sdk'
+import type { GetResult } from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 function sampleSnapshot(overrides: Partial<PlaygroundSnapshot> = {}): PlaygroundSnapshot {

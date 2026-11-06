@@ -1,4 +1,4 @@
-import { getWindow, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getWindow, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /** Legacy WebSQL `openDatabase` (removed from modern Chromium; may exist on older WebKit). */
 export type WindowWithOpenDatabase = {

@@ -18,14 +18,14 @@ import type {
   SourcesToComponents,
   UnknownComponents,
   UnknownSources,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import {
   ALGORITHM_SCHEMA,
   APPLE_PAY_EXCLUDED,
   ENABLED_SOURCES,
   isErrorComponent,
   isValueComponent,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import type {
   Agent,
   BrowserSdkDefaultExport,
@@ -35,7 +35,7 @@ import type {
   HashComponents,
   Load,
   LoadOptions,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 export type PublicCoreTypes = {
   MaybePromise: MaybePromise<string>

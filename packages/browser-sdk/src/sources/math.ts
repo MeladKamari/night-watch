@@ -1,4 +1,4 @@
-import { type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /** Fallback when a native Math method is missing (older engines). */
 const fallbackFn = (): number => 0

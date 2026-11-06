@@ -5,7 +5,7 @@ import {
   UnsupportedEnvironmentError,
   getFontPreferences,
   normalizeFontMeasurement,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 test.describe('fontPreferences', () => {
   test('Node getFontPreferences does not invent widths', async () => {

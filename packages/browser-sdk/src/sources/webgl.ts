@@ -5,7 +5,7 @@ import {
   isWebKit,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /** WebGL context is not available. */
 export const STATUS_NO_GL_CONTEXT = -1

@@ -41,7 +41,7 @@ const terserPlugin = terser({
 /**
  * Browser-sdk publish bundles (step 56).
  * - IIFE/UMD: dependencies inlined for self-hosted script-tag / offline use.
- * - ESM/CJS npm: `@night-watch/core` left external for tree-shaking / dual-package installs.
+ * - ESM/CJS npm: `@thenightwatch/core` left external for tree-shaking / dual-package installs.
  * Readable + minified where applicable. Sourcemaps always emitted (publication policy).
  */
 export default defineConfig([

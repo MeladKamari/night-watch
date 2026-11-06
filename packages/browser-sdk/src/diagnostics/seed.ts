@@ -1,4 +1,4 @@
-import { x64hash128 } from '@night-watch/core'
+import { x64hash128 } from '@thenightwatch/core'
 import { DiagnosticsError } from './errors.js'
 
 /**

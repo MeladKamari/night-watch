@@ -1,4 +1,4 @@
-import { load, type GetResult, type LoadOptions } from '@night-watch/browser-sdk'
+import { load, type GetResult, type LoadOptions } from '@thenightwatch/browser-sdk'
 
 export type CollectOptions = {
   /** Idle fallback ms; playground default matches SDK (50). */

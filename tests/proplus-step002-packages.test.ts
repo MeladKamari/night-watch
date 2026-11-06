@@ -4,7 +4,7 @@ import {
   SOURCE_MANIFEST_REVISION,
   hashComponents,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import {
   IDENTITY_ALGORITHM_VERSION,
   NPM_SCOPE,
@@ -13,20 +13,20 @@ import {
   knownEvidence,
   notApplicableNativeOnly,
   unknownEvidence,
-} from '@night-watch/contracts'
+} from '@thenightwatch/contracts'
 import {
   adaptGetResultToObservation,
   expectedLegacySourceCount,
-} from '@night-watch/browser-adapter'
+} from '@thenightwatch/browser-adapter'
 import {
   ProPlusServerSdk,
   ProPlusServerSdkError,
   placeholderUnknownServerVisitor,
-} from '@night-watch/server-sdk'
+} from '@thenightwatch/server-sdk'
 import {
   ProPlusDashboardClient,
   ProPlusDashboardClientError,
-} from '@night-watch/dashboard-client'
+} from '@thenightwatch/dashboard-client'
 import { describe, expect, it } from 'vitest'
 
 function syntheticGetResult(components: UnknownComponents, version = '1.0.0') {
@@ -42,7 +42,7 @@ describe('STEP 002 Pro+ namespace and packages', () => {
   it('uses an independent product name and npm scope (no vendor branding)', () => {
     expect(PRODUCT_NAME).toBe('Night Watch')
     expect(PRODUCT_CODE).toBe('night-watch')
-    expect(NPM_SCOPE).toBe('@night-watch')
+    expect(NPM_SCOPE).toBe('@thenightwatch')
     expect(IDENTITY_ALGORITHM_VERSION).toBe('night-watch-identity-v0')
     expect(PRODUCT_NAME.toLowerCase()).not.toContain('fingerprint')
     expect(NPM_SCOPE).not.toContain('fingerprint')

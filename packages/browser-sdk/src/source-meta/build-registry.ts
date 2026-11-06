@@ -3,7 +3,7 @@ import {
   ENABLED_SOURCES,
   ENABLED_SOURCE_COUNT,
   type EnabledSourceName,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { categoryForSource } from '../policy/categories.js'
 import { SOURCE_RELIABILITY_TIERS } from '../profiles/tiers.js'
 import {

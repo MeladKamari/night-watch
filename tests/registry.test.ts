@@ -11,7 +11,7 @@ import {
   UPSTREAM_SOURCE_COUNT,
   assertDefaultRegistryInvariants,
   listEnabledSources,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { describe, expect, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')

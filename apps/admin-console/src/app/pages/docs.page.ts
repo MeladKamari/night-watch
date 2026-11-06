@@ -24,7 +24,7 @@ export class DocsPage {
     const kind = route.snapshot.data['kind'] as string
     if (kind === 'wrappers') {
       this.title = 'Browser framework wrappers'
-      this.blurb = 'Angular / React / Vue / Next client-only loaders share @night-watch/web-agent.'
+      this.blurb = 'Angular / React / Vue / Next client-only loaders share @thenightwatch/web-agent.'
       this.items = ['SSR guard', 'No decision authority in frontend', 'Step-up UI consumes server action only']
     } else if (kind === 'deploy') {
       this.title = 'Enterprise first-party deployment'
@@ -40,7 +40,7 @@ export class DocsPage {
       ]
     } else {
       this.title = 'Public API & SDKs'
-      this.blurb = 'Contracts from @night-watch/contracts; management APIs require console session + CSRF.'
+      this.blurb = 'Contracts from @thenightwatch/contracts; management APIs require console session + CSRF.'
       this.items = [
         '/v1/identify',
         '/v1/observations',

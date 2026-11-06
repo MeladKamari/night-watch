@@ -8,7 +8,7 @@ export const CSP_RECOMMENDATIONS = {
   workerSrc: ["'self'", 'blob:'],
   objectSrc: ["'none'"],
   notes: [
-    'No eval or new Function in @night-watch/web-agent',
+    'No eval or new Function in @thenightwatch/web-agent',
     'No unsafe-inline requirement',
     'First-party connect-src only by default',
     'Integrity-pin script tags when serving IIFE/UMD from first-party origin',

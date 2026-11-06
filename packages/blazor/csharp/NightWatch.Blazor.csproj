@@ -7,15 +7,26 @@
     <AssemblyName>NightWatch.Blazor</AssemblyName>
     <Description>Night Watch Blazor JS interop helpers for visitor identification.</Description>
     <PackageId>NightWatch.Blazor</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Night Watch</Authors>
+    <Company>Night Watch</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/MeladKamari/night-watch</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MeladKamari/night-watch</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>blazor;fingerprint;visitor-id;night-watch;wasm</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <IsPackable>true</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>

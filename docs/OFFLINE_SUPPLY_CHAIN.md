@@ -25,7 +25,7 @@ Commit `pnpm-lock.yaml`. CI should fail on lockfile drift.
 
 ## npm provenance (guidance)
 
-When publishing `@night-watch/*` with human authorization:
+When publishing `@thenightwatch/*` with human authorization:
 
 - Prefer npm provenance / OIDC-signed publishes from CI.
 - Publish with `publishConfig.tag` (`next` for RC) as already configured.

@@ -8,7 +8,7 @@
 
 | Area | Contract | Status | Evidence |
 |---|---|---|---|
-| Monorepo / SSR-safe import | Node import of `@night-watch/*` without DOM | `PASS_UNIT` | `tests/ssr-import.test.ts`; Playwright smoke |
+| Monorepo / SSR-safe import | Node import of `@thenightwatch/*` without DOM | `PASS_UNIT` | `tests/ssr-import.test.ts`; Playwright smoke |
 | DOM / iframe isolation | Offscreen iframe; cleanup; CSS/CSP-safe styles; abort/timeout | `PASS_UNIT` + `PASS_BROWSER` | `tests/dom-utils.test.ts`; `tests/e2e/dom-iframe.spec.ts`; D-015 |
 | Browser engine detectors | Capability signatures; SSR-safe; confidence wiring | `PASS_UNIT` + `PASS_BROWSER` | `tests/browser-engines.test.ts`; `tests/e2e/browser-engines.spec.ts` (Chromium); WebKit/Gecko/Android matrix `NOT_RUN` until step 57 |
 | Runtime probes | On-demand globals; unsupported/blocked/error | `PASS_UNIT` + `PASS_BROWSER` | `tests/runtime-environment.test.ts`; `tests/e2e/runtime-probes.spec.ts` |
@@ -18,7 +18,7 @@
 | Canonicalization + MurmurHash3 | Sorted keys; escapes; duration excluded; x64 128 | `PASS_UNIT` | `tests/hash.test.ts`; golden vectors |
 | Filtered hash (omit applePay) | Harness omits excluded key before hash | `PASS_UNIT` + `PASS_BROWSER` | `hashComponentsOmittingExcluded`; `tests/upstream-diff.test.ts`; `tests/e2e/upstream-diff.spec.ts`; D-061 |
 | Upstream differential (41 sources) | Consented dual-run vs v5.3.0; classify mismatches; no raw ID gate | `PASS_UNIT` + `PASS_BROWSER` | `reference/upstream-diff-report.*`; ADR-069 |
-| Source registry (41 names, order) | Match `ENABLED_SOURCES`; no `applePay` | `PASS_UNIT` | `@night-watch/core` + `tests/registry.test.ts` + baseline mjs |
+| Source registry (41 names, order) | Match `ENABLED_SOURCES`; no `applePay` | `PASS_UNIT` | `@thenightwatch/core` + `tests/registry.test.ts` + baseline mjs |
 | Excluded `applePay` | Absent from types/registry/bundles | `DEVIATION_APPROVED` + `PASS_UNIT` | D-001; `AssertApplePayExcluded`; type tests |
 | Public API **types** | `Load`/`Agent`/`GetResult`/helpers | `PASS_UNIT` | `packages/*/src/types.ts`; `tests/public-contracts.test.ts` |
 | Public API **runtime** | `load`/`get`/`hashComponents`/`componentsToDebugString` | `PASS_UNIT` | `tests/agent.test.ts`; default export |

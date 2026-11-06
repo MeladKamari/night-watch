@@ -134,17 +134,17 @@ describe('publish bundles (step 56)', () => {
       cdn: null
       sideEffects: boolean
       resolutions: {
-        '@night-watch/browser-sdk': Record<string, string>
-        '@night-watch/core': Record<string, string>
+        '@thenightwatch/browser-sdk': Record<string, string>
+        '@thenightwatch/core': Record<string, string>
       }
     }
     expect(fixture.offline).toBe(true)
     expect(fixture.cdn).toBeNull()
     expect(fixture.sideEffects).toBe(false)
-    for (const rel of Object.values(fixture.resolutions['@night-watch/browser-sdk'])) {
+    for (const rel of Object.values(fixture.resolutions['@thenightwatch/browser-sdk'])) {
       expect(existsSync(join(root, rel)), rel).toBe(true)
     }
-    for (const rel of Object.values(fixture.resolutions['@night-watch/core'])) {
+    for (const rel of Object.values(fixture.resolutions['@thenightwatch/core'])) {
       expect(existsSync(join(root, rel)), rel).toBe(true)
     }
   })
@@ -197,7 +197,7 @@ describe('publish bundles (step 56)', () => {
 
   it('SSR import of published modular entry still works under Node', async () => {
     const sdk = await import(pathToFileURL(join(root, 'packages/browser-sdk/dist/index.js')).href)
-    expect(sdk.SDK_PACKAGE_NAME).toBe('@night-watch/browser-sdk')
+    expect(sdk.SDK_PACKAGE_NAME).toBe('@thenightwatch/browser-sdk')
     expect(sdk.listEnabledSources()).toHaveLength(41)
   })
 })

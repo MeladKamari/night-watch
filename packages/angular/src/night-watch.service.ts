@@ -6,7 +6,7 @@ import {
   type NightWatchClient,
   type NightWatchClientOptions,
   type NightWatchSnapshot,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
 export const NIGHT_WATCH_OPTIONS = new InjectionToken<NightWatchClientOptions>(
   'NIGHT_WATCH_OPTIONS',

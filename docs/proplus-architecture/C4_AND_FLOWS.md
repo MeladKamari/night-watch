@@ -24,8 +24,8 @@ External systems: none required at runtime. Optional offline IP/intelligence **b
 ```mermaid
 flowchart TB
   subgraph Browser
-    Legacy["@night-watch/browser-sdk<br/>41 sources / local visitorId"]
-    Adapter["@night-watch/browser-adapter"]
+    Legacy["@thenightwatch/browser-sdk<br/>41 sources / local visitorId"]
+    Adapter["@thenightwatch/browser-adapter"]
     Legacy --> Adapter
   end
   subgraph Edge

@@ -1,4 +1,4 @@
-import { getNavigator, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getNavigator, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /**
  * `navigator.pdfViewerEnabled` surface (Chromium ≥94, Firefox ≥99, Safari ≥16.4).

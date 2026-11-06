@@ -3,7 +3,7 @@ import {
   createNightWatchClient,
   type NightWatchClientOptions,
   type NightWatchSnapshot,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
 export type UseVisitorDataOptions = NightWatchClientOptions & {
   enabled?: boolean
@@ -13,7 +13,7 @@ export type UseVisitorDataResult = NightWatchSnapshot & {
   refresh: () => Promise<void>
 }
 
-/** Preact hook mirroring `@night-watch/react`'s `useVisitorData`. */
+/** Preact hook mirroring `@thenightwatch/react`'s `useVisitorData`. */
 export function useVisitorData(options: UseVisitorDataOptions = {}): UseVisitorDataResult {
   const { enabled = true, ...clientOptions } = options
   const optionsKey = JSON.stringify(clientOptions)

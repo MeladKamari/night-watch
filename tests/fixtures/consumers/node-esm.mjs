@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url'
 const root = join(dirname(fileURLToPath(import.meta.url)), '../../..')
 const require = createRequire(import.meta.url)
 
-const modular = await import('@night-watch/browser-sdk')
+const modular = await import('@thenightwatch/browser-sdk')
 if (modular.SOURCE_MANIFEST_REVISION !== 'default-v1') {
   throw new Error('modular import: bad manifest')
 }

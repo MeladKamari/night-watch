@@ -1,4 +1,4 @@
-import { ENABLED_SOURCES, ENABLED_SOURCE_COUNT, type EnabledSourceName } from '@night-watch/core'
+import { ENABLED_SOURCES, ENABLED_SOURCE_COUNT, type EnabledSourceName } from '@thenightwatch/core'
 import { SOURCE_RELIABILITY_TIERS, tierAtMost } from './tiers.js'
 import {
   RELIABILITY_PROFILES_REVISION,

@@ -11,9 +11,9 @@ This document freezes what Pro+ must treat as immutable until an explicit adapte
 | Item | Value |
 |---|---|
 | Root package | `independent-browser-fingerprint@1.0.0` |
-| Core | `@night-watch/core@1.0.0` |
-| Browser SDK | `@night-watch/browser-sdk@1.0.0` |
-| Playground | `@night-watch/playground@1.0.0` (private) |
+| Core | `@thenightwatch/core@1.0.0` |
+| Browser SDK | `@thenightwatch/browser-sdk@1.0.0` |
+| Playground | `@thenightwatch/playground@1.0.0` (private) |
 | Tooling | pnpm 12.15.0 workspace, TypeScript 5.8, Vitest, Playwright |
 | Network default | No runtime vendor CDN / telemetry (`monitoring` is a no-op) |
 
@@ -74,7 +74,7 @@ Stable extension points (must not rewrite legacy defaults):
 
 | Claim (docs/PROGRESS.md) | Evidence this audit |
 |---|---|
-| Steps 01–73 PASS | Source tree contains foundations, 41 collectors, bundles, CI guards, optional enhancements 63–73 |
+| Steps 01ï¿½73 PASS | Source tree contains foundations, 41 collectors, bundles, CI guards, optional enhancements 63ï¿½73 |
 | 529 Vitest tests | Re-run: **529 passed** |
 | applePay excluded | Registry + CI guard PASS |
 | Server integration | Design-only (`docs/SERVER_INTEGRATION_DESIGN.md`); no runtime client |

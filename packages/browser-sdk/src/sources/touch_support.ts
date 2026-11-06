@@ -5,7 +5,7 @@ import {
   toInt,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * Observable touch-capability signals.

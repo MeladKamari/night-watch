@@ -6,8 +6,8 @@ import { describe, expect, it } from 'vitest'
  * touch browser globals or throw.
  */
 describe('SSR-safe package imports', () => {
-  it('imports @night-watch/core under Node without DOM access', async () => {
-    const core = await import('@night-watch/core')
+  it('imports @thenightwatch/core under Node without DOM access', async () => {
+    const core = await import('@thenightwatch/core')
     expect(core.SOURCE_MANIFEST_REVISION).toBe('default-v1')
     expect(core.ENABLED_SOURCE_COUNT).toBe(41)
     expect(core.ENABLED_SOURCES).not.toContain('applePay')
@@ -27,9 +27,9 @@ describe('SSR-safe package imports', () => {
     await expect(core.requestIdleCallbackIfAvailable(1, 1)).resolves.toBeUndefined()
   })
 
-  it('imports @night-watch/browser-sdk under Node without DOM access', async () => {
-    const sdk = await import('@night-watch/browser-sdk')
-    expect(sdk.SDK_PACKAGE_NAME).toBe('@night-watch/browser-sdk')
+  it('imports @thenightwatch/browser-sdk under Node without DOM access', async () => {
+    const sdk = await import('@thenightwatch/browser-sdk')
+    expect(sdk.SDK_PACKAGE_NAME).toBe('@thenightwatch/browser-sdk')
     expect(sdk.SDK_PACKAGE_VERSION).toBe('1.0.0')
     expect(sdk.SOURCE_MANIFEST_REVISION).toBe('default-v1')
     expect(sdk.listEnabledSources()).toHaveLength(41)

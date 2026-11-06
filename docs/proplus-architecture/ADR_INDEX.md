@@ -7,7 +7,7 @@ Legacy browser ADRs remain in `docs/DECISIONS.md` (ADR-001…). ProPlus platform
 ## ADR-P001 — Independent product namespace `@night-watch`
 
 - **Status:** Accepted (STEP 002)
-- **Decision:** Ship ProPlus under `@night-watch/*` / product code `night-watch`, separate from `@night-watch/*` legacy SDK.
+- **Decision:** Ship ProPlus under `@thenightwatch/*` / product code `night-watch`, separate from `@thenightwatch/*` legacy SDK.
 - **Why:** Prevent marketing/API collision with Fingerprint Pro; keep additive imports.
 - **Consequences:** Two identity planes; compatibility doc required.
 
@@ -17,7 +17,7 @@ Legacy browser ADRs remain in `docs/DECISIONS.md` (ADR-001…). ProPlus platform
 - **Decision:** Implement ingestion, identity, risk, management APIs as an ASP.NET Core modular monolith (target .NET 10 LTS when toolchain available; otherwise current LTS installed locally).
 - **Why:** Strong typing, first-class DI, OpenAPI, mature auth/middleware, excellent Windows/Linux on-prem fit for Iran DC/air-gap; team path already Rider/.NET-oriented (`RiderProjects`).
 - **Alternatives considered:** Node NestJS (rejected: split stack duplication with future C# preference); multiple microservices day-one (rejected: ops cost before measurement).
-- **Consequences:** C# solution under `server/`; TypeScript `@night-watch/server-sdk` remains a thin client.
+- **Consequences:** C# solution under `server/`; TypeScript `@thenightwatch/server-sdk` remains a thin client.
 
 ## ADR-P003 — PostgreSQL as system of record
 
@@ -61,4 +61,4 @@ Legacy browser ADRs remain in `docs/DECISIONS.md` (ADR-001…). ProPlus platform
 - **Status:** Accepted (direction); UI app not bootstrapped until phase 07
 - **Decision:** Dashboard uses Angular + PrimeNG with Persian RTL / English.
 - **Why:** Enterprise table/form density; RTL support; matches roadmap.
-- **Consequences:** `@night-watch/dashboard-client` precedes the Angular app.
+- **Consequences:** `@thenightwatch/dashboard-client` precedes the Angular app.

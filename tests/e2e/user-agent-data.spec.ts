@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { collectUserAgentData, isGreaseBrand } from '@night-watch/browser-sdk'
+import { collectUserAgentData, isGreaseBrand } from '@thenightwatch/browser-sdk'
 
 test.describe('userAgentData (UA-CH)', () => {
   test('Desktop Chromium exposes UA-CH on HTTPS; GREASE brands are stripped', async ({ page }) => {

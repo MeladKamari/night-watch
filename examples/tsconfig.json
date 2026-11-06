@@ -10,8 +10,8 @@
     "skipLibCheck": true,
     "types": [],
     "paths": {
-      "@night-watch/browser-sdk": ["../packages/browser-sdk/dist/index.d.ts"],
-      "@night-watch/core": ["../packages/core/dist/index.d.ts"]
+      "@thenightwatch/browser-sdk": ["../packages/browser-sdk/dist/index.d.ts"],
+      "@thenightwatch/core": ["../packages/core/dist/index.d.ts"]
     },
     "baseUrl": "."
   },

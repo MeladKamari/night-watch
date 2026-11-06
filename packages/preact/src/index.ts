@@ -9,7 +9,7 @@ export {
   type NightWatchSnapshot,
   type GetResult,
   type LoadOptions,
-} from '@night-watch/vanilla'
+} from '@thenightwatch/vanilla'
 
-export const PREACT_PACKAGE_NAME = '@night-watch/preact' as const
+export const PREACT_PACKAGE_NAME = '@thenightwatch/preact' as const
 export const PREACT_PACKAGE_VERSION = '1.0.0' as const

@@ -1,4 +1,4 @@
-import { getDocument, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getDocument, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /** Cookie name used for the temporary first-party probe (not a persistent identifier). */
 export const COOKIE_TEST_NAME = 'cookietest'

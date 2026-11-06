@@ -9,7 +9,7 @@ import {
   type BuiltinSourceOptions,
   type MaybePromise,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * Stable Latin probe string (max-width glyphs + ligatures).

@@ -6,9 +6,9 @@
 |---|---|
 | Tag | `v1.0.0` |
 | Type | Annotated (`-a`) |
-| Packages | `@night-watch/core@1.0.0`, `@night-watch/browser-sdk@1.0.0` |
+| Packages | `@thenightwatch/core@1.0.0`, `@thenightwatch/browser-sdk@1.0.0` |
 | Manifest | `default-v1` (41 sources) |
-| npm dist-tag (if published) | `next` — **not** `latest` until stable |
+| npm dist-tag (if published) | `next` ï¿½ **not** `latest` until stable |
 
 ## Local tag command (after gates; no push unless authorized)
 
@@ -22,8 +22,8 @@ git show v1.0.0
 ```bash
 # ONLY when a human authorizes remote publish:
 git push origin v1.0.0
-pnpm --filter @night-watch/core publish --access public --tag next --no-git-checks
-pnpm --filter @night-watch/browser-sdk publish --access public --tag next --no-git-checks
+pnpm --filter @thenightwatch/core publish --access public --tag next --no-git-checks
+pnpm --filter @thenightwatch/browser-sdk publish --access public --tag next --no-git-checks
 ```
 
 Do **not** run the push/publish block without that authorization.

@@ -43,21 +43,21 @@
   },
   "packages": [
     {
-      "name": "@night-watch/core",
+      "name": "@thenightwatch/core",
       "path": "packages/core",
       "version": "1.0.0",
       "role": "contracts, registry, collectors engine, murmur hash, confidence",
       "status": "IMPLEMENTED"
     },
     {
-      "name": "@night-watch/browser-sdk",
+      "name": "@thenightwatch/browser-sdk",
       "path": "packages/browser-sdk",
       "version": "1.0.0",
       "role": "public load()/get() agent, 41 collectors, optional extensions",
       "status": "IMPLEMENTED"
     },
     {
-      "name": "@night-watch/playground",
+      "name": "@thenightwatch/playground",
       "path": "apps/playground",
       "version": "1.0.0",
       "role": "local first-party Vite playground (loopback)",
@@ -81,7 +81,7 @@
       "note": "No angular.json or dashboard app"
     },
     {
-      "name": "@night-watch/proplus browser agent package",
+      "name": "@thenightwatch/proplus browser agent package",
       "status": "MISSING",
       "note": "Pro+ namespace packages not separated yet (STEP 002)"
     }
@@ -212,7 +212,7 @@
     },
     {
       "id": "ALGORITHM_SCHEMA",
-      "api": "@night-watch/core ALGORITHM_SCHEMA / SOURCE_MANIFEST_REVISION",
+      "api": "@thenightwatch/core ALGORITHM_SCHEMA / SOURCE_MANIFEST_REVISION",
       "stability": "immutable-for-proplus-bridge",
       "note": "Must not change without explicit adapter approval"
     }
@@ -233,7 +233,7 @@
     "pnpm_lint": "NOT_RUN"
   },
   "componentSummary": {
-    "implemented": ["@night-watch/core", "@night-watch/browser-sdk", "@night-watch/playground", "41_sources", "hash_visitorId", "optional_enhancements_63_73"],
+    "implemented": ["@thenightwatch/core", "@thenightwatch/browser-sdk", "@thenightwatch/playground", "41_sources", "hash_visitorId", "optional_enhancements_63_73"],
     "partial": ["first_party_server_design_only"],
     "missing": ["proplus_packages", "aspnet_backend", "postgres", "redis", "angular_dashboard", "smart_signals", "identity_matching_server"],
     "broken": []

@@ -1,4 +1,4 @@
-import { getWindow, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getWindow, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /**
  * Special `dateTimeLocale` component values (FingerprintJS OSS v5.3.0).

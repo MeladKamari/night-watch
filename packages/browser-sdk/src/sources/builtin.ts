@@ -5,7 +5,7 @@ import {
   type BuiltinSources,
   type EnabledSourceName,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { getArchitecture } from './architecture.js'
 import { getAudio } from './audio.js'
 import { getAudioBaseLatency } from './audio_base_latency.js'

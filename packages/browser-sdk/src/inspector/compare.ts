@@ -4,7 +4,7 @@ import {
   isValueComponent,
   type Component,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import type { GetResult } from '../types.js'
 import { expectedInstabilityFor, hintForChange } from './hints.js'
 import { armOf, previewComponent, stableStringify } from './preview.js'

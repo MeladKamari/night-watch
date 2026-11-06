@@ -4,7 +4,7 @@ import {
   toFloat,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /** Chromium Device Memory API surface (may be absent on Safari/Firefox). */
 export type NavigatorWithDeviceMemory = {

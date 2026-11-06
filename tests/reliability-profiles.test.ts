@@ -19,7 +19,7 @@ import {
   type BuiltinSourceOptions,
   type BuiltinSources,
   type Source,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 type Opts = BuiltinSourceOptions

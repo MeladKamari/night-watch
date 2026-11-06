@@ -8,8 +8,8 @@ import {
   hashComponents,
   isValueComponent,
   load,
-} from '@night-watch/browser-sdk'
-import { loadSource, type BuiltinSourceOptions } from '@night-watch/core'
+} from '@thenightwatch/browser-sdk'
+import { loadSource, type BuiltinSourceOptions } from '@thenightwatch/core'
 import { describe, expect, it, vi } from 'vitest'
 
 function makeOfflineAudioContextMock(opts: {

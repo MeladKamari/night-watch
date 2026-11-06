@@ -15,7 +15,7 @@ import {
   type BuiltinSourceOptions,
   type OfflineAudioContextConstructor,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * Documented special audio fingerprint states (FingerprintJS OSS v5.3.0).

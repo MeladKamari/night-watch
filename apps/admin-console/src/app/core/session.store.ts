@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core'
-import type { ConsoleLoginResult } from '@night-watch/dashboard-client'
+import type { ConsoleLoginResult } from '@thenightwatch/dashboard-client'
 import type { Role } from './rbac'
 
 @Injectable({ providedIn: 'root' })

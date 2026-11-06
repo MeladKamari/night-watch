@@ -1,4 +1,4 @@
-import type { BuiltinSourceOptions, Component, MaybePromise, UnknownComponents } from '@night-watch/core'
+import type { BuiltinSourceOptions, Component, MaybePromise, UnknownComponents } from '@thenightwatch/core'
 
 /** Versioned plugin SDK catalog (independent of `SOURCE_MANIFEST_REVISION`). */
 export const PLUGIN_SDK_REVISION = 'night-watch-plugin-sdk-v1' as const

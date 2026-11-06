@@ -647,7 +647,7 @@ This file records intentional deviations and non-goals. Every change that affect
 
 | | |
 |---|---|
-| **Decision** | Ship ESM/CJS/IIFE/UMD (readable + min where applicable) via Rollup atop modular `tsc` output. IIFE/UMD inline `@night-watch/core` for script-tag self-host. npm ESM/CJS keep `@night-watch/core` external. `sideEffects: false`, dual `exports`, `.d.ts` from tsc. Sourcemaps published; not required to execute. No CDN/runtime network in artifacts; no `applePay`. Global `NightWatch`. |
+| **Decision** | Ship ESM/CJS/IIFE/UMD (readable + min where applicable) via Rollup atop modular `tsc` output. IIFE/UMD inline `@thenightwatch/core` for script-tag self-host. npm ESM/CJS keep `@thenightwatch/core` external. `sideEffects: false`, dual `exports`, `.d.ts` from tsc. Sourcemaps published; not required to execute. No CDN/runtime network in artifacts; no `applePay`. Global `NightWatch`. |
 | **Rationale** | Step 56 / upstream-like distribution adapted to Self-hosted offline + CSP without unsafe-eval. |
 | **ID impact** | None ? packaging only. |
 | **Status** | **APPROVED** (ADR-067) |
@@ -702,7 +702,7 @@ This file records intentional deviations and non-goals. Every change that affect
 
 | | |
 |---|---|
-| **Decision** | Publish MIT `LICENSE` for this repo and `NOTICE` preserving FingerprintJS OSS v5.3.0 MIT attribution where algorithms were adapted. Keep `@night-watch/*` / `IBF` naming (not `@fingerprintjs`). Ship API/migration/privacy/build docs and typechecked examples without CDN hotlinks. Privacy guidance does not claim automatic legal compliance. |
+| **Decision** | Publish MIT `LICENSE` for this repo and `NOTICE` preserving FingerprintJS OSS v5.3.0 MIT attribution where algorithms were adapted. Keep `@thenightwatch/*` / `IBF` naming (not `@fingerprintjs`). Ship API/migration/privacy/build docs and typechecked examples without CDN hotlinks. Privacy guidance does not claim automatic legal compliance. |
 | **Rationale** | Step 61 / D-004. |
 | **ID impact** | None. |
 | **Status** | **APPROVED** (ADR-072) |

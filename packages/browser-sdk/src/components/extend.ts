@@ -1,4 +1,4 @@
-import type { Component, UnknownComponents } from '@night-watch/core'
+import type { Component, UnknownComponents } from '@thenightwatch/core'
 
 export type ExtendComponentsOptions = {
   /**

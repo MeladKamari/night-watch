@@ -6,7 +6,7 @@ import {
   requestIdleCallbackIfAvailable,
   suppressUnhandledRejectionWarning,
   wait,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 describe('scheduler', () => {

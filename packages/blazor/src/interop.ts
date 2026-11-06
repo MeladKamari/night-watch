@@ -1,4 +1,4 @@
-import { identify, type GetResult, type LoadAgentOptions } from '@night-watch/vanilla'
+import { identify, type GetResult, type LoadAgentOptions } from '@thenightwatch/vanilla'
 
 /** JSON-safe subset returned to .NET via JS interop. */
 export type BlazorIdentifyResult = {

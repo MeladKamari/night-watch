@@ -10,7 +10,7 @@ import {
   type BuiltinComponents,
   type NavigatorUAData,
   type StableUserAgentData,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 function ua(partial: {

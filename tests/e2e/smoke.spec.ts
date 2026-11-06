@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { ENABLED_SOURCE_COUNT, SOURCE_MANIFEST_REVISION } from '@night-watch/core'
+import { ENABLED_SOURCE_COUNT, SOURCE_MANIFEST_REVISION } from '@thenightwatch/core'
 
 /**
  * Cross-browser smoke: validates Playwright wiring and that Node can still

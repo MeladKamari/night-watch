@@ -7,7 +7,7 @@ import {
   wait,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import { getFilters, type DomBlockerFilters } from './dom_blockers_filters.js'
 
 export type { DomBlockerFilters }

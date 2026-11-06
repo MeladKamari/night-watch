@@ -17,7 +17,7 @@
 ## API
 
 ```ts
-import { createEntropyExperimentHarness } from '@night-watch/browser-sdk'
+import { createEntropyExperimentHarness } from '@thenightwatch/browser-sdk'
 
 const harness = createEntropyExperimentHarness({
   consent: {

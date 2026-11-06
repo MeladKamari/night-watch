@@ -8,7 +8,7 @@ import {
   isValueComponent,
   load,
   type OffsetDateCtor,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 function mockIntlWithTimeZone(timeZone: string | undefined): typeof Intl {

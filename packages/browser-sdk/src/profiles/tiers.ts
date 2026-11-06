@@ -1,4 +1,4 @@
-import { ENABLED_SOURCES, type EnabledSourceName } from '@night-watch/core'
+import { ENABLED_SOURCES, type EnabledSourceName } from '@thenightwatch/core'
 import type { ReliabilityTier, SourceReliabilityRow } from './types.js'
 
 /**

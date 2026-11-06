@@ -19,7 +19,7 @@ import {
   loadWithCollectionPolicy,
   describePolicyImpact,
   SOURCE_CATEGORIES,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 // Default path — unchanged
 await load({ monitoring: false })

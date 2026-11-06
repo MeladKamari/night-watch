@@ -1,4 +1,4 @@
-import { getWindow, type BuiltinSourceOptions, type Source } from '@night-watch/core'
+import { getWindow, type BuiltinSourceOptions, type Source } from '@thenightwatch/core'
 
 /** Minimal window surface for localStorage existence probe. */
 export type WindowWithLocalStorage = {

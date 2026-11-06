@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { expect, test, type Browser, type Page } from '@playwright/test'
-import { ENABLED_SOURCES, SOURCE_MANIFEST_REVISION } from '@night-watch/core'
+import { ENABLED_SOURCES, SOURCE_MANIFEST_REVISION } from '@thenightwatch/core'
 import { readSdkIife } from './helpers/inject-sdk.js'
 import {
   buildPerfEntropyReport,
@@ -162,7 +162,7 @@ test.describe('performance / stability / entropy evaluation', () => {
       const payload = await collectOnce(page, consentHtml('ltr', 'en-US'))
       reloadIds.push(payload.visitorId)
     }
-    const stabilityReload = summarizeStability('document-rebuild×20', reloadIds, [
+    const stabilityReload = summarizeStability('document-rebuildï¿½20', reloadIds, [
       'Each sample is a fresh setContent + IIFE inject + load/get (reload-equivalent profile).',
       'Not a claim of cross-device or post-browser-restart stability.',
     ])
@@ -174,7 +174,7 @@ test.describe('performance / stability / entropy evaluation', () => {
       locale: 'fa-IR',
       timezoneId: 'Asia/Tehran',
     })
-    // Direction alone: same browser fingerprint surface may still change with locale/tz —
+    // Direction alone: same browser fingerprint surface may still change with locale/tz ï¿½
     // also compare direction-only on identical locale.
     const idRtlEn = await visitorIdInContext(browser, { dir: 'rtl', locale: 'en-US' })
 
@@ -186,7 +186,7 @@ test.describe('performance / stability / entropy evaluation', () => {
         visitorIdA: idLtr,
         visitorIdB: idRtlEn,
         notes: [
-          'Same locale/timezone; only html dir differs — visitorId must not change solely due to RTL.',
+          'Same locale/timezone; only html dir differs ï¿½ visitorId must not change solely due to RTL.',
         ],
       },
       {
@@ -230,7 +230,7 @@ test.describe('performance / stability / entropy evaluation', () => {
       'Local Playwright Chromium cohort only; not a worldwide collision rate.',
     ])
 
-    // Diversified synthetic cohort (locale/tz variants) — still consented lab fixtures.
+    // Diversified synthetic cohort (locale/tz variants) ï¿½ still consented lab fixtures.
     const diversifiedIds = [
       idLtr,
       idRtlEn,
@@ -251,7 +251,7 @@ test.describe('performance / stability / entropy evaluation', () => {
       'lab locale/timezone variants',
       diversifiedIds,
       [
-        'Synthetic lab diversity (locale/tz). Numerators/denominators only — no uniqueness claim.',
+        'Synthetic lab diversity (locale/tz). Numerators/denominators only ï¿½ no uniqueness claim.',
       ],
     )
 
@@ -297,7 +297,7 @@ test.describe('performance / stability / entropy evaluation', () => {
         'No network egress expected; scripts are self-hosted IIFE only.',
       ],
       notRun: [
-        'Real mid-range / low-memory Chrome for Android hardware (CPU/memory) — emulator/device required',
+        'Real mid-range / low-memory Chrome for Android hardware (CPU/memory) ï¿½ emulator/device required',
         'Real Android System WebView / Samsung Internet / iOS Safari hardware',
         'Browser restart persistence across OS sessions',
         'Main-thread long-task attribution via PerformanceObserver in production pages',
@@ -362,7 +362,7 @@ test.describe('performance / stability / entropy evaluation', () => {
     expect(payload.sourceCount).toBe(41)
     expect(payload.hasApplePay).toBe(false)
     expect(payload.visitorId).toMatch(/^[0-9a-f]{32}$/)
-    // Emulated evidence only — real mid-end Android remains NOT RUN in the report.
+    // Emulated evidence only ï¿½ real mid-end Android remains NOT RUN in the report.
     expect(payload.wallMs).toBeGreaterThan(0)
   })
 })

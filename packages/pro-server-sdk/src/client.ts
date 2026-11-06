@@ -4,7 +4,7 @@ import {
   type ObservationEnvelope,
   type ServerVisitorIdentity,
   unknownEvidence,
-} from '@night-watch/contracts'
+} from '@thenightwatch/contracts'
 
 export type ServerSdkConfig = {
   /** First-party absolute origin only (https://fp.example.ir). No vendor SaaS hosts. */

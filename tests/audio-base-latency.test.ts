@@ -11,7 +11,7 @@ import {
   load,
   type AudioContextWithBaseLatency,
   type AudioContextWithBaseLatencyConstructor,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 import { describe, expect, it, vi } from 'vitest'
 
 function mockCtor(

@@ -1,4 +1,4 @@
-import type { EnabledSourceName } from '@night-watch/core'
+import type { EnabledSourceName } from '@thenightwatch/core'
 import type { SourceCategory } from '../policy/categories.js'
 import type { ReliabilityTier } from '../profiles/types.js'
 

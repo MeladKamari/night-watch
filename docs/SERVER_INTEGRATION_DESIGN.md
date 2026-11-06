@@ -1,6 +1,6 @@
 # First-party optional server integration — design only (step 71)
 
-**No server or network collector is implemented in `@night-watch/browser-sdk`.**
+**No server or network collector is implemented in `@thenightwatch/browser-sdk`.**
 The browser package remains fully functional offline. This document + the
 `FIRST_PARTY_SERVER_INTEGRATION_DESIGN` constant capture a future opt-in API.
 

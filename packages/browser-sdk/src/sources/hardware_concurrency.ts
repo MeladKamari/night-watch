@@ -6,7 +6,7 @@ import {
   toInt,
   type BuiltinSourceOptions,
   type Source,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /** Navigator surface for logical processor count (may be a string). */
 export type NavigatorWithHardwareConcurrency = {

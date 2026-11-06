@@ -3,7 +3,7 @@ import {
   hashComponents,
   x64hash128,
   type UnknownComponents,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 import {
   NAMESPACED_ID_ALGORITHM,
   type IdentityDerivationMeta,

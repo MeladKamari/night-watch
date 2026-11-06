@@ -1,10 +1,10 @@
 /**
- * Night Watch product identity (single product — browser + server).
+ * Night Watch product identity (single product ï¿½ browser + server).
  * Not affiliated with Fingerprint Inc. or FingerprintJS.
  */
 export const PRODUCT_NAME = 'Night Watch' as const
 export const PRODUCT_CODE = 'night-watch' as const
-export const NPM_SCOPE = '@night-watch' as const
+export const NPM_SCOPE = '@thenightwatch' as const
 
 /** Human-safe label for dashboards and docs (never "Fingerprint Pro"). */
 export const PRODUCT_PUBLIC_LABEL = 'Night Watch' as const
@@ -18,5 +18,5 @@ export const IDENTITY_ALGORITHM_VERSION = 'night-watch-identity-v0' as const
 /** Risk / signal evaluation processing envelope revision. */
 export const PROCESSING_VERSION = 'night-watch-processing-v0' as const
 
-export const CONTRACTS_PACKAGE_NAME = '@night-watch/contracts' as const
+export const CONTRACTS_PACKAGE_NAME = '@thenightwatch/contracts' as const
 export const CONTRACTS_PACKAGE_VERSION = '1.0.0' as const

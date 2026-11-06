@@ -1,7 +1,7 @@
-import { load, type GetResult } from '@night-watch/browser-sdk'
-import { ENABLED_SOURCES } from '@night-watch/core'
-import { runProPlusBridge } from '@night-watch/browser-adapter'
-import type { CollectionMode } from '@night-watch/contracts'
+import { load, type GetResult } from '@thenightwatch/browser-sdk'
+import { ENABLED_SOURCES } from '@thenightwatch/core'
+import { runProPlusBridge } from '@thenightwatch/browser-adapter'
+import type { CollectionMode } from '@thenightwatch/contracts'
 import {
   PRO_WEB_AGENT_PROTOCOL_VERSION,
   type GetCallOptions,

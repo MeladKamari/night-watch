@@ -1,6 +1,6 @@
 /**
  * Compilable ESM usage example (documentation fixture).
- * Run under a bundler or native ESM in the browser — not executed by Vitest.
+ * Run under a bundler or native ESM in the browser ï¿½ not executed by Vitest.
  */
 import {
   ENABLED_SOURCES,
@@ -8,13 +8,13 @@ import {
   componentsToDebugString,
   load,
   omitComponents,
-} from '@night-watch/browser-sdk'
+} from '@thenightwatch/browser-sdk'
 
 export async function collectVisitorId(): Promise<string> {
   const agent = await load({ monitoring: false, delayFallback: 0 })
   const result = await agent.get()
 
-  // Illustrative post-processing — does not change default agent hash.
+  // Illustrative post-processing ï¿½ does not change default agent hash.
   const withoutFonts = omitComponents(result.components, ['fonts'])
   void componentsToDebugString(withoutFonts)
 

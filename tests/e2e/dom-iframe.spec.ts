@@ -5,11 +5,11 @@ import {
   isFullscreenActive,
   isInIframe,
   withIframe,
-} from '@night-watch/core'
+} from '@thenightwatch/core'
 
 /**
  * In-page DOM helpers are exercised via page.evaluate with inlined logic mirroring
- * `@night-watch/core` until the playground bundles the package. Node-side imports stay SSR-safe.
+ * `@thenightwatch/core` until the playground bundles the package. Node-side imports stay SSR-safe.
  */
 test.describe('DOM / iframe isolation', () => {
   test('offscreen iframe runs action, then removes itself (no orphan nodes)', async ({ page }) => {

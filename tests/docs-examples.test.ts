@@ -2,7 +2,7 @@ import { spawnSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { SDK_PACKAGE_NAME, SDK_PRODUCT_LABEL } from '@night-watch/browser-sdk'
+import { SDK_PACKAGE_NAME, SDK_PRODUCT_LABEL } from '@thenightwatch/browser-sdk'
 import { describe, expect, it } from 'vitest'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -28,7 +28,7 @@ describe('licensing and documentation fixtures (step 61)', () => {
     expect(notice).toMatch(/\*\*not\*\*/)
     expect(notice).toMatch(/applePay/)
 
-    expect(SDK_PACKAGE_NAME).toBe('@night-watch/browser-sdk')
+    expect(SDK_PACKAGE_NAME).toBe('@thenightwatch/browser-sdk')
     expect(SDK_PRODUCT_LABEL).toMatch(/Night Watch/)
     expect(SDK_PACKAGE_NAME.startsWith('@fingerprintjs/')).toBe(false)
 

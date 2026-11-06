@@ -6,26 +6,26 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — ProPlus STEP 003: Platform architecture boundaries
+## 2026-11-03 ï¿½ ProPlus STEP 003: Platform architecture boundaries
 
-### ADR-P002…P008 (summary)
+### ADR-P002ï¿½P008 (summary)
 
 - **Decision:** ASP.NET Core modular monolith + PostgreSQL SoR + Redis ephemeral cache; browser untrusted; Self-hosted/local-only; sync identify with honest degradation; Angular/PrimeNG admin later.
 - **Details:** `docs/proplus-architecture/ADR_INDEX.md` and `C4_AND_FLOWS.md`.
-- **Consequences:** Legacy `@night-watch/*` visitorId unchanged; server identity versioned separately (`night-watch-identity-v0`).
+- **Consequences:** Legacy `@thenightwatch/*` visitorId unchanged; server identity versioned separately (`night-watch-identity-v0`).
 
 ---
 
-## 2026-11-03 — Steps 70–73: Final optional enhancements
+## 2026-11-03 ï¿½ Steps 70ï¿½73: Final optional enhancements
 
 ### ADR-081: Consent-gated entropy experiment harness (step 70)
 
 - **Decision:** Ship `packages/browser-sdk/src/experiments` with in-memory samples, within/across aggregates, deletion controls, revision `night-watch-entropy-experiments-v1`. No network upload. Default `load()` unchanged.
-- **Consequences:** Lab stats only — not population uniqueness claims.
+- **Consequences:** Lab stats only ï¿½ not population uniqueness claims.
 
 ### ADR-082: First-party server integration design only (step 71)
 
-- **Decision:** Publish `FIRST_PARTY_SERVER_INTEGRATION_DESIGN` + `docs/SERVER_INTEGRATION_DESIGN.md`. No runtime server/network client in `@night-watch/browser-sdk`. Browser package stays standalone.
+- **Decision:** Publish `FIRST_PARTY_SERVER_INTEGRATION_DESIGN` + `docs/SERVER_INTEGRATION_DESIGN.md`. No runtime server/network client in `@thenightwatch/browser-sdk`. Browser package stays standalone.
 - **Consequences:** Future server package needs a separate ADR/version.
 
 ### ADR-083: Hash-neutral source metadata registry (step 72)
@@ -40,7 +40,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 69: Fingerprint change inspector
+## 2026-11-03 ï¿½ Step 69: Fingerprint change inspector
 
 ### ADR-080: Local component diff; probabilistic hints; no identity claims
 
@@ -50,27 +50,27 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 68: Opt-in diagnostics and reproducibility snapshots
+## 2026-11-03 ï¿½ Step 68: Opt-in diagnostics and reproducibility snapshots
 
 ### ADR-079: Local schema-validated snapshots; explicit export; page-context redaction
 
 - **Context:** Optional enhancement for support/lab reproducibility without telemetry or changing default-profile fingerprint behavior.
 - **Decision:** Ship `packages/browser-sdk/src/diagnostics` with `buildDiagnosticSnapshot` / `exportDiagnosticSnapshot` / `loadWithDiagnostics`, schema `night-watch-diagnostics-snapshot-v1`, revision `night-watch-diagnostics-v1`, repro seed hashing, deep redaction of page URL/title/cookies/referrer and credential-like fields, and schema validation that rejects `applePay` and leaked page-context keys. Export is explicit only; SDK performs no network upload. Default `load()` unchanged. `SOURCE_MANIFEST_REVISION` unchanged.
-- **Consequences:** Snapshots remain sensitive entropy dumps — document handling; raw repro seeds omitted unless `includeRawReproSeed`.
+- **Consequences:** Snapshots remain sensitive entropy dumps ï¿½ document handling; raw repro seeds omitted unless `includeRawReproSeed`.
 
 ---
 
-## 2026-11-03 — Step 67: AbortSignal and resource budgets
+## 2026-11-03 ï¿½ Step 67: AbortSignal and resource budgets
 
 ### ADR-078: Opt-in budgets; abort/timeout ? error components; default load unchanged
 
 - **Context:** Optional enhancement to abort collection and bound wall-clock / per-source time without changing default-profile fingerprint compatibility.
-- **Decision:** Ship `packages/browser-sdk/src/budgets` with `loadWithResourceBudget`, versioned manifests (`night-watch-resource-budgets-v1`), linked AbortSignal + total timeout, per-source load/get stage races, optional idle `loopReleaseInterval`, and timer registry cleanup. Optional `BuiltinSourceOptions.signal` forwarded into iframe helpers (`fonts`, `fontPreferences`). Never fabricate success values — abort/timeout become error components (or `CollectionAbortError` if aborted before start). Default `load()` ignores budgets. `SOURCE_MANIFEST_REVISION` unchanged.
+- **Decision:** Ship `packages/browser-sdk/src/budgets` with `loadWithResourceBudget`, versioned manifests (`night-watch-resource-budgets-v1`), linked AbortSignal + total timeout, per-source load/get stage races, optional idle `loopReleaseInterval`, and timer registry cleanup. Optional `BuiltinSourceOptions.signal` forwarded into iframe helpers (`fonts`, `fontPreferences`). Never fabricate success values ï¿½ abort/timeout become error components (or `CollectionAbortError` if aborted before start). Default `load()` ignores budgets. `SOURCE_MANIFEST_REVISION` unchanged.
 - **Consequences:** Partial error components change visitorId vs fully successful runs; call `dispose()` if `get()` is skipped so budget timers clear.
 
 ---
 
-## 2026-11-03 — Step 66: Optional custom plugin SDK
+## 2026-11-03 ï¿½ Step 66: Optional custom plugin SDK
 
 ### ADR-077: Opt-in plugin SDK; namespaced keys; default load unchanged
 
@@ -80,17 +80,17 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 65: Signal reliability profiles
+## 2026-11-03 ï¿½ Step 65: Signal reliability profiles
 
 ### ADR-076: Opt-in reliability profiles; default load unchanged; tiers are heuristics
 
 - **Context:** Optional enhancement to prefer more stable selectors (or label a full diagnostic run) without changing default-profile fingerprint compatibility.
-- **Decision:** Ship `packages/browser-sdk/src/profiles` with `loadWithReliabilityProfile`, versioned manifests (`night-watch-reliability-profiles-v1`), and per-source tiers (`stable` / `moderate` / `volatile`). Profiles: `conservative` (stable only), `balanced` (stable+moderate), `diagnostic` (all 41 — same selectors as default `load()`). Exclusions use existing `excludeSources` so disabled collectors never start. Default `load()` ignores profiles. Tiers are operational heuristics, not calibrated stability or uniqueness. `SOURCE_MANIFEST_REVISION` unchanged.
+- **Decision:** Ship `packages/browser-sdk/src/profiles` with `loadWithReliabilityProfile`, versioned manifests (`night-watch-reliability-profiles-v1`), and per-source tiers (`stable` / `moderate` / `volatile`). Profiles: `conservative` (stable only), `balanced` (stable+moderate), `diagnostic` (all 41 ï¿½ same selectors as default `load()`). Exclusions use existing `excludeSources` so disabled collectors never start. Default `load()` ignores profiles. Tiers are operational heuristics, not calibrated stability or uniqueness. `SOURCE_MANIFEST_REVISION` unchanged.
 - **Consequences:** Apps that use non-diagnostic profiles must document ID divergence vs full 41-source default; store profile id / revision beside IDs.
 
 ---
 
-## 2026-11-03 — Step 64: Privacy-preserving configurable IDs
+## 2026-11-03 ï¿½ Step 64: Privacy-preserving configurable IDs
 
 ### ADR-075: Opt-in namespaced/salted IDs; default hash unchanged; no persistence
 
@@ -100,7 +100,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 63: Explicit consent and collection policies
+## 2026-11-03 ï¿½ Step 63: Explicit consent and collection policies
 
 ### ADR-074: Opt-in policy module; default load unchanged; no region classification
 
@@ -110,27 +110,27 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 62: Release candidate and sign-off
+## 2026-11-03 ï¿½ Step 62: Release candidate and sign-off
 
 ### ADR-073: 1.0.0 cut; release-gate script; no publish without authorization
 
 - **Context:** Integration/release phase needs a versioned RC, changelog, tag plan, checklist, rollback, and Self-hosted hard gates without accidentally publishing.
-- **Decision:** Bump `@night-watch/core` and `@night-watch/browser-sdk` to **1.0.0** with `publishConfig.tag: next`. Ship `CHANGELOG.md`, `docs/RELEASE_CHECKLIST.md`, `docs/TAG_PLAN.md`, `docs/ROLLBACK.md`. Automate Iran acceptance via `ci:release-gate` (41 sources, no payment collectors, 41 unit+e2e pairs, upstream-diff + coverage evidence, fa-IR/Asia/Tehran fixtures, no-egress matrix proof). Annotated tag `v1.0.0` is planned locally only; **npm/git remote publish requires explicit human authorization**. Algorithm / `default-v1` unchanged.
+- **Decision:** Bump `@thenightwatch/core` and `@thenightwatch/browser-sdk` to **1.0.0** with `publishConfig.tag: next`. Ship `CHANGELOG.md`, `docs/RELEASE_CHECKLIST.md`, `docs/TAG_PLAN.md`, `docs/ROLLBACK.md`. Automate Iran acceptance via `ci:release-gate` (41 sources, no payment collectors, 41 unit+e2e pairs, upstream-diff + coverage evidence, fa-IR/Asia/Tehran fixtures, no-egress matrix proof). Annotated tag `v1.0.0` is planned locally only; **npm/git remote publish requires explicit human authorization**. Algorithm / `default-v1` unchanged.
 - **Consequences:** RC is ready for authorized tagging. Steps 63+ remain optional enhancements.
 
 ---
 
-## 2026-11-03 — Step 61: Licensing, documentation and public examples
+## 2026-11-03 ï¿½ Step 61: Licensing, documentation and public examples
 
 ### ADR-072: MIT + NOTICE; @ibf scope locked; docs/examples without CDN or compliance fiction
 
 - **Context:** Need public README/API/migration/privacy/build/troubleshooting/accuracy docs, MIT obligations for adapted upstream algorithms, trademark-distinct naming, offline install guidance, and compilable examples (EN + optional FA).
-- **Decision:** Ship root `LICENSE` (MIT for this project) and `NOTICE` (FingerprintJS OSS v5.3.0 MIT attribution + explicit non-affiliation). Confirm publish scope **`@night-watch/*`**, product label **Night Watch**, global **`NightWatch`**. Document self-host / private registry / checksums (`ci:checksums`). Privacy doc states the SDK is not a compliance substitute. Examples under `examples/` are typechecked in CI; IIFE sample uses first-party `fp.min.js` only. Algorithm / visitorId unchanged.
+- **Decision:** Ship root `LICENSE` (MIT for this project) and `NOTICE` (FingerprintJS OSS v5.3.0 MIT attribution + explicit non-affiliation). Confirm publish scope **`@thenightwatch/*`**, product label **Night Watch**, global **`NightWatch`**. Document self-host / private registry / checksums (`ci:checksums`). Privacy doc states the SDK is not a compliance substitute. Examples under `examples/` are typechecked in CI; IIFE sample uses first-party `fp.min.js` only. Algorithm / visitorId unchanged.
 - **Consequences:** ADR-008 provisional scope is **locked** for the release track unless a later ADR renames before first public npm publish.
 
 ---
 
-## 2026-11-03 — Step 60: CI security and quality gates
+## 2026-11-03 ï¿½ Step 60: CI security and quality gates
 
 ### ADR-071: SHA-pinned Actions; prod audit hard gate; static applePay exclusion guard
 
@@ -140,17 +140,17 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 59: Performance, stability and entropy evaluation
+## 2026-11-03 ï¿½ Step 59: Performance, stability and entropy evaluation
 
 ### ADR-070: Observed baselines only; consented lab cohorts; no invented SLAs/uniqueness
 
 - **Context:** Need microbenchmarks (p50/p95/p99), per-signal cost, rebuild stability, mode diffs, collision numerators, and bundle sizes without fabricating worldwide uniqueness, FPR, or absolute performance promises.
-- **Decision:** Ship a test-only harness (`tests/harness/perf`) that aggregates consented samples into `reference/perf-entropy-report.{json,md}`. Wall-clock and per-source durations use nearest-rank percentiles. Relative-expensive flags use `factor × max(1ms, median mean)` as a profiling hint. Stability is reported as unique/N and majority share (lab rebuild×20). Collision cohorts record uniqueness ratio and approximate collision pairs with explicit “local sample only” notes. RTL-only direction must not change `visitorId`; locale/tz fixtures may. Real mid/low-end Android hardware and production-scale datasets remain **NOT RUN**. Algorithm / visitorId semantics unchanged.
+- **Decision:** Ship a test-only harness (`tests/harness/perf`) that aggregates consented samples into `reference/perf-entropy-report.{json,md}`. Wall-clock and per-source durations use nearest-rank percentiles. Relative-expensive flags use `factor ï¿½ max(1ms, median mean)` as a profiling hint. Stability is reported as unique/N and majority share (lab rebuildï¿½20). Collision cohorts record uniqueness ratio and approximate collision pairs with explicit ï¿½local sample onlyï¿½ notes. RTL-only direction must not change `visitorId`; locale/tz fixtures may. Real mid/low-end Android hardware and production-scale datasets remain **NOT RUN**. Algorithm / visitorId semantics unchanged.
 - **Consequences:** `pnpm test` covers fixtures; Chromium e2e refreshes the report. No production telemetry.
 
 ---
 
-## 2026-11-03 — Step 58: Upstream differential harness
+## 2026-11-03 ï¿½ Step 58: Upstream differential harness
 
 ### ADR-069: Consented dual-run harness; filter applePay; never gate on raw visitorId
 
@@ -160,7 +160,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 57: Browser coverage matrix
+## 2026-11-03 ï¿½ Step 57: Browser coverage matrix
 
 ### ADR-068: Playwright Chromium/Firefox/WebKit + matrix subset; manual devices NOT RUN
 
@@ -170,27 +170,27 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 56: Multi-format publish bundles
+## 2026-11-03 ï¿½ Step 56: Multi-format publish bundles
 
 ### ADR-067: Rollup ESM/CJS/IIFE/UMD + sourcemaps; modular ESM remains primary
 
 - **Context:** Consumers need Node `import`/`require`, Vite/webpack resolution, and offline script-tag (IIFE/UMD) deployment without CDN or telemetry.
-- **Decision:** Keep `tsc` modular ESM + `.d.ts` as the tree-shakeable primary (`sideEffects: false`). Add Rollup artifacts: `fp.{js,min.js}` (IIFE), `fp.umd{.min}.js`, `fp.esm{.min}.js`, `fp.cjs{.min}.js` for `@night-watch/browser-sdk` (core inlined in IIFE/UMD; external in npm ESM/CJS). Core ships `core.{esm,cjs}{.min}.js`. Global name `NightWatch`. Sourcemaps always generated and published with the package for first-party debugging; runtime does not require them. No `eval`/`new Function` in compress. Exports map dual-package; `unpkg`/`jsdelivr` fields point at self-hostable IIFE min (still first-party when mirrored).
+- **Decision:** Keep `tsc` modular ESM + `.d.ts` as the tree-shakeable primary (`sideEffects: false`). Add Rollup artifacts: `fp.{js,min.js}` (IIFE), `fp.umd{.min}.js`, `fp.esm{.min}.js`, `fp.cjs{.min}.js` for `@thenightwatch/browser-sdk` (core inlined in IIFE/UMD; external in npm ESM/CJS). Core ships `core.{esm,cjs}{.min}.js`. Global name `NightWatch`. Sourcemaps always generated and published with the package for first-party debugging; runtime does not require them. No `eval`/`new Function` in compress. Exports map dual-package; `unpkg`/`jsdelivr` fields point at self-hostable IIFE min (still first-party when mirrored).
 - **Consequences:** `pnpm build` runs `tsc -b` then package `bundle`. Algorithm/visitorId unchanged. Iran offline/self-host uses IIFE/UMD from local origin.
 
 ---
 
-## 2026-11-03 — Step 55: Live development playground
+## 2026-11-03 ï¿½ Step 55: Live development playground
 
 ### ADR-066: Local Vite playground; consent-gated; no automatic upload
 
-- **Context:** Developers need an interactive first-party page for visitorId, confidence, full signal table (value/error/duration), version, independent repeat-run comparison, and JSON copy — without telemetry or CDN assets.
-- **Decision:** Ship `@night-watch/playground` with Vite on loopback (`127.0.0.1:4173`). Collection requires explicit consent checkbox. Each Collect click uses a fresh `load()`+`get()` with `monitoring: false`. Copy JSON is user-action only. Persian RTL surrounding stays beside English LTR diagnostics; Persian digits are display-only and never mutate hashed values. Unsupported/error keys are listed without claiming IP, nationality, or physical device identity. Playwright starts the playground via `webServer`.
+- **Context:** Developers need an interactive first-party page for visitorId, confidence, full signal table (value/error/duration), version, independent repeat-run comparison, and JSON copy ï¿½ without telemetry or CDN assets.
+- **Decision:** Ship `@thenightwatch/playground` with Vite on loopback (`127.0.0.1:4173`). Collection requires explicit consent checkbox. Each Collect click uses a fresh `load()`+`get()` with `monitoring: false`. Copy JSON is user-action only. Persian RTL surrounding stays beside English LTR diagnostics; Persian digits are display-only and never mutate hashed values. Unsupported/error keys are listed without claiming IP, nationality, or physical device identity. Playwright starts the playground via `webServer`.
 - **Consequences:** `pnpm playground` is the local entry. No remote sample endpoints. Algorithm / visitorId semantics unchanged.
 
 ---
 
-## 2026-11-03 — Step 54: Public component extension / filtering API
+## 2026-11-03 ï¿½ Step 54: Public component extension / filtering API
 
 ### ADR-065: Safe-by-default extend/omit + merge; no built-in overwrite; no applePay
 
@@ -200,7 +200,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 53: `webGlExtensions` (WebGL extensions / precision)
+## 2026-11-03 ï¿½ Step 53: `webGlExtensions` (WebGL extensions / precision)
 
 ### ADR-064: Allowlisted params + sorted arrays; skip warning-prone extensions
 
@@ -210,7 +210,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 52: `webGlBasics` (WebGL basic capabilities)
+## 2026-11-03 ï¿½ Step 52: `webGlBasics` (WebGL basic capabilities)
 
 ### ADR-063: Cached WebGL context; statuses -1/-2; Gecko skips debug renderer info
 
@@ -220,17 +220,17 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 51: `dateTimeLocale` (Intl.DateTimeFormat locale)
+## 2026-11-03 ï¿½ Step 51: `dateTimeLocale` (Intl.DateTimeFormat locale)
 
 ### ADR-062: Default resolved locale only; status codes for missing Intl/DTF/locale
 
 - **Context:** Upstream returns `Intl.DateTimeFormat().resolvedOptions().locale` or `-1`/`-2`/`-3`.
-- **Decision:** Match statuses. Empty string is a valid locale value; only `null`/`undefined` ? `-3`. Prefer `window.Intl`; fall back to global `Intl` when window is absent (Node/SSR). Never force `fa-IR`, Jalali, or numeral systems — Iran locales are test inputs only.
+- **Decision:** Match statuses. Empty string is a valid locale value; only `null`/`undefined` ? `-3`. Prefer `window.Intl`; fall back to global `Intl` when window is absent (Node/SSR). Never force `fa-IR`, Jalali, or numeral systems ï¿½ Iran locales are test inputs only.
 - **Consequences:** Node/Chromium typically return a BCP 47 string; environments with neither window nor Intl ? `-1`.
 
 ---
 
-## 2026-11-03 — Step 50: `audioBaseLatency` (AudioContext.baseLatency)
+## 2026-11-03 ï¿½ Step 50: `audioBaseLatency` (AudioContext.baseLatency)
 
 ### ADR-061: Platform-gated baseLatency; special codes; always close context
 
@@ -240,7 +240,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 49: `privateClickMeasurement` (Safari PCM)
+## 2026-11-03 ï¿½ Step 49: `privateClickMeasurement` (Safari PCM)
 
 ### ADR-060: Unattached `<a>` attribution props only; no click / network / registration
 
@@ -250,7 +250,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 48: `architecture` (floating-point architecture clue)
+## 2026-11-03 ï¿½ Step 48: `architecture` (floating-point architecture clue)
 
 ### ADR-059: NaN sign-bit byte only; never a CPU / hardware ID label
 
@@ -260,7 +260,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 47: `pdfViewerEnabled` (built-in PDF viewer)
+## 2026-11-03 ï¿½ Step 47: `pdfViewerEnabled` (built-in PDF viewer)
 
 ### ADR-058: Read-only `navigator.pdfViewerEnabled`; never invent false
 
@@ -270,7 +270,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 46: `math` (floating-point math differences)
+## 2026-11-03 ï¿½ Step 46: `math` (floating-point math differences)
 
 ### ADR-057: Empirical Math probes + polyfills; no rounding before hash
 
@@ -280,7 +280,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 45: `hdr` (dynamic range / HDR)
+## 2026-11-03 ï¿½ Step 45: `hdr` (dynamic range / HDR)
 
 ### ADR-056: Tri-state dynamic-range via matchMedia
 
@@ -290,7 +290,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 44: `reducedTransparency` (reduced transparency preference)
+## 2026-11-03 ï¿½ Step 44: `reducedTransparency` (reduced transparency preference)
 
 ### ADR-055: Tri-state prefers-reduced-transparency via matchMedia
 
@@ -300,7 +300,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 43: `reducedMotion` (reduced motion preference)
+## 2026-11-03 ï¿½ Step 43: `reducedMotion` (reduced motion preference)
 
 ### ADR-054: Tri-state prefers-reduced-motion via matchMedia
 
@@ -310,7 +310,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 42: `contrast` (preferred contrast)
+## 2026-11-03 ï¿½ Step 42: `contrast` (preferred contrast)
 
 ### ADR-053: Stable prefers-contrast numeric codes; undefined when unsupported
 
@@ -320,7 +320,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 41: `monochrome` (monochrome bit depth)
+## 2026-11-03 ï¿½ Step 41: `monochrome` (monochrome bit depth)
 
 ### ADR-052: Bounded max-monochrome search; unsupported ? undefined
 
@@ -330,7 +330,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 40: `forcedColors` (forced color mode)
+## 2026-11-03 ï¿½ Step 40: `forcedColors` (forced color mode)
 
 ### ADR-051: Tri-state forced-colors via matchMedia
 
@@ -340,7 +340,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 39: `invertedColors` (inverted color preference)
+## 2026-11-03 ï¿½ Step 39: `invertedColors` (inverted color preference)
 
 ### ADR-050: Tri-state inverted-colors via matchMedia
 
@@ -350,7 +350,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 38: `colorGamut` (CSS display color gamut)
+## 2026-11-03 ï¿½ Step 38: `colorGamut` (CSS display color gamut)
 
 ### ADR-049: Widest-first color-gamut matchMedia; undefined when unidentified
 
@@ -360,7 +360,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 37: `cookiesEnabled` (cookie access capability)
+## 2026-11-03 ï¿½ Step 37: `cookiesEnabled` (cookie access capability)
 
 ### ADR-048: Temporary SameSite=Strict cookietest; never trust cookieEnabled
 
@@ -370,7 +370,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 36: `vendorFlavors` (vendor-specific globals)
+## 2026-11-03 ï¿½ Step 36: `vendorFlavors` (vendor-specific globals)
 
 ### ADR-047: Allowlisted window globals; sorted names; no API invocation
 
@@ -380,7 +380,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 35: `vendor` (browser vendor)
+## 2026-11-03 ï¿½ Step 35: `vendor` (browser vendor)
 
 ### ADR-046: Raw `navigator.vendor` with empty-string fallback
 
@@ -390,7 +390,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 34: `touchSupport` (touch input capability)
+## 2026-11-03 ï¿½ Step 34: `touchSupport` (touch input capability)
 
 ### ADR-045: Crude maxTouchPoints + TouchEvent + ontouchstart; no physical certainty
 
@@ -400,7 +400,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 33: `plugins` (navigator plugins metadata)
+## 2026-11-03 ï¿½ Step 33: `plugins` (navigator plugins metadata)
 
 ### ADR-044: Serializable plugin list; skip nulls; never execute plugins
 
@@ -410,7 +410,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 32: `platform` (platform descriptor)
+## 2026-11-03 ï¿½ Step 32: `platform` (platform descriptor)
 
 
 ### ADR-043: navigator.platform + mobile-WebKit MacIntel remap
@@ -421,7 +421,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 31: `cpuClass` (legacy CPU class)
+## 2026-11-03 ï¿½ Step 31: `cpuClass` (legacy CPU class)
 
 
 ### ADR-042: Raw navigator.cpuClass only; never infer from UA
@@ -432,7 +432,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 30: `openDatabase` (legacy WebSQL presence)
+## 2026-11-03 ï¿½ Step 30: `openDatabase` (legacy WebSQL presence)
 
 
 ### ADR-041: Existence-only `!!openDatabase`; never create a WebSQL database
@@ -443,7 +443,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 29: `indexedDB` (availability)
+## 2026-11-03 ï¿½ Step 29: `indexedDB` (availability)
 
 
 ### ADR-040: Existence-only; IE/EdgeHTML ? undefined; never open databases
@@ -454,7 +454,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 28: `localStorage` (availability)
+## 2026-11-03 ï¿½ Step 28: `localStorage` (availability)
 
 
 ### ADR-039: Existence-only probe; SecurityError means present; no persistent writes
@@ -465,7 +465,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 27: `sessionStorage` (availability)
+## 2026-11-03 ï¿½ Step 27: `sessionStorage` (availability)
 
 
 ### ADR-038: Existence-only probe; SecurityError means present; no storage writes
@@ -476,18 +476,18 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 26: `timezone` (timezone identity)
+## 2026-11-03 ï¿½ Step 26: `timezone` (timezone identity)
 
 
 ### ADR-037: Intl IANA name first; DST-stable offset fallback; no geo hardcoding
 
 - **Context:** DST can flip `getTimezoneOffset` mid-year; Iran QA needs `Asia/Tehran` / `UTC+03:30` fixtures without treating timezone as nationality.
-- **Decision:** Port v5.3.0: prefer `Intl.DateTimeFormat().resolvedOptions().timeZone`; else `-max(Jan,July offsets)` as `UTC±N` (minutes). Never invent or force `Asia/Tehran`. `Asia/Tehran`, `Asia/Dubai`, `UTC` appear only as test inputs.
+- **Decision:** Port v5.3.0: prefer `Intl.DateTimeFormat().resolvedOptions().timeZone`; else `-max(Jan,July offsets)` as `UTCï¿½N` (minutes). Never invent or force `Asia/Tehran`. `Asia/Tehran`, `Asia/Dubai`, `UTC` appear only as test inputs.
 - **Consequences:** Modern browsers hash the IANA id; legacy/denied Intl hash a DST-stable numeric offset string.
 
 ---
 
-## 2026-11-03 — Step 25: `hardwareConcurrency` (logical processor count)
+## 2026-11-03 ï¿½ Step 25: `hardwareConcurrency` (logical processor count)
 
 
 ### ADR-036: toInt + Firefox143 RFP tiering; unstable probe kept
@@ -498,7 +498,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 24: `screenResolution` (physical screen dimensions)
+## 2026-11-03 ï¿½ Step 24: `screenResolution` (physical screen dimensions)
 
 
 ### ADR-035: toInt + sort/reverse; Safari 17+ skip
@@ -509,7 +509,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 23: `deviceMemory` (approximate device memory)
+## 2026-11-03 ï¿½ Step 23: `deviceMemory` (approximate device memory)
 
 
 ### ADR-034: toFloat + replaceNaN; no RAM inventing or un-clamping
@@ -520,7 +520,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 22: `colorDepth` (display color depth)
+## 2026-11-03 ï¿½ Step 22: `colorDepth` (display color depth)
 
 
 ### ADR-033: Raw screen.colorDepth; never invent bit depth
@@ -531,7 +531,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 21: `languages` (browser locale list)
+## 2026-11-03 ï¿½ Step 21: `languages` (browser locale list)
 
 
 ### ADR-032: string[][] schema; Chromium86+ skips languages array; no locale inventing
@@ -542,7 +542,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 20: `osCpu` (legacy navigator.oscpu)
+## 2026-11-03 ï¿½ Step 20: `osCpu` (legacy navigator.oscpu)
 
 
 ### ADR-031: Absence of oscpu is undefined, never a fabricated CPU string
@@ -553,7 +553,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 19: `canvas` (2D winding + geometry/text)
+## 2026-11-03 ï¿½ Step 19: `canvas` (2D winding + geometry/text)
 
 
 ### ADR-030: Canvas ImageStatus + antifingerprinting skip; Latin+emoji fixture locked
@@ -564,7 +564,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 18: `screenFrame` (chrome insets)
+## 2026-11-03 ï¿½ Step 18: `screenFrame` (chrome insets)
 
 
 ### ADR-029: Backup watch + rounding; no default fullscreen exit
@@ -575,17 +575,17 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 17: `audio` (offline synthesis fingerprint)
+## 2026-11-03 ï¿½ Step 17: `audio` (offline synthesis fingerprint)
 
 ### ADR-028: OfflineAudioContext only; special codes are values; antifingerprinting skips
 
 - **Context:** Audio fingerprinting must be deterministic, silent, and honor browsers that suspend or noise the signal.
-- **Decision:** Port v5.3.0 OfflineAudioContext oscillator/compressor parameters and sample-sum hash. Special fingerprints `-1…-4` are component **values** (not errors). Skip synthesis on Safari=17 / Samsung Internet=26; skip on old mobile WebKit that never leaves suspended. Two-stage getter finalizes render. No realtime `AudioContext` / speaker output.
+- **Decision:** Port v5.3.0 OfflineAudioContext oscillator/compressor parameters and sample-sum hash. Special fingerprints `-1ï¿½-4` are component **values** (not errors). Skip synthesis on Safari=17 / Samsung Internet=26; skip on old mobile WebKit that never leaves suspended. Two-stage getter finalizes render. No realtime `AudioContext` / speaker output.
 - **Consequences:** Node/`allowNonBrowser` yields `-2` (NotSupported). Live Safari private-mode validation deferred to multi-browser matrix.
 
 ---
 
-## 2026-11-03 — Step 16: `fontPreferences` (font preference widths)
+## 2026-11-03 ï¿½ Step 16: `fontPreferences` (font preference widths)
 
 ### ADR-027: Natural-font iframe + Chromium128 DPR normalize; Latin hash text locked
 
@@ -595,7 +595,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 15: `domBlockers` (content-blocker CSS probes)
+## 2026-11-03 ï¿½ Step 15: `domBlockers` (content-blocker CSS probes)
 
 ### ADR-026: Local filter dataset; eligibility-gated; empty ? no blockers
 
@@ -605,17 +605,17 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 14: `fonts` (installed font availability)
+## 2026-11-03 ï¿½ Step 14: `fonts` (installed font availability)
 
 ### ADR-025: Upstream font probe set only; Persian fonts via future opt-in pack
 
 - **Context:** Iran market wants Vazirmatn / Tahoma / B Nazanin coverage, but default-profile must keep upstream signal behavior; no Local Font Access permission prompts.
-- **Decision:** Implement v5.3.0 layout-delta probe (`FONT_PROBE_STRING`, base families, 52 candidates) inside `withIframe`. Never call `queryLocalFonts`. Do **not** silently append Persian fonts to the default list. Document a future opt-in extension (new `sourceManifestRevision`, separate package or `sources` override) — D-017.
+- **Decision:** Implement v5.3.0 layout-delta probe (`FONT_PROBE_STRING`, base families, 52 candidates) inside `withIframe`. Never call `queryLocalFonts`. Do **not** silently append Persian fonts to the default list. Document a future opt-in extension (new `sourceManifestRevision`, separate package or `sources` override) ï¿½ D-017.
 - **Consequences:** Core visitorId semantics stay comparable to filtered upstream; Persian glyph packs require an explicit algorithm bump when shipped.
 
 ---
 
-## 2026-11-03 — Step 13: `userAgentData` (UA-CH)
+## 2026-11-03 ï¿½ Step 13: `userAgentData` (UA-CH)
 
 ### ADR-024: Stable UA-CH component; absence is `undefined`, denial is a value sentinel
 
@@ -625,37 +625,37 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 12: DOM and iframe isolation utilities
+## 2026-11-03 ï¿½ Step 12: DOM and iframe isolation utilities
 
 ### ADR-023: Offscreen iframe helper with mandatory cleanup + abort/timeout
 
 - **Context:** Fonts/DOM probes need an isolated document; host CSS and orphan iframes corrupt measurements and leak nodes. Upstream `withIframe` has no abort/timeout.
 - **Decision:** Port v5.3.0-observable `withIframe` / `addStyleString` / `selectorToElement` / `isAnyParentCrossOrigin` under `packages/core/src/dom`. Use `about:blank` or `srcdoc` only (never http(s) navigation of the host). Always detach the iframe in `finally`. Apply styles via `setProperty` (CSP-friendly). Add optional `timeoutMs` / `AbortSignal` (D-015) so collectors can cancel without leaving DOM behind.
-- **Consequences:** Later sources (fonts, fontPreferences, domBlockers, …) share one isolation primitive. Full in-page package import e2e still waits on playground bundling.
+- **Consequences:** Later sources (fonts, fontPreferences, domBlockers, ï¿½) share one isolation primitive. Full in-page package import e2e still waits on playground bundling.
 
 ---
 
-## 2026-11-03 — Step 11: Browser engine / version capability detectors
+## 2026-11-03 ï¿½ Step 11: Browser engine / version capability detectors
 
 ### ADR-022: Capability-signature detectors; wire into confidence
 
 - **Context:** Confidence heuristic needs engine hints; UA strings are spoofable; Iran-facing Chromium/WebView variants must not be classified by brand text alone.
-- **Decision:** Port v5.3.0-style detectors under `packages/core/src/browser` (on-demand `getBrowserContext`, injectable fixtures). Prefer feature counts over UA. `getConfidence` merges `detectConfidenceEnvironmentHints()` then caller overrides. `ApplePayError` remains an engine signature only (D-001 / D-014) — never an entropy source.
+- **Decision:** Port v5.3.0-style detectors under `packages/core/src/browser` (on-demand `getBrowserContext`, injectable fixtures). Prefer feature counts over UA. `getConfidence` merges `detectConfidenceEnvironmentHints()` then caller overrides. `ApplePayError` remains an engine signature only (D-001 / D-014) ï¿½ never an entropy source.
 - **Consequences:** Agent confidence picks up live hints in browsers; Node/SSR stays all-false ? platform-string path. Full WebKit/Gecko/Android e2e matrix deferred to coverage step 57; Desktop Chromium capability smoke is covered now.
 
 ---
 
-## 2026-11-03 — Step 10: Agent lifecycle load() / get()
+## 2026-11-03 ï¿½ Step 10: Agent lifecycle load() / get()
 
 ### ADR-021: Agent API with monitoring no-op and not-yet-implemented sources as errors
 
-- **Context:** Need public `load`/`get` before individual entropy sources exist (steps 13–53).
+- **Context:** Need public `load`/`get` before individual entropy sources exist (steps 13ï¿½53).
 - **Decision:** Implement upstream-shaped agent (idle prep, lazy visitorId, debug dump). `monitoring` defaults false and never beacons. Builtin registry registers all 41 keys; missing collectors throw `SourceNotImplementedError` ? `{ error, duration }` (not fake values). Test-only `allowNonBrowser` + `sources` injection for Node unit tests.
-- **Consequences:** Visitor IDs today reflect mostly-error component maps; they will change as real sources land (expected pre-release). `version` is `@night-watch/browser-sdk` package version.
+- **Consequences:** Visitor IDs today reflect mostly-error component maps; they will change as real sources land (expected pre-release). `version` is `@thenightwatch/browser-sdk` package version.
 
 ---
 
-## 2026-11-03 — Step 09: Confidence model with honest semantics
+## 2026-11-03 ï¿½ Step 09: Confidence model with honest semantics
 
 ### ADR-020: Labeled heuristic confidence; no Pro marketing; injectable env hints
 
@@ -665,7 +665,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 08: Canonicalization and MurmurHash3 x64 128
+## 2026-11-03 ï¿½ Step 08: Canonicalization and MurmurHash3 x64 128
 
 ### ADR-019: Lock hashing to pinned OSS canonical + x64hash128 semantics
 
@@ -675,17 +675,17 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 07: Error isolation and debug serializer
+## 2026-11-03 ï¿½ Step 07: Error isolation and debug serializer
 
 ### ADR-018: Debug serializer with credential-key redaction
 
 - **Context:** Upstream `componentsToDebugString` + `errorToObject` make Errors JSON-safe; raw dumps could still include custom secret fields.
-- **Decision:** Match upstream Error ? plain object conversion (name/message/stack split) and add redaction of credential-like keys (`token`, `password`, `authorization`, …) in both `errorToObject` and the debug JSON replacer. Hashing continues to use the literal sentinel `'error'` only.
+- **Decision:** Match upstream Error ? plain object conversion (name/message/stack split) and add redaction of credential-like keys (`token`, `password`, `authorization`, ï¿½) in both `errorToObject` and the debug JSON replacer. Hashing continues to use the literal sentinel `'error'` only.
 - **Consequences:** Local debug output is safer for first-party support; filtered-hash parity is unaffected because debug strings are not hashed.
 
 ---
 
-## 2026-11-03 — Step 06: Two-stage collector engine
+## 2026-11-03 ï¿½ Step 06: Two-stage collector engine
 
 ### ADR-017: Pinned two-stage loader semantics (`loadSource` / `loadSources`)
 
@@ -695,7 +695,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 05: Async scheduling and event-loop yielding
+## 2026-11-03 ï¿½ Step 05: Async scheduling and event-loop yielding
 
 ### ADR-016: MessageChannel-first event-loop yield with safe fallbacks
 
@@ -705,7 +705,7 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 04: Environment guards and runtime context
+## 2026-11-03 ï¿½ Step 04: Environment guards and runtime context
 
 ### ADR-014: On-demand probes with explicit unsupported / blocked / error
 
@@ -721,12 +721,12 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 03: Public contracts and API typing
+## 2026-11-03 ï¿½ Step 03: Public contracts and API typing
 
-### ADR-011: Split generic contracts (`@night-watch/core`) from SDK surface (`@night-watch/browser-sdk`)
+### ADR-011: Split generic contracts (`@thenightwatch/core`) from SDK surface (`@thenightwatch/browser-sdk`)
 
 - **Context:** Step 03 requires stable public types without implementing collectors.
-- **Decision:** Engine generics (`Source`, `Component`, `SourcesToComponents`, …) and `BuiltinComponents` live in core; `LoadOptions` / `Agent` / `GetResult` and function signature types live in browser-sdk. Runtime functions remain unimplemented until later steps.
+- **Decision:** Engine generics (`Source`, `Component`, `SourcesToComponents`, ï¿½) and `BuiltinComponents` live in core; `LoadOptions` / `Agent` / `GetResult` and function signature types live in browser-sdk. Runtime functions remain unimplemented until later steps.
 - **Consequences:** Consumers can type against the public API now; importing packages under Node stays SSR-safe.
 
 ### ADR-012: Retain `monitoring?: boolean`, default false / no-op toward vendor endpoints
@@ -739,16 +739,16 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 - **Context:** Iran profile and hashing must not impersonate upstream `5.3.0` identity.
 - **Decision:** Export `ALGORITHM_SCHEMA` with `sourceManifestRevision: default-v1`, `hashingRevision`, `confidenceRevision`, and local `packageVersion`.
-- **Consequences:** `GetResult.version` (later) uses this SDK’s version; manifest changes require an explicit revision bump.
+- **Consequences:** `GetResult.version` (later) uses this SDKï¿½s version; manifest changes require an explicit revision bump.
 
 ---
 
-## 2026-11-03 — Step 02: Monorepo bootstrap and package naming
+## 2026-11-03 ï¿½ Step 02: Monorepo bootstrap and package naming
 
-### ADR-008: Independent npm scope `@night-watch/*`
+### ADR-008: Independent npm scope `@thenightwatch/*`
 
 - **Context:** Must not publish under `@fingerprintjs` or claim affiliation.
-- **Decision:** Root workspace `independent-browser-fingerprint`; packages `@night-watch/core` and `@night-watch/browser-sdk` (Night Watch). Product label: “Night Watch”.
+- **Decision:** Root workspace `independent-browser-fingerprint`; packages `@thenightwatch/core` and `@thenightwatch/browser-sdk` (Night Watch). Product label: ï¿½Night Watchï¿½.
 - **Consequences:** Docs, playground, and publish use this scope. **Locked for release track in ADR-072 / step 61** (rename only via a new ADR before first public npm publish).
 
 ### ADR-009: Tooling stack for foundations
@@ -765,9 +765,9 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 
 ---
 
-## 2026-11-03 — Step 01: Lock baseline and Default-profile profile
+## 2026-11-03 ï¿½ Step 01: Lock baseline and Default-profile profile
 
-### ADR-001: Pin FingerprintJS OSS v5.3.0 commit `dac5ae59…`
+### ADR-001: Pin FingerprintJS OSS v5.3.0 commit `dac5ae59ï¿½`
 
 - **Context:** Specs require a fixed behavioral baseline, not moving `master`.
 - **Decision:** Treat annotated tag `v5.3.0` ? commit `dac5ae59409669f09aa09c0b2f44b7615b0520da` as the only reference pin until an explicit re-baseline is approved.
@@ -812,4 +812,4 @@ ProPlus platform ADRs (**ADR-P00x**) live in `docs/proplus-architecture/ADR_INDE
 ### Pending (deferred)
 
 - `@ibf` scope locked for release track (ADR-072); change only via new ADR before first public npm publish.
-- Real-device Iran matrix (Android/iOS/Brave/Samsung) remains NOT RUN — see `docs/BROWSER_COVERAGE.md`.
+- Real-device Iran matrix (Android/iOS/Brave/Samsung) remains NOT RUN ï¿½ see `docs/BROWSER_COVERAGE.md`.

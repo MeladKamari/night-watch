@@ -1,4 +1,4 @@
-import type { EnabledSourceName } from '@night-watch/core'
+import type { EnabledSourceName } from '@thenightwatch/core'
 
 /** Heuristic stability tier for an Default-profile entropy source (not a uniqueness claim). */
 export type ReliabilityTier = 'stable' | 'moderate' | 'volatile'

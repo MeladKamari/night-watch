@@ -1,4 +1,4 @@
-import type { GetResult } from '@night-watch/browser-sdk'
+import type { GetResult } from '@thenightwatch/browser-sdk'
 import { identify } from './identify.js'
 import type {
   NightWatchClient,

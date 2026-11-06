@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core'
 import { formatTehran } from '../core/i18n-time'
 import { ConsoleApiService } from '../core/api.service'
-import type { ManagementHealth, MetaResponse } from '@night-watch/dashboard-client'
+import type { ManagementHealth, MetaResponse } from '@thenightwatch/dashboard-client'
 
 @Component({
   standalone: true,
