@@ -1,7 +1,7 @@
 {
-  "name": "@night-watch/blazor",
-  "version": "1.0.0",
-  "description": "Night Watch Blazor / WebAssembly JS interop helpers",
+  "name": "@thenightwatch/blazor",
+  "version": "1.0.1",
+  "description": "INTERNAL JS helpers for NightWatch.Blazor — publish the C# package to NuGet, not this npm package.",
   "license": "MIT",
   "keywords": [
     "fingerprint",
@@ -10,10 +10,6 @@
     "dotnet",
     "visitor-id"
   ],
-  "publishConfig": {
-    "access": "public",
-    "tag": "latest"
-  },
   "type": "module",
   "sideEffects": false,
   "exports": {
@@ -42,10 +38,16 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/vanilla": "workspace:*",
-    "@night-watch/browser-sdk": "workspace:*"
+    "@thenightwatch/vanilla": "workspace:*",
+    "@thenightwatch/browser-sdk": "workspace:*"
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/blazor"
+  },
+  "private": true
 }

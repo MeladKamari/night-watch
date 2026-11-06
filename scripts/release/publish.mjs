@@ -4,8 +4,11 @@
  *
  * Prerequisites:
  *   1. npm login
- *   2. Create org https://www.npmjs.com/org/create → night-watch
+ *   2. Org https://www.npmjs.com/org/thenightwatch
  *   3. pnpm release:prepare
+ *
+ * Prefer CI: `.github/workflows/publish.yml` + `scripts/release/ci-publish.mjs`
+ * (OIDC Trusted Publishing, auto patch bump on push to main).
  *
  * Usage:
  *   node scripts/release/publish.mjs           # dry-run
@@ -33,7 +36,7 @@ const PACKAGES = [
   'packages/preact',
   'packages/vue',
   'packages/angular',
-  'packages/blazor',
+  // Blazor C# package → NuGet (NightWatch.Blazor), not npm
 ]
 
 function publishOne(rel) {
