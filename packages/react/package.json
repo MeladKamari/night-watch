@@ -1,6 +1,6 @@
 {
-  "name": "@night-watch/react",
-  "version": "1.0.0",
+  "name": "@thenightwatch/react",
+  "version": "1.0.1",
   "description": "Night Watch React hooks for visitor identification",
   "license": "MIT",
   "keywords": [
@@ -36,8 +36,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/vanilla": "workspace:*",
-    "@night-watch/browser-sdk": "workspace:*"
+    "@thenightwatch/vanilla": "workspace:*",
+    "@thenightwatch/browser-sdk": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"
@@ -53,5 +53,10 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/react"
   }
 }

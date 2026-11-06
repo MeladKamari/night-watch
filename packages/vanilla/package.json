@@ -1,7 +1,7 @@
 {
-  "name": "@night-watch/vanilla",
-  "version": "1.0.0",
-  "description": "Night Watch vanilla JS helpers (identify + cached client) over @night-watch/browser-sdk",
+  "name": "@thenightwatch/vanilla",
+  "version": "1.0.1",
+  "description": "Night Watch vanilla JS helpers (identify + cached client) over @thenightwatch/browser-sdk",
   "license": "MIT",
   "keywords": [
     "fingerprint",
@@ -36,10 +36,15 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/browser-sdk": "workspace:*",
-    "@night-watch/core": "workspace:*"
+    "@thenightwatch/browser-sdk": "workspace:*",
+    "@thenightwatch/core": "workspace:*"
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/vanilla"
   }
 }

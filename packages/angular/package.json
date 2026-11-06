@@ -1,6 +1,6 @@
 {
-  "name": "@night-watch/angular",
-  "version": "1.0.0",
+  "name": "@thenightwatch/angular",
+  "version": "1.0.1",
   "description": "Night Watch Angular service for visitor identification",
   "license": "MIT",
   "keywords": [
@@ -35,8 +35,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/vanilla": "workspace:*",
-    "@night-watch/browser-sdk": "workspace:*"
+    "@thenightwatch/vanilla": "workspace:*",
+    "@thenightwatch/browser-sdk": "workspace:*"
   },
   "peerDependencies": {
     "@angular/core": ">=17",
@@ -48,5 +48,10 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/angular"
   }
 }

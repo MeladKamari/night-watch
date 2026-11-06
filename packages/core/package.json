@@ -1,6 +1,6 @@
 {
-  "name": "@night-watch/core",
-  "version": "1.0.0",
+  "name": "@thenightwatch/core",
+  "version": "1.0.1",
   "description": "Core contracts and default source registry for the independent browser fingerprint SDK",
   "license": "MIT",
   "keywords": [
@@ -49,5 +49,10 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/core"
   }
 }

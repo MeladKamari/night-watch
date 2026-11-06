@@ -1,5 +1,5 @@
 {
-  "name": "@night-watch/contracts",
+  "name": "@thenightwatch/contracts",
   "version": "1.0.0",
   "description": "Shared contracts for Night Watch (independent; not affiliated with Fingerprint Inc.)",
   "license": "MIT",

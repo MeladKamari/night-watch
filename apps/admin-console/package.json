@@ -1,5 +1,5 @@
 {
-  "name": "@night-watch/admin-console",
+  "name": "@thenightwatch/admin-console",
   "version": "1.0.0",
   "private": true,
   "description": "Night Watch admin console (fa-IR RTL / en-US LTR)",
@@ -16,7 +16,7 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
-    "@night-watch/dashboard-client": "workspace:*",
+    "@thenightwatch/dashboard-client": "workspace:*",
     "primeng": "^19.0.0",
     "rxjs": "^7.8.1",
     "tslib": "^2.8.1",

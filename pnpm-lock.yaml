@@ -175,43 +175,43 @@ importers:
       '@fingerprintjs/fingerprintjs':
         specifier: 5.3.0
         version: 5.3.0
-      '@night-watch/angular':
+      '@thenightwatch/angular':
         specifier: workspace:*
         version: link:packages/angular
-      '@night-watch/blazor':
+      '@thenightwatch/blazor':
         specifier: workspace:*
         version: link:packages/blazor
-      '@night-watch/browser-adapter':
+      '@thenightwatch/browser-adapter':
         specifier: workspace:*
         version: link:packages/pro-browser-adapter
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:packages/browser-sdk
-      '@night-watch/contracts':
+      '@thenightwatch/contracts':
         specifier: workspace:*
         version: link:packages/pro-contracts
-      '@night-watch/core':
+      '@thenightwatch/core':
         specifier: workspace:*
         version: link:packages/core
-      '@night-watch/dashboard-client':
+      '@thenightwatch/dashboard-client':
         specifier: workspace:*
         version: link:packages/pro-dashboard-client
-      '@night-watch/preact':
+      '@thenightwatch/preact':
         specifier: workspace:*
         version: link:packages/preact
-      '@night-watch/react':
+      '@thenightwatch/react':
         specifier: workspace:*
         version: link:packages/react
-      '@night-watch/server-sdk':
+      '@thenightwatch/server-sdk':
         specifier: workspace:*
         version: link:packages/pro-server-sdk
-      '@night-watch/vanilla':
+      '@thenightwatch/vanilla':
         specifier: workspace:*
         version: link:packages/vanilla
-      '@night-watch/vue':
+      '@thenightwatch/vue':
         specifier: workspace:*
         version: link:packages/vue
-      '@night-watch/web-agent':
+      '@thenightwatch/web-agent':
         specifier: workspace:*
         version: link:packages/pro-web-agent
       '@playwright/test':
@@ -289,7 +289,7 @@ importers:
       '@angular/router':
         specifier: ^19.2.0
         version: 19.2.25(@angular/common@19.2.25(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@19.2.25(@angular/animations@19.2.25(@angular/common@19.2.25(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@19.2.25(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.25(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
-      '@night-watch/dashboard-client':
+      '@thenightwatch/dashboard-client':
         specifier: workspace:*
         version: link:../../packages/pro-dashboard-client
       primeng:
@@ -323,10 +323,10 @@ importers:
 
   apps/playground:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../../packages/browser-sdk
-      '@night-watch/core':
+      '@thenightwatch/core':
         specifier: workspace:*
         version: link:../../packages/core
     devDependencies:
@@ -336,10 +336,10 @@ importers:
 
   packages/angular:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/vanilla':
+      '@thenightwatch/vanilla':
         specifier: workspace:*
         version: link:../vanilla
     devDependencies:
@@ -352,16 +352,16 @@ importers:
 
   packages/blazor:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/vanilla':
+      '@thenightwatch/vanilla':
         specifier: workspace:*
         version: link:../vanilla
 
   packages/browser-sdk:
     dependencies:
-      '@night-watch/core':
+      '@thenightwatch/core':
         specifier: workspace:*
         version: link:../core
 
@@ -369,10 +369,10 @@ importers:
 
   packages/preact:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/vanilla':
+      '@thenightwatch/vanilla':
         specifier: workspace:*
         version: link:../vanilla
     devDependencies:
@@ -382,13 +382,13 @@ importers:
 
   packages/pro-browser-adapter:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/contracts':
+      '@thenightwatch/contracts':
         specifier: workspace:*
         version: link:../pro-contracts
-      '@night-watch/core':
+      '@thenightwatch/core':
         specifier: workspace:*
         version: link:../core
 
@@ -396,37 +396,37 @@ importers:
 
   packages/pro-dashboard-client:
     dependencies:
-      '@night-watch/contracts':
+      '@thenightwatch/contracts':
         specifier: workspace:*
         version: link:../pro-contracts
 
   packages/pro-server-sdk:
     dependencies:
-      '@night-watch/contracts':
+      '@thenightwatch/contracts':
         specifier: workspace:*
         version: link:../pro-contracts
 
   packages/pro-web-agent:
     dependencies:
-      '@night-watch/browser-adapter':
+      '@thenightwatch/browser-adapter':
         specifier: workspace:*
         version: link:../pro-browser-adapter
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/contracts':
+      '@thenightwatch/contracts':
         specifier: workspace:*
         version: link:../pro-contracts
-      '@night-watch/core':
+      '@thenightwatch/core':
         specifier: workspace:*
         version: link:../core
 
   packages/react:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/vanilla':
+      '@thenightwatch/vanilla':
         specifier: workspace:*
         version: link:../vanilla
     devDependencies:
@@ -439,19 +439,19 @@ importers:
 
   packages/vanilla:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/core':
+      '@thenightwatch/core':
         specifier: workspace:*
         version: link:../core
 
   packages/vue:
     dependencies:
-      '@night-watch/browser-sdk':
+      '@thenightwatch/browser-sdk':
         specifier: workspace:*
         version: link:../browser-sdk
-      '@night-watch/vanilla':
+      '@thenightwatch/vanilla':
         specifier: workspace:*
         version: link:../vanilla
     devDependencies:

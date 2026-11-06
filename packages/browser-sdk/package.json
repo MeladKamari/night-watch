@@ -1,6 +1,6 @@
 {
-  "name": "@night-watch/browser-sdk",
-  "version": "1.0.0",
+  "name": "@thenightwatch/browser-sdk",
+  "version": "1.0.1",
   "description": "Browser SDK entry for the independent 41-source fingerprinting library",
   "license": "MIT",
   "keywords": [
@@ -55,9 +55,14 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/core": "workspace:*"
+    "@thenightwatch/core": "workspace:*"
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/browser-sdk"
   }
 }

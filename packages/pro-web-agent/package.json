@@ -1,7 +1,7 @@
 {
-  "name": "@night-watch/web-agent",
+  "name": "@thenightwatch/web-agent",
   "version": "1.0.0",
-  "description": "Night Watch web agent public API wrapping @night-watch/browser-sdk without changing visitorId",
+  "description": "Night Watch web agent public API wrapping @thenightwatch/browser-sdk without changing visitorId",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -27,10 +27,10 @@
     "checksums": "node ./scripts/checksum-dist.mjs"
   },
   "dependencies": {
-    "@night-watch/browser-adapter": "workspace:*",
-    "@night-watch/contracts": "workspace:*",
-    "@night-watch/browser-sdk": "workspace:*",
-    "@night-watch/core": "workspace:*"
+    "@thenightwatch/browser-adapter": "workspace:*",
+    "@thenightwatch/contracts": "workspace:*",
+    "@thenightwatch/browser-sdk": "workspace:*",
+    "@thenightwatch/core": "workspace:*"
   },
   "engines": {
     "node": ">=20"

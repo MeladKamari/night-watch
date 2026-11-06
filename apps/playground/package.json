@@ -1,5 +1,5 @@
 {
-  "name": "@night-watch/playground",
+  "name": "@thenightwatch/playground",
   "private": true,
   "version": "1.0.0",
   "description": "Local first-party interactive fingerprint playground (loopback only)",
@@ -12,8 +12,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/browser-sdk": "workspace:*",
-    "@night-watch/core": "workspace:*"
+    "@thenightwatch/browser-sdk": "workspace:*",
+    "@thenightwatch/core": "workspace:*"
   },
   "devDependencies": {
     "vite": "^6.2.2"

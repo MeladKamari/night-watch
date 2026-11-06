@@ -1,6 +1,6 @@
 {
-  "name": "@night-watch/preact",
-  "version": "1.0.0",
+  "name": "@thenightwatch/preact",
+  "version": "1.0.1",
   "description": "Night Watch Preact hooks for visitor identification",
   "license": "MIT",
   "keywords": [
@@ -36,8 +36,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/vanilla": "workspace:*",
-    "@night-watch/browser-sdk": "workspace:*"
+    "@thenightwatch/vanilla": "workspace:*",
+    "@thenightwatch/browser-sdk": "workspace:*"
   },
   "peerDependencies": {
     "preact": ">=10"
@@ -47,5 +47,10 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/preact"
   }
 }

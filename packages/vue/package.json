@@ -1,6 +1,6 @@
 {
-  "name": "@night-watch/vue",
-  "version": "1.0.0",
+  "name": "@thenightwatch/vue",
+  "version": "1.0.1",
   "description": "Night Watch Vue composables for visitor identification",
   "license": "MIT",
   "keywords": [
@@ -36,8 +36,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/vanilla": "workspace:*",
-    "@night-watch/browser-sdk": "workspace:*"
+    "@thenightwatch/vanilla": "workspace:*",
+    "@thenightwatch/browser-sdk": "workspace:*"
   },
   "peerDependencies": {
     "vue": ">=3.3"
@@ -47,5 +47,10 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeladKamari/night-watch.git",
+    "directory": "packages/vue"
   }
 }

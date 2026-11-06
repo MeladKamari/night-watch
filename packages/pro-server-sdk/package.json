@@ -1,5 +1,5 @@
 {
-  "name": "@night-watch/server-sdk",
+  "name": "@thenightwatch/server-sdk",
   "version": "1.0.0",
   "description": "First-party TypeScript client contracts for the future Night Watch ASP.NET Core API",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@night-watch/contracts": "workspace:*"
+    "@thenightwatch/contracts": "workspace:*"
   },
   "engines": {
     "node": ">=20"
