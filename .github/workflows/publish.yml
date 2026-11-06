@@ -1,6 +1,7 @@
-# Publish @thenightwatch frontend packages to npm on push to main.
+# Publish @thenightwatch frontend packages to npm on push to main,
+# and mirror them to GitHub Packages as @MeladKamari/night-watch-*.
 #
-# Auth (preferred): npm Trusted Publishing (OIDC) — no long-lived token.
+# Auth (npm, preferred): Trusted Publishing (OIDC) — no long-lived token.
 # For each package on npmjs.com → Package Settings → Trusted Publisher:
 #   Provider: GitHub Actions
 #   User/org: MeladKamari
@@ -9,6 +10,7 @@
 #   Allow: npm publish
 #
 # Optional fallback secret: NPM_TOKEN (granular token with Bypass 2FA).
+# GitHub Packages uses GITHUB_TOKEN (packages: write).
 #
 # Skip a push: include "chore(release):" or "[skip release]" in the commit message.
 name: publish
@@ -35,6 +37,10 @@ on:
         type: choice
         options: [patch, minor, major]
         default: patch
+      github_packages_only:
+        description: Only mirror current versions to GitHub Packages (no npm bump)
+        type: boolean
+        default: false
 
 concurrency:
   group: publish-npm
@@ -43,6 +49,7 @@ concurrency:
 permissions:
   contents: write
   id-token: write
+  packages: write
 
 env:
   CI: true
@@ -72,7 +79,7 @@ jobs:
         with:
           version: 12.15.0
 
-      - name: Setup Node.js
+      - name: Setup Node.js (npmjs)
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '22'
@@ -84,16 +91,20 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Lint
+        if: ${{ github.event.inputs.github_packages_only != 'true' }}
         run: pnpm lint
 
       - name: Typecheck
+        if: ${{ github.event.inputs.github_packages_only != 'true' }}
         run: pnpm typecheck
 
       - name: Unit tests
+        if: ${{ github.event.inputs.github_packages_only != 'true' }}
         run: pnpm test
 
       - name: Resolve bump type
         id: bump
+        if: ${{ github.event.inputs.github_packages_only != 'true' }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "type=${{ inputs.bump }}" >> "$GITHUB_OUTPUT"
@@ -103,6 +114,7 @@ jobs:
 
       - name: Version, build, and publish to npm
         id: release
+        if: ${{ github.event.inputs.github_packages_only != 'true' }}
         env:
           # OIDC is primary; secret is optional fallback.
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -121,7 +133,25 @@ jobs:
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "Published version: $VERSION"
 
+      - name: Build packages (GitHub Packages-only)
+        if: ${{ github.event.inputs.github_packages_only == 'true' }}
+        run: pnpm build
+
+      - name: Setup Node.js (GitHub Packages)
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@MeladKamari'
+
+      - name: Mirror to GitHub Packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/release/github-packages-publish.mjs --execute
+
       - name: Commit version bump and push tag
+        if: ${{ github.event.inputs.github_packages_only != 'true' }}
         env:
           VERSION: ${{ steps.release.outputs.version }}
         run: |
