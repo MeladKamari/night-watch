@@ -75,41 +75,24 @@ public class Closure100WaveTests : IClassFixture<WebApplicationFactory<Program>>
     public async Task Identify_with_probes_marks_enrichment_completed()
     {
         var idem = "closure-enrich-" + Guid.NewGuid().ToString("N")[..8];
-        using var req = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
+        var probes = new
         {
-            Content = JsonContent.Create(new
-            {
-                schemaVersion = "night-watch-identify-v1",
-                productCode = "night-watch",
-                purpose = "fraud_prevention",
-                consentStatus = "granted",
-                collectedAt = DateTimeOffset.UtcNow.ToString("O"),
-                idempotencyKey = idem,
-                tenantId = "ten_100",
-                projectId = "prj_100",
-                region = "ir-central",
-                environmentProbes = new
-                {
-                    probeCollected = true,
-                    userAgent = "Mozilla/5.0",
-                    navigatorWebdriver = false,
-                    automationArtifacts = Array.Empty<string>(),
-                    platform = "Win32",
-                    deviceMemory = 8,
-                    hardwareConcurrency = 4
-                },
-                legacyBrowser = new
-                {
-                    visitorId = "33333333333333333333333333333333",
-                    sourceManifestRevision = "default-v1",
-                    componentKeys = new[] { "canvas", "fonts" }
-                }
-            })
+            probeCollected = true,
+            userAgent = "Mozilla/5.0",
+            navigatorWebdriver = false,
+            automationArtifacts = Array.Empty<string>(),
+            platform = "Win32",
+            deviceMemory = 8,
+            hardwareConcurrency = 4
         };
-        req.Headers.TryAddWithoutValidation("Idempotency-Key", idem);
-        var res = await _client.SendAsync(req);
+        var (res, json) = await IdentifyFixtures.PostIdentifyAsync(
+            _client,
+            "closure-enrich-" + Guid.NewGuid().ToString("N")[..8],
+            idem,
+            tenant: "ten_100",
+            project: "prj_100",
+            environmentProbes: probes);
         Assert.Equal(HttpStatusCode.OK, res.StatusCode);
-        var json = await res.Content.ReadFromJsonAsync<JsonElement>();
         Assert.Equal("completed", json.GetProperty("enrichmentStatus").GetString());
         Assert.Equal("night-watch-identity-v4", json.GetProperty("identityAlgorithmVersion").GetString());
         Assert.Equal(JsonValueKind.Array, json.GetProperty("smartSignals").ValueKind);

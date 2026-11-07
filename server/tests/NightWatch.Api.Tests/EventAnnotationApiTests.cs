@@ -20,29 +20,14 @@ public class EventAnnotationApiTests : IClassFixture<WebApplicationFactory<Progr
 
     private async Task<string> IdentifyEventAsync()
     {
-        using var req = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(new
-            {
-                schemaVersion = "night-watch-identify-v1",
-                productCode = "night-watch",
-                purpose = "fraud_prevention",
-                consentStatus = "granted",
-                collectedAt = DateTimeOffset.UtcNow.ToString("O"),
-                idempotencyKey = "annot-idem-" + Guid.NewGuid().ToString("N")[..12],
-                tenantId = "ten_annot",
-                projectId = "prj_web",
-                legacyBrowser = new
-                {
-                    visitorId = Convert.ToHexString(Guid.NewGuid().ToByteArray()).ToLowerInvariant()[..32],
-                    sourceManifestRevision = "default-v1",
-                    componentKeys = new[] { "canvas", "fonts", "audio", "timezone", "platform" }
-                }
-            })
-        };
-        var res = await _client.SendAsync(req);
+        var idem = "annot-idem-" + Guid.NewGuid().ToString("N")[..12];
+        var (res, json) = await IdentifyFixtures.PostIdentifyAsync(
+            _client,
+            "annot-" + Guid.NewGuid().ToString("N")[..12],
+            idem,
+            tenant: "ten_annot",
+            project: "prj_web");
         res.EnsureSuccessStatusCode();
-        var json = await res.Content.ReadFromJsonAsync<JsonElement>();
         return json.GetProperty("eventId").GetString()!;
     }
 

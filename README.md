@@ -152,28 +152,40 @@ Health:
 curl http://127.0.0.1:5080/health/live
 ```
 
-Identify (minimal):
+Identify (minimal — challenge + real components + hash verify):
 
 ```bash
+# 1) one-time challenge
+CHAL=$(curl -s http://127.0.0.1:5080/v1/identify/challenge \
+  -H "Content-Type: application/json" \
+  -d '{"tenantId":"ten_demo","projectId":"prj_demo"}' | jq -r .challengeNonce)
+
+# 2) identify — visitorId must equal hashComponents(components)
 curl -s http://127.0.0.1:5080/v1/identify \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: demo-00000001" \
-  -d '{
-    "schemaVersion": "night-watch-identify-v1",
-    "productCode": "night-watch",
-    "purpose": "fraud_prevention",
-    "consentStatus": "granted",
-    "collectedAt": "2026-01-01T00:00:00Z",
-    "idempotencyKey": "demo-00000001",
-    "tenantId": "ten_demo",
-    "projectId": "prj_demo",
-    "region": "eu-west",
-    "legacyBrowser": {
-      "visitorId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "sourceManifestRevision": "default-v1",
-      "componentKeys": ["canvas", "fonts", "audio"]
+  -d "{
+    \"schemaVersion\": \"night-watch-identify-v1\",
+    \"productCode\": \"night-watch\",
+    \"purpose\": \"fraud_prevention\",
+    \"consentStatus\": \"granted\",
+    \"collectedAt\": \"2026-01-01T00:00:00Z\",
+    \"idempotencyKey\": \"demo-00000001\",
+    \"tenantId\": \"ten_demo\",
+    \"projectId\": \"prj_demo\",
+    \"region\": \"eu-west\",
+    \"challengeNonce\": \"$CHAL\",
+    \"legacyBrowser\": {
+      \"visitorId\": \"b0a3ed33df2bfd9f8ead1eebe9d2cf99\",
+      \"sourceManifestRevision\": \"default-v1\",
+      \"hashingRevision\": \"murmur3-x64-128-canonical-v1\",
+      \"componentKeys\": [\"a\", \"b\"],
+      \"components\": {
+        \"a\": { \"value\": \"x\", \"duration\": 1 },
+        \"b\": { \"value\": 1, \"duration\": 1 }
+      }
     }
-  }'
+  }"
 ```
 
 Docker Compose (Postgres + Redis + API): see [`server/docker-compose.yml`](./server/docker-compose.yml) and [`server/deploy/`](./server/deploy/).
@@ -184,7 +196,9 @@ Docker Compose (Postgres + Redis + API): see [`server/docker-compose.yml`](./ser
 
 | Method | Path | Purpose |
 |---|---|---|
-| `POST` | `/v1/identify` | Server-authoritative visitor match + optional smart signals |
+| `POST` | `/v1/identify/challenge` | One-time challenge nonce (required before identify) |
+| `POST` | `/v1/identify` | Server-authoritative visitor match; verifies `hashComponents(components)` + challenge + velocity |
+| gRPC | `nightwatch.v1.NightWatchIdentity` | Same surface over HTTP/2 — see [`server/docs/GRPC.md`](./server/docs/GRPC.md) |
 | `POST` | `/v1/decisions/evaluate` | Risk decision from observed probes / score |
 | `POST` | `/v1/observations` | Observation ingest |
 | `POST` | `/v1/sealed/unseal` | Verify sealed identify envelope |

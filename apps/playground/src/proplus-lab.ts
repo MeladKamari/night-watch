@@ -85,9 +85,35 @@ export function storeContinuityToken(token: string | undefined | null): void {
   }
 }
 
+export type IdentifyComponentMap = Record<
+  string,
+  { value?: unknown; error?: unknown; duration: number }
+>
+
+export async function issueIdentifyChallenge(
+  config?: ProPlusLabConfig,
+): Promise<string> {
+  const cfg = config ?? readLabConfig()
+  const res = await fetch(`${cfg.apiBase}/v1/identify/challenge`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ tenantId: cfg.tenantId, projectId: cfg.projectId }),
+  })
+  const raw = await res.json()
+  if (!res.ok) {
+    throw new Error(`challenge ${res.status}: ${JSON.stringify(raw)}`)
+  }
+  const nonce = raw?.challengeNonce ?? raw?.ChallengeNonce
+  if (typeof nonce !== 'string' || nonce.length < 16) {
+    throw new Error('challenge response missing challengeNonce')
+  }
+  return nonce
+}
+
 export async function identifyToProPlus(input: {
   legacyVisitorId: string
   componentKeys: string[]
+  components: IdentifyComponentMap
   sourceManifestRevision: string
   clientDevice?: ClientDevicePayload
   environmentProbes?: EnvironmentProbesPayload
@@ -97,6 +123,7 @@ export async function identifyToProPlus(input: {
   const cfg = input.config ?? readLabConfig()
   const idem = `pg_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`
   const continuityToken = input.continuityToken ?? readStoredContinuityToken()
+  const challengeNonce = await issueIdentifyChallenge(cfg)
   const body = {
     schemaVersion: 'night-watch-identify-v1',
     productCode: 'night-watch',
@@ -107,6 +134,7 @@ export async function identifyToProPlus(input: {
     tenantId: cfg.tenantId,
     projectId: cfg.projectId,
     region: 'ir-central',
+    challengeNonce,
     clientVisitorId: 'ignored_client_authority',
     clientConfidence: 0.5,
     clientDevice: input.clientDevice,
@@ -116,7 +144,9 @@ export async function identifyToProPlus(input: {
     legacyBrowser: {
       visitorId: input.legacyVisitorId,
       sourceManifestRevision: input.sourceManifestRevision,
+      hashingRevision: 'murmur3-x64-128-canonical-v1',
       componentKeys: input.componentKeys,
+      components: input.components,
     },
   }
 

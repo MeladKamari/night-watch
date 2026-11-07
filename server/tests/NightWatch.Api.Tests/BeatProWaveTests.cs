@@ -18,31 +18,6 @@ public class BeatProWaveTests : IClassFixture<WebApplicationFactory<Program>>
         _client = factory.CreateClient();
     }
 
-    private static object IdentifyBody(
-        string legacyHash,
-        string idem,
-        object? clientDevice = null,
-        object? environmentProbes = null) => new
-    {
-        schemaVersion = "night-watch-identify-v1",
-        productCode = "night-watch",
-        purpose = "fraud_prevention",
-        consentStatus = "granted",
-        collectedAt = DateTimeOffset.UtcNow.ToString("O"),
-        idempotencyKey = idem,
-        tenantId = "ten_beat",
-        projectId = "prj_beat",
-        region = "ir-central",
-        clientDevice,
-        environmentProbes,
-        legacyBrowser = new
-        {
-            visitorId = legacyHash,
-            sourceManifestRevision = "default-v1",
-            componentKeys = new[] { "canvas", "fonts", "audio", "timezone", "platform" }
-        }
-    };
-
     [Fact]
     public async Task Fuzzy_insights_soft_link_without_merging_visitor_ids()
     {
@@ -59,26 +34,15 @@ public class BeatProWaveTests : IClassFixture<WebApplicationFactory<Program>>
 
         var idem1 = "beat-fuzzy-" + Guid.NewGuid().ToString("N")[..8];
         var idem2 = "beat-fuzzy-" + Guid.NewGuid().ToString("N")[..8];
-        using var r1 = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(IdentifyBody(Guid.NewGuid().ToString("N"), idem1, device))
-        };
-        r1.Headers.TryAddWithoutValidation("Idempotency-Key", idem1);
+        var (a, ja) = await IdentifyFixtures.PostIdentifyAsync(
+            _client, "beat-fuzzy-a-" + Guid.NewGuid().ToString("N")[..8], idem1,
+            tenant: "ten_beat", project: "prj_beat", clientDevice: device);
+        var (b, jb) = await IdentifyFixtures.PostIdentifyAsync(
+            _client, "beat-fuzzy-b-" + Guid.NewGuid().ToString("N")[..8], idem2,
+            tenant: "ten_beat", project: "prj_beat", clientDevice: device);
 
-        using var r2 = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(IdentifyBody(Guid.NewGuid().ToString("N"), idem2, device))
-        };
-        r2.Headers.TryAddWithoutValidation("Idempotency-Key", idem2);
-
-        var a = await _client.SendAsync(r1);
-        var b = await _client.SendAsync(r2);
         Assert.Equal(HttpStatusCode.OK, a.StatusCode);
         Assert.Equal(HttpStatusCode.OK, b.StatusCode);
-
-        var ja = await a.Content.ReadFromJsonAsync<JsonElement>();
-        var jb = await b.Content.ReadFromJsonAsync<JsonElement>();
-
         Assert.NotEqual(ja.GetProperty("visitorId").GetString(), jb.GetProperty("visitorId").GetString());
         Assert.Equal("created", ja.GetProperty("matchType").GetString());
         Assert.Equal("created", jb.GetProperty("matchType").GetString());
@@ -102,22 +66,19 @@ public class BeatProWaveTests : IClassFixture<WebApplicationFactory<Program>>
             automationArtifacts = new[] { "navigator.webdriver" }
         };
 
-        using var req = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(IdentifyBody(
-                "12121212121212121212121212121212",
-                "beat-probes-0000001",
-                environmentProbes: probes))
-        };
-        req.Headers.TryAddWithoutValidation("Idempotency-Key", "beat-probes-0000001");
-
-        var res = await _client.SendAsync(req);
+        var (res, json) = await IdentifyFixtures.PostIdentifyAsync(
+            _client,
+            "beat-probes-" + Guid.NewGuid().ToString("N")[..8],
+            "beat-probes-0000001",
+            tenant: "ten_beat",
+            project: "prj_beat",
+            environmentProbes: probes);
         Assert.Equal(HttpStatusCode.OK, res.StatusCode);
-        var json = await res.Content.ReadFromJsonAsync<JsonElement>();
         Assert.Equal(JsonValueKind.Array, json.GetProperty("smartSignals").ValueKind);
         Assert.True(json.GetProperty("smartSignals").GetArrayLength() > 0);
         Assert.Equal(JsonValueKind.Object, json.GetProperty("scoreReceipt").ValueKind);
         Assert.True(json.GetProperty("scoreReceipt").GetProperty("score").GetInt32() >= 0);
+        Assert.True(json.TryGetProperty("velocity", out _));
     }
 
     [Fact]

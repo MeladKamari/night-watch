@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -28,6 +28,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightWatch.Persistence", "src\NightWatch.Persistence\NightWatch.Persistence.csproj", "{C6F3C1BE-DBFE-4898-86C9-5AD5BAA84D62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightWatch.Grpc.Contracts", "src\NightWatch.Grpc.Contracts\NightWatch.Grpc.Contracts.csproj", "{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,11 +185,24 @@ Global
 		{C6F3C1BE-DBFE-4898-86C9-5AD5BAA84D62}.Release|x64.Build.0 = Release|Any CPU
 		{C6F3C1BE-DBFE-4898-86C9-5AD5BAA84D62}.Release|x86.ActiveCfg = Release|Any CPU
 		{C6F3C1BE-DBFE-4898-86C9-5AD5BAA84D62}.Release|x86.Build.0 = Release|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Debug|x64.Build.0 = Debug|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Debug|x86.Build.0 = Debug|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Release|x64.ActiveCfg = Release|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Release|x64.Build.0 = Release|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Release|x86.ActiveCfg = Release|Any CPU
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C6F3C1BE-DBFE-4898-86C9-5AD5BAA84D62} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{80155CA7-BCD3-4C8E-B386-4E1DE8AE775E} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal

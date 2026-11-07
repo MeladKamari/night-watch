@@ -30,8 +30,16 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using NightWatch.Api.Grpc;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// HTTP/1.1 (REST) + HTTP/2 (gRPC) on the same Kestrel endpoints.
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ConfigureEndpointDefaults(lo => lo.Protocols = HttpProtocols.Http1AndHttp2);
+});
 
 builder.Logging.ClearProviders();
 builder.Logging.AddJsonConsole(o =>
@@ -41,6 +49,8 @@ builder.Logging.AddJsonConsole(o =>
 });
 
 builder.Services.AddOpenApi();
+builder.Services.AddGrpc();
+builder.Services.AddGrpcReflection();
 builder.Services.AddCors(o => o.AddPolicy("console", p =>
     p.WithOrigins(
             "http://127.0.0.1:4300",
@@ -186,11 +196,21 @@ app.MapGet("/v1/meta", (IEnumerable<IProPlusModule> modules) =>
         identityAlgorithmVersion = ProductIdentity.IdentityAlgorithmVersion,
         processingVersion = ProductIdentity.ProcessingVersion,
         legacySourceManifestRevision = ProductIdentity.LegacySourceManifestRevision,
+        hashingRevision = ProductIdentity.HashingRevision,
         modules = names,
+        transports = new[] { "http", "grpc" },
+        grpcService = "nightwatch.v1.NightWatchIdentity",
+        grpcProto = "server/src/NightWatch.Api/Protos/night_watch_v1.proto",
         runtimeVendorSaas = false,
         applePay = "excluded"
     });
 }).WithName("Meta");
+
+app.MapGrpcService<NightWatchIdentityGrpcService>();
+if (app.Environment.IsDevelopment())
+{
+    app.MapGrpcReflectionService();
+}
 
 app.MapGet("/v1/management/health", (IEnumerable<IProPlusModule> modules) =>
 {
@@ -282,6 +302,38 @@ app.MapPost("/v1/observations", async (HttpRequest request, IObservationIngestSe
     return Results.Json(payload, statusCode: status);
 }).WithName("IngestObservation");
 
+app.MapPost("/v1/identify/challenge", async (HttpRequest request, IIdentifyChallengeService challenges) =>
+{
+    using var doc = await JsonDocument.ParseAsync(request.Body);
+    var tenantId = doc.RootElement.TryGetProperty("tenantId", out var t) ? t.GetString() : null;
+    var projectId = doc.RootElement.TryGetProperty("projectId", out var p) ? p.GetString() : null;
+    if (string.IsNullOrWhiteSpace(tenantId) || string.IsNullOrWhiteSpace(projectId))
+    {
+        return Results.Json(
+            new IdentifyProblem
+            {
+                Type = "https://night-watch.local/problems/namespace_required",
+                Title = "namespace_required",
+                Status = 400,
+                Code = "namespace_required",
+                Detail = "tenantId and projectId required"
+            },
+            statusCode: 400,
+            contentType: "application/problem+json");
+    }
+
+    var ticket = challenges.Issue(tenantId, projectId);
+    return Results.Json(new
+    {
+        challengeNonce = ticket.ChallengeNonce,
+        tenantId = ticket.TenantId,
+        projectId = ticket.ProjectId,
+        expiresAt = ticket.ExpiresAt,
+        ttlSeconds = ticket.TtlSeconds,
+        note = "single_use_anti_replay_not_proof_of_honest_collection"
+    });
+}).WithName("IdentifyChallenge");
+
 app.MapPost("/v1/identify", async (
     HttpRequest request,
     IIdentifyService identify,
@@ -355,12 +407,24 @@ app.MapPost("/v1/identify", async (
 
         object? smartSignals = null;
         object? scoreReceipt = null;
+        object? velocityReceipt = null;
         var enrichmentStatus = id.EnrichmentStatus;
+        var netCtx = ReadNetworkContext(request);
+        var velKey = $"{tenantId}|ip|{(netCtx.ClientIp ?? netCtx.ForwardedFor ?? "unknown")}";
+        var eventsHour = velocity.Record(velKey);
+        var anomaly = eventsHour >= 40 ? "elevated_velocity"
+            : eventsHour >= 15 ? "elevated_velocity_soft"
+            : "none";
+        velocityReceipt = new
+        {
+            eventsLastHour = eventsHour,
+            anomaly,
+            keyKind = "tenant_ip",
+            note = "heuristic_velocity_not_calibrated_ml"
+        };
+
         if (rawRoot is { } root)
         {
-            var netCtx = ReadNetworkContext(request);
-            var velKey = $"{tenantId}|ip|{(netCtx.ClientIp ?? netCtx.ForwardedFor ?? "unknown")}";
-            var eventsHour = velocity.Record(velKey);
             var input = EnvironmentProbeMapper.FromJson(root, ReadSignatureAgent(request));
             input = input with { EventsLastHour = input.EventsLastHour ?? eventsHour };
             input = NetworkReputationEnricher.Enrich(input, netCtx, asnStore);
@@ -395,7 +459,20 @@ app.MapPost("/v1/identify", async (
                     unknownSignals = scored.UnknownSignals,
                     reasonCodes = scored.ReasonCodes,
                     eventsLastHour = eventsHour,
+                    anomaly,
                     receipt = "heuristic_weighted_not_calibrated_ml"
+                };
+            }
+            else
+            {
+                scoreReceipt = new
+                {
+                    score = eventsHour >= 40 ? 60 : eventsHour >= 15 ? 25 : 0,
+                    decision = eventsHour >= 40 ? "challenge" : "observe",
+                    mode = "velocity_only",
+                    eventsLastHour = eventsHour,
+                    anomaly,
+                    receipt = "heuristic_velocity_not_calibrated_ml"
                 };
             }
         }
@@ -464,6 +541,7 @@ app.MapPost("/v1/identify", async (
             },
             smartSignals,
             scoreReceipt,
+            velocity = velocityReceipt,
             sealedEnvelope = envelope,
             sealedAudience = audience,
             sealedNote = "client_visible_only_not_authoritative_without_unseal"
@@ -1598,6 +1676,29 @@ app.MapPost("/v1/lab/calibration/run", async (HttpRequest request, FraudFeedback
         note = "Use metrics for operator review; identify confidenceStatus remains heuristic until labeled production data exists."
     });
 }).WithName("LabCalibrationRun");
+
+app.MapPost("/v1/lab/hash-components", async (HttpRequest request) =>
+{
+    using var doc = await JsonDocument.ParseAsync(request.Body);
+    if (!doc.RootElement.TryGetProperty("components", out var components)
+        || components.ValueKind != JsonValueKind.Object)
+    {
+        return Results.Json(
+            new { code = "components_required", status = 400, detail = "components object required" },
+            statusCode: 400,
+            contentType: "application/problem+json");
+    }
+
+    var canonical = NightWatch.BuildingBlocks.Hashing.ComponentHasher.ComponentsToCanonicalString(components);
+    var visitorId = NightWatch.BuildingBlocks.Hashing.ComponentHasher.HashComponents(components);
+    return Results.Json(new
+    {
+        visitorId,
+        canonical,
+        hashingRevision = NightWatch.BuildingBlocks.ProductIdentity.HashingRevision,
+        note = "lab_helper_parity_with_hashComponents_not_a_trust_proof"
+    });
+}).WithName("LabHashComponents");
 
 app.MapPost("/v1/lab/network/lookup", async (HttpRequest request, AsnReputationStore asnStore) =>
 {

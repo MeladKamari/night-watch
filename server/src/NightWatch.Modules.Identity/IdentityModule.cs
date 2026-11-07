@@ -18,6 +18,7 @@ public static class IdentityServiceCollectionExtensions
         services.AddSingleton<EventQueryOptions>();
         services.AddSingleton<EventSearchOptions>();
         services.AddSingleton<VisitorLifecycleOptions>();
+        services.AddSingleton<IIdentifyChallengeService, IdentifyChallengeService>();
         services.AddSingleton<IVisitorErasureRegistry, InMemoryVisitorErasureRegistry>();
         services.AddSingleton<IIdentificationEventCatalog, InMemoryIdentificationEventCatalog>();
         services.AddSingleton<IIdentifyService, IdentifyService>();

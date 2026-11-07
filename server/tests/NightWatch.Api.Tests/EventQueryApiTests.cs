@@ -18,34 +18,11 @@ public class EventQueryApiTests : IClassFixture<WebApplicationFactory<Program>>
         _client = factory.CreateClient();
     }
 
-    private static object IdentifyBody(string hash, string idem, string tenant = "ten_evt") => new
+    private async Task<(string VisitorId, string EventId)> IdentifyAsync(string salt, string idem, string tenant = "ten_evt")
     {
-        schemaVersion = "night-watch-identify-v1",
-        productCode = "night-watch",
-        purpose = "fraud_prevention",
-        consentStatus = "granted",
-        collectedAt = DateTimeOffset.UtcNow.ToString("O"),
-        idempotencyKey = idem,
-        tenantId = tenant,
-        projectId = "prj_web",
-        legacyBrowser = new
-        {
-            visitorId = hash,
-            sourceManifestRevision = "default-v1",
-            componentKeys = new[] { "canvas", "fonts", "audio", "timezone", "platform" }
-        }
-    };
-
-    private async Task<(string VisitorId, string EventId)> IdentifyAsync(string hash, string idem, string tenant = "ten_evt")
-    {
-        using var req = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(IdentifyBody(hash, idem, tenant))
-        };
-        req.Headers.TryAddWithoutValidation("Idempotency-Key", idem);
-        var res = await _client.SendAsync(req);
+        var (res, json) = await IdentifyFixtures.PostIdentifyAsync(
+            _client, salt, idem, tenant: tenant, project: "prj_web");
         res.EnsureSuccessStatusCode();
-        var json = await res.Content.ReadFromJsonAsync<JsonElement>();
         return (json.GetProperty("visitorId").GetString()!, json.GetProperty("eventId").GetString()!);
     }
 

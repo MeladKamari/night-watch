@@ -7,6 +7,7 @@ public static class ProductIdentity
     public const string IdentityAlgorithmVersion = "night-watch-identity-v4";
     public const string ProcessingVersion = "night-watch-processing-v4";
     public const string LegacySourceManifestRevision = "default-v1";
+    public const string HashingRevision = "murmur3-x64-128-canonical-v1";
 
     /// <summary>Forbidden runtime hosts (vendor SaaS / CDN telemetry).</summary>
     public static readonly string[] ForbiddenHostFragments =

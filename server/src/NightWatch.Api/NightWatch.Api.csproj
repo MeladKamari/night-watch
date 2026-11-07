@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.71.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.20.1" />
@@ -14,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NightWatch.Grpc.Contracts\NightWatch.Grpc.Contracts.csproj" />
     <ProjectReference Include="..\NightWatch.BuildingBlocks\NightWatch.BuildingBlocks.csproj" />
     <ProjectReference Include="..\NightWatch.Modules.Ingestion\NightWatch.Modules.Ingestion.csproj" />
     <ProjectReference Include="..\NightWatch.Modules.Identity\NightWatch.Modules.Identity.csproj" />

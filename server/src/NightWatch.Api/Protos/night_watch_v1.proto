@@ -1,0 +1,194 @@
+syntax = "proto3";
+
+option csharp_namespace = "NightWatch.Api.Grpc.V1";
+
+package nightwatch.v1;
+
+// Primary backend surface for first-party clients (Hermes, etc.).
+// HTTP twin: POST /v1/identify/challenge, /v1/identify, /v1/sealed/unseal, GET /v1/meta, /health/live
+service NightWatchIdentity {
+  rpc Health (HealthRequest) returns (HealthReply);
+  rpc GetMeta (MetaRequest) returns (MetaReply);
+  rpc Challenge (ChallengeRequest) returns (ChallengeReply);
+  rpc Identify (IdentifyRequest) returns (IdentifyReply);
+  rpc Unseal (UnsealRequest) returns (UnsealReply);
+  rpc HashComponents (HashComponentsRequest) returns (HashComponentsReply);
+}
+
+message HealthRequest {}
+
+message HealthReply {
+  string status = 1;
+  string product = 2;
+  string utc = 3;
+}
+
+message MetaRequest {}
+
+message MetaReply {
+  string product = 1;
+  string product_code = 2;
+  string identity_algorithm_version = 3;
+  string processing_version = 4;
+  string legacy_source_manifest_revision = 5;
+  string hashing_revision = 6;
+  bool runtime_vendor_saas = 7;
+  repeated string transports = 8;
+}
+
+message ChallengeRequest {
+  string tenant_id = 1;
+  string project_id = 2;
+}
+
+message ChallengeReply {
+  string challenge_nonce = 1;
+  string tenant_id = 2;
+  string project_id = 3;
+  string expires_at = 4;
+  int32 ttl_seconds = 5;
+  string note = 6;
+}
+
+// Component arm matching browser-sdk / hashComponents rules.
+message ComponentValue {
+  // JSON encoding of the successful value (e.g. "\"Win32\"", "1", "[\"Arial\"]").
+  string value_json = 1;
+  // When true, hash path uses the literal sentinel "error" (value_json ignored).
+  bool has_error = 2;
+  string error_json = 3;
+  int32 duration_ms = 4;
+}
+
+message ClientDevice {
+  string platform = 1;
+  string os_family = 2;
+  string browser_family = 3;
+  string locale = 4;
+  int32 screen_width = 5;
+  int32 screen_height = 6;
+  string webgl_renderer = 7;
+}
+
+message LegacyBrowser {
+  string visitor_id = 1;
+  string source_manifest_revision = 2;
+  string hashing_revision = 3;
+  repeated string component_keys = 4;
+  map<string, ComponentValue> components = 5;
+  // Alternative to components map: raw JSON object of components (same shape as HTTP).
+  string components_json = 6;
+}
+
+message IdentifyRequest {
+  string schema_version = 1;
+  string product_code = 2;
+  string purpose = 3;
+  string consent_status = 4;
+  string collected_at = 5;
+  string idempotency_key = 6;
+  string tenant_id = 7;
+  string project_id = 8;
+  string region = 9;
+  string challenge_nonce = 10;
+  string continuity_token = 11;
+  string continuity_legal_basis = 12;
+  string seal_audience = 13;
+  string correlation_id = 14;
+  string client_visitor_id = 15;
+  double client_confidence = 16;
+  ClientDevice client_device = 17;
+  LegacyBrowser legacy_browser = 18;
+  // Optional JSON object for smart-signal probes (same as HTTP environmentProbes).
+  string environment_probes_json = 19;
+  string client_ip = 20;
+}
+
+message ContinuityInfo {
+  string status = 1;
+  string continuity_id = 2;
+  string token = 3;
+  string cookie_name = 4;
+  string claim = 5;
+  string code = 6;
+}
+
+message MatchCandidate {
+  string visitor_id = 1;
+  double score = 2;
+  string decision = 3;
+  repeated string agreeing_features = 4;
+}
+
+message MatchInsights {
+  string status = 1;
+  string best_candidate_visitor_id = 2;
+  double best_score = 3;
+  string best_decision = 4;
+  bool soft_linked = 5;
+  string note = 6;
+  repeated MatchCandidate top_candidates = 7;
+}
+
+message VelocityInfo {
+  int32 events_last_hour = 1;
+  string anomaly = 2;
+  string key_kind = 3;
+  string note = 4;
+}
+
+message IdentifyReply {
+  string visitor_id = 1;
+  string event_id = 2;
+  string match_type = 3;
+  string first_seen_at = 4;
+  string last_seen_at = 5;
+  double confidence = 6;
+  bool confidence_specified = 7;
+  string confidence_status = 8;
+  string confidence_note = 9;
+  string enrichment_status = 10;
+  string receipt = 11;
+  string receipt_expires_at = 12;
+  string identity_algorithm_version = 13;
+  string processing_version = 14;
+  string namespace = 15;
+  bool duplicate = 16;
+  string correlation_id = 17;
+  ContinuityInfo continuity = 18;
+  MatchInsights match_insights = 19;
+  VelocityInfo velocity = 20;
+  string sealed_envelope = 21;
+  string sealed_audience = 22;
+  string sealed_note = 23;
+  string score_receipt_json = 24;
+  string smart_signals_json = 25;
+}
+
+message UnsealRequest {
+  string envelope = 1;
+  string audience = 2;
+  // When false (default), nonce is consumed (anti-replay) — same as HTTP default.
+  // Set true only for lab re-reads of the same envelope.
+  bool skip_consume = 3;
+}
+
+message UnsealReply {
+  bool ok = 1;
+  string code = 2;
+  string event_id = 3;
+  string audience = 4;
+  string payload_json = 5;
+}
+
+message HashComponentsRequest {
+  map<string, ComponentValue> components = 1;
+  string components_json = 2;
+}
+
+message HashComponentsReply {
+  string visitor_id = 1;
+  string canonical = 2;
+  string hashing_revision = 3;
+  string note = 4;
+}

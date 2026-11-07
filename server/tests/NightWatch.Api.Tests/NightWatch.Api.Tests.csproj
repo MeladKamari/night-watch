@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\NightWatch.Api\NightWatch.Api.csproj" />
+    <ProjectReference Include="..\..\src\NightWatch.Grpc.Contracts\NightWatch.Grpc.Contracts.csproj" />
     <ProjectReference Include="..\..\src\NightWatch.Persistence\NightWatch.Persistence.csproj" />
     <ProjectReference Include="..\..\src\NightWatch.Modules.Intelligence\NightWatch.Modules.Intelligence.csproj" />
     <ProjectReference Include="..\..\src\NightWatch.Modules.Admin\NightWatch.Modules.Admin.csproj" />

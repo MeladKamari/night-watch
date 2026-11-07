@@ -18,30 +18,11 @@ public class EventSearchApiTests : IClassFixture<WebApplicationFactory<Program>>
         _client = factory.CreateClient();
     }
 
-    private async Task IdentifyAsync(string hash, string idem, string tenant)
+    private async Task IdentifyAsync(string salt, string idem, string tenant)
     {
-        using var req = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(new
-            {
-                schemaVersion = "night-watch-identify-v1",
-                productCode = "night-watch",
-                purpose = "fraud_prevention",
-                consentStatus = "granted",
-                collectedAt = DateTimeOffset.UtcNow.ToString("O"),
-                idempotencyKey = idem,
-                tenantId = tenant,
-                projectId = "prj_web",
-                legacyBrowser = new
-                {
-                    visitorId = hash,
-                    sourceManifestRevision = "default-v1",
-                    componentKeys = new[] { "canvas", "fonts", "audio", "timezone", "platform" }
-                }
-            })
-        };
-        req.Headers.TryAddWithoutValidation("Idempotency-Key", idem);
-        (await _client.SendAsync(req)).EnsureSuccessStatusCode();
+        var (res, _) = await IdentifyFixtures.PostIdentifyAsync(
+            _client, salt, idem, tenant: tenant, project: "prj_web");
+        res.EnsureSuccessStatusCode();
     }
 
     private static HttpRequestMessage Search(string tenant, string? scope = "events:search", string query = "")

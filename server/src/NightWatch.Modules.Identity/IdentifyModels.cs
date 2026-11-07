@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace NightWatch.Modules.Identity;
 
 public sealed class IdentifyRequest
@@ -12,6 +14,9 @@ public sealed class IdentifyRequest
     public string? ProjectId { get; set; }
     public string? Region { get; set; }
     public LegacyIdentifyBrowser? LegacyBrowser { get; set; }
+
+    /// <summary>One-time nonce from POST /v1/identify/challenge (anti-replay).</summary>
+    public string? ChallengeNonce { get; set; }
 
     // Untrusted — never authoritative for matching
     public string? ClientVisitorId { get; set; }
@@ -42,7 +47,10 @@ public sealed class LegacyIdentifyBrowser
 {
     public string? VisitorId { get; set; }
     public string? SourceManifestRevision { get; set; }
+    public string? HashingRevision { get; set; }
     public List<string>? ComponentKeys { get; set; }
+    /// <summary>Real component map (value/error + duration). Required for identify hash verify.</summary>
+    public JsonElement? Components { get; set; }
 }
 
 public sealed record MatchCandidateInsight(

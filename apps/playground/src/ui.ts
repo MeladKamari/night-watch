@@ -165,12 +165,20 @@ export function mountPlayground(root: HTMLElement): PlaygroundController {
     setStatus('POST /v1/identify …', 'info')
     try {
       const keys = state.current.signals.map((s) => s.key)
+      const components: Record<string, { value?: unknown; error?: unknown; duration: number }> = {}
+      for (const row of state.current.signals) {
+        components[row.key] =
+          row.kind === 'value'
+            ? { value: row.exportValue, duration: row.durationMs }
+            : { error: row.exportValue, duration: row.durationMs }
+      }
       const probes = collectEnvironmentProbes()
       renderProbes(probes)
       const nav = globalThis.navigator
       const result = await identifyToProPlus({
         legacyVisitorId: state.current.visitorId,
         componentKeys: keys,
+        components,
         sourceManifestRevision: state.current.sourceManifestRevision,
         clientDevice: {
           platform: nav?.platform,

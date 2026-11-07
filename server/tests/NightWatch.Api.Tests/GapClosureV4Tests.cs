@@ -79,29 +79,26 @@ public class GapClosureV4Tests : IClassFixture<WebApplicationFactory<Program>>
         };
 
         var idem1 = "v4-conf-" + Guid.NewGuid().ToString("N")[..8];
-        using var r1 = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(IdentifyBody(Guid.NewGuid().ToString("N"), idem1, "ten_v4_conf", device))
-        };
-        r1.Headers.TryAddWithoutValidation("Idempotency-Key", idem1);
-        var a = await _client.SendAsync(r1);
-        var ja = await a.Content.ReadFromJsonAsync<JsonElement>();
+        var (a, ja) = await IdentifyFixtures.PostIdentifyAsync(
+            _client,
+            "v4-conf-a-" + Guid.NewGuid().ToString("N")[..8],
+            idem1,
+            tenant: "ten_v4_conf",
+            project: "prj_v4",
+            clientDevice: device);
+        Assert.Equal(HttpStatusCode.OK, a.StatusCode);
         var token = ja.GetProperty("continuity").GetProperty("token").GetString();
 
         var idem2 = "v4-conf-" + Guid.NewGuid().ToString("N")[..8];
-        using var r2 = new HttpRequestMessage(HttpMethod.Post, "/v1/identify")
-        {
-            Content = JsonContent.Create(IdentifyBody(
-                Guid.NewGuid().ToString("N"),
-                idem2,
-                "ten_v4_conf",
-                device,
-                token))
-        };
-        r2.Headers.TryAddWithoutValidation("Idempotency-Key", idem2);
-        r2.Headers.TryAddWithoutValidation("X-Continuity-Token", token!);
-        var b = await _client.SendAsync(r2);
-        var jb = await b.Content.ReadFromJsonAsync<JsonElement>();
+        var (b, jb) = await IdentifyFixtures.PostIdentifyAsync(
+            _client,
+            "v4-conf-b-" + Guid.NewGuid().ToString("N")[..8],
+            idem2,
+            tenant: "ten_v4_conf",
+            project: "prj_v4",
+            clientDevice: device,
+            continuityToken: token);
+        Assert.Equal(HttpStatusCode.OK, b.StatusCode);
         Assert.Equal("matched", jb.GetProperty("matchType").GetString());
         Assert.Equal("holdout_backed", jb.GetProperty("confidenceStatus").GetString());
         Assert.True(jb.GetProperty("confidence").GetDouble() >= 0.9);
@@ -153,30 +150,4 @@ public class GapClosureV4Tests : IClassFixture<WebApplicationFactory<Program>>
         return await res.Content.ReadFromJsonAsync<JsonElement>();
     }
 
-    private static object IdentifyBody(
-        string hash,
-        string idem,
-        string tenant,
-        object device,
-        string? continuity = null) => new
-    {
-        schemaVersion = "night-watch-identify-v1",
-        productCode = "night-watch",
-        purpose = "fraud_prevention",
-        consentStatus = "granted",
-        collectedAt = DateTimeOffset.UtcNow.ToString("O"),
-        idempotencyKey = idem,
-        tenantId = tenant,
-        projectId = "prj_v4",
-        region = "ir-central",
-        continuityToken = continuity,
-        continuityLegalBasis = "legitimate_interest",
-        clientDevice = device,
-        legacyBrowser = new
-        {
-            visitorId = hash,
-            sourceManifestRevision = "default-v1",
-            componentKeys = new[] { "canvas", "fonts", "audio" }
-        }
-    };
 }

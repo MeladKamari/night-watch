@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using NightWatch.BuildingBlocks;
+using NightWatch.BuildingBlocks.Hashing;
 using NightWatch.Modules.Identity.Matching;
 using Microsoft.Extensions.Logging;
 
@@ -16,6 +17,10 @@ public sealed class IdentifyOptions
     /// <summary>Only true when a calibrated model is registered — default false.</summary>
     public bool ConfidenceCalibrated { get; set; }
     public string FeatureTenantSecret { get; set; } = "night-watch-dev-feature-secret";
+    /// <summary>Require POST /v1/identify/challenge nonce (anti-replay).</summary>
+    public bool RequireChallenge { get; set; } = true;
+    /// <summary>Minimum real components required on identify.</summary>
+    public int MinComponentCount { get; set; } = 2;
     public HashSet<string> AllowedPurposes { get; set; } = new(StringComparer.Ordinal)
     {
         "fraud_prevention",
@@ -44,9 +49,11 @@ public sealed class IdentifyService(
     ICandidateRetrievalService candidates,
     IFirstPartySessionCookieService cookies,
     IHoldoutConfidenceSource holdoutSource,
+    IIdentifyChallengeService challenges,
     IdentifyOptions? options = null) : IIdentifyService
 {
     private readonly IdentifyOptions _options = options ?? new IdentifyOptions();
+    private readonly IIdentifyChallengeService _challenges = challenges;
 
     private readonly ConcurrentDictionary<string, string> _idempotency = new(StringComparer.Ordinal);
     private readonly ConcurrentDictionary<string, StoredIdentifyResult> _resultsByEvent = new(StringComparer.Ordinal);
@@ -92,6 +99,15 @@ public sealed class IdentifyService(
         {
             var dup = prior.Response with { Duplicate = true, CorrelationId = correlationId };
             return Task.FromResult<(int, object)>((200, dup));
+        }
+
+        if (_options.RequireChallenge)
+        {
+            if (!_challenges.TryConsume(tenant, project, body.ChallengeNonce, out var chalCode, out var chalDetail))
+            {
+                var status = chalCode is "challenge_invalid" or "challenge_expired" ? 409 : 400;
+                return Task.FromResult(Problem(status, chalCode, chalDetail, correlationId));
+            }
         }
 
         var legacyHash = body.LegacyBrowser!.VisitorId!;
@@ -690,6 +706,45 @@ public sealed class IdentifyService(
         if (legacy.ComponentKeys.Contains("applePay", StringComparer.Ordinal))
         {
             return ("apple_pay_forbidden", "applePay is excluded");
+        }
+
+        if (!string.IsNullOrWhiteSpace(legacy.HashingRevision)
+            && legacy.HashingRevision != ProductIdentity.HashingRevision
+            && legacy.HashingRevision != ComponentHasher.HashingRevision)
+        {
+            return ("hashing_revision_invalid", $"hashingRevision must be {ProductIdentity.HashingRevision}");
+        }
+
+        if (legacy.Components is null || legacy.Components.Value.ValueKind != JsonValueKind.Object)
+        {
+            return ("components_required", "legacyBrowser.components (real component map) required");
+        }
+
+        var components = legacy.Components.Value;
+        var componentKeySet = ComponentHasher.ComponentKeys(components);
+        if (componentKeySet.Count < _options.MinComponentCount)
+        {
+            return ("components_insufficient", $"at least {_options.MinComponentCount} components required");
+        }
+
+        if (componentKeySet.Contains("applePay", StringComparer.Ordinal))
+        {
+            return ("apple_pay_forbidden", "applePay must not appear in components");
+        }
+
+        var declared = new HashSet<string>(legacy.ComponentKeys, StringComparer.Ordinal);
+        var actual = new HashSet<string>(componentKeySet, StringComparer.Ordinal);
+        if (!declared.SetEquals(actual))
+        {
+            return ("component_keys_mismatch", "componentKeys must match Object.keys(components)");
+        }
+
+        var expectedHash = ComponentHasher.HashComponents(components);
+        if (!string.Equals(legacy.VisitorId, expectedHash, StringComparison.Ordinal))
+        {
+            return (
+                "visitor_hash_mismatch",
+                "legacyBrowser.visitorId must equal hashComponents(components) (server-verified)");
         }
 
         return null;
