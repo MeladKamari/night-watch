@@ -1,0 +1,225 @@
+:root {
+  --void: #070b14;
+  --ice: #d7e0ea;
+  --cyan: #3ad7ff;
+  --wall: #1a2740;
+  --muted: color-mix(in srgb, var(--ice) 62%, transparent);
+  --line: color-mix(in srgb, var(--cyan) 28%, transparent);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  background: var(--void);
+  color: var(--ice);
+  overflow-x: hidden;
+}
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 55% at 70% -10%, rgba(58, 215, 255, 0.18), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 10% 90%, rgba(26, 39, 64, 0.95), transparent 60%),
+    linear-gradient(165deg, #05080f 0%, var(--void) 45%, #0b1220 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.atmosphere::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(7, 11, 20, 0.15) 48%,
+    transparent 49%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  opacity: 0.25;
+  animation: scan 9s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(-8%);
+  }
+  to {
+    transform: translateY(8%);
+  }
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 8vw, 5.5rem) clamp(1.25rem, 4vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.1rem;
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.brand {
+  margin: 0;
+  font-family: Syne, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  background: linear-gradient(120deg, var(--ice) 20%, var(--cyan) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.headline {
+  margin: 0;
+  font-family: Syne, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ice);
+}
+
+.lede {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.lede code {
+  color: var(--cyan);
+  font-size: 0.86em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.cta,
+.ghost {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 0.35rem;
+  padding: 0.85rem 1.2rem;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    opacity 160ms ease;
+}
+
+.cta {
+  border: 1px solid color-mix(in srgb, var(--cyan) 65%, white);
+  background: color-mix(in srgb, var(--cyan) 18%, transparent);
+  color: var(--ice);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--cyan) 20%, transparent);
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--cyan) 28%, transparent);
+}
+
+.cta:disabled {
+  opacity: 0.55;
+  cursor: wait;
+  transform: none;
+}
+
+.ghost {
+  border: 1px solid var(--wall);
+  background: transparent;
+  color: var(--muted);
+}
+
+.ghost:hover {
+  border-color: var(--line);
+  color: var(--ice);
+}
+
+.result {
+  margin-top: 1.25rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--wall) 55%, transparent);
+  backdrop-filter: blur(8px);
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.label {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.visitor-id {
+  margin: 0;
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  word-break: break-all;
+  color: var(--cyan);
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  margin: 1rem 0 0;
+}
+
+.meta dt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.meta dd {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.status {
+  min-height: 1.25rem;
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.status[data-tone='error'] {
+  color: #ff8f8f;
+}

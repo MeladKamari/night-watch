@@ -1,0 +1,20 @@
+{
+  "name": "night-watch-visitor-console",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Demo app consuming published @thenightwatch packages from npm",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@thenightwatch/browser-sdk": "^1.0.1",
+    "@thenightwatch/vanilla": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

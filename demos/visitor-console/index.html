@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Night Watch — Visitor Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+    <main class="stage">
+      <p class="brand">Night Watch</p>
+      <h1 class="headline">Know the visitor.<br />Not the person.</h1>
+      <p class="lede">
+        Live demo of <code>@thenightwatch/vanilla</code> against the public npm
+        packages.
+      </p>
+      <div class="actions">
+        <button type="button" id="identify" class="cta">Identify visitor</button>
+        <button type="button" id="again" class="ghost" hidden>Run again</button>
+      </div>
+      <section class="result" id="result" hidden>
+        <p class="label">Visitor ID</p>
+        <p class="visitor-id" id="visitor-id"></p>
+        <dl class="meta" id="meta"></dl>
+      </section>
+      <p class="status" id="status" role="status"></p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
