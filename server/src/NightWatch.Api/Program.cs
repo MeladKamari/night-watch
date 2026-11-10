@@ -51,15 +51,6 @@ builder.Logging.AddJsonConsole(o =>
 builder.Services.AddOpenApi();
 builder.Services.AddGrpc();
 builder.Services.AddGrpcReflection();
-builder.Services.AddCors(o => o.AddPolicy("console", p =>
-    p.WithOrigins(
-            "http://127.0.0.1:4300",
-            "http://localhost:4300",
-            "http://127.0.0.1:4173",
-            "http://localhost:4173")
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials()));
 builder.Services.AddProPlusOptions();
 builder.Services.AddProPlusCaching(builder.Configuration);
 builder.Services.AddProPlusEdgeAdapter();
@@ -165,8 +156,6 @@ app.Lifetime.ApplicationStarted.Register(() =>
     app.Logger.LogInformation("{Product} API started (no vendor SaaS runtime dependency)", ProductIdentity.ProductName));
 app.Lifetime.ApplicationStopping.Register(() =>
     app.Logger.LogInformation("{Product} API stopping gracefully", ProductIdentity.ProductName));
-
-app.UseCors("console");
 
 if (app.Environment.IsDevelopment())
 {
